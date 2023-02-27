@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6424715507133704420}
   - component: {fileID: 6424715507133704418}
   - component: {fileID: 6424715507133704419}
+  - component: {fileID: 1561234698337840599}
   m_Layer: 0
   m_Name: PlayerPlaceholder
   m_TagString: Untagged
@@ -146,3 +147,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1561234698337840599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424715507133704421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c1fc14f92e00546a6bf3a8967782fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  regenRate: 0
+  armor: 0
+  moveSpeed: 0
+  power: 0
+  projectileSpeed: 0
+  effectLifeSpan: 0
+  attackRange: 0
+  attackCooldown: 0
+  projectilesPerAttack: 0
+  resurections: 0
+  grabRange: 0
+  luck: 0
+  bonusExp: 0
+  bonusGold: 0
+  curse: 0
+  reroll: 0
+  xpInsteadOfStuff: 0
+  banObject: 0
+  gold: 0
+  xp: 0
+  level: 0
+  kills: 0
