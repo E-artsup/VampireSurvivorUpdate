@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     [Tooltip("Player's move speed.")] public float moveSpeed;
     
     [Tooltip("Player's power. Apply a bonus percentage to the damages.")]public float power;
-    [Tooltip("Player's projectile speed.")]public float projectileSpeed;
+    [Tooltip("Player's projectile bonus speed.")]public float projectileSpeed;
     [Tooltip("Player's projectile's effects life span")]
     public float effectLifeSpan;
     [Tooltip("Player's attack range.")]public float attackRange;
@@ -27,9 +27,15 @@ public class PlayerStats : MonoBehaviour
     [Tooltip("Stats that increase the speed, the health, the quantity and the spawn rates of ennemies")]
     public float curse;
     
-    [Tooltip("Player can reroll the stuff he drops every level")]public bool reroll;
+    [Tooltip("Player can reroll two times the stuff he drops every level")]public bool reroll;
     [Tooltip("Player can have xp instead of stuffs two times per rank each rank up")]public bool xpInsteadOfStuff;
     [Tooltip("Player can ban an object for the game")]public bool banObject;
+    
+    
+    [Tooltip("Gold amount of the player.")]public int gold;
+    [Tooltip("Experience amount of the player.")]public int xp;
+    [Tooltip("Level of the player.")]public int level;
+    [Tooltip("Number of kills of the player.")]public int kills;
     
     
 
