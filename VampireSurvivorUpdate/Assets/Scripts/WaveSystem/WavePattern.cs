@@ -1,59 +1,49 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// this script makes you able to edit your waves: the shape of the wave, the ennemy pool that spawn in it 
 public class WavePattern : MonoBehaviour
 {
-    public int maxEnemies = 10;
-    public float spawnRate = 1f;
-    public float raycastDistance = 10f;
-    public float spawnDelay = 1f;
+    [SerializeField] private float polygonFormula;
+    [SerializeField] public bool snailShape;
+    [SerializeField] private int n;
 
-    public List<GameObject> monsterPool;
-    public Vector2[] polygonVertices;
-    public int polygonVertexCount;
-
-    private void Start()
+    // Initialize the shape of the wave
+    public void Start()
     {
-        // Set up the polygon shape using raycasts from the player
-        //Put the points in the array to have better control over the area, simplify it?
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.up, raycastDistance);
-        polygonVertexCount = hits.Length + 1;
-        polygonVertices = new Vector2[polygonVertexCount];
-        for (int i = 0; i < hits.Length; i++)
-        {
-            polygonVertices[i] = hits[i].point - (Vector2)transform.position;
-        }
-        polygonVertices[polygonVertexCount - 1] = polygonVertices[0];
+        TypeOfShape();
     }
 
-    private void OnWaveStart()
+    // Initialize which shape of polygon we want
+    public int TypeOfShape()
     {
-        //1st of all, get the poly,2nd of all use the other script for enemy spawning 
-    }
-
-    // make a clear system with the monster pool and what can spawn.
-    private GameObject GetMonsterFromPool()
-    {
-        foreach (GameObject monster in monsterPool)
+        if (snailShape)
         {
-            if (!monster.activeInHierarchy)
-            {
-                return monster;
-            }
+            n = 1;
         }
 
-        return null;
+        return n;
     }
 
-    // Calculate the area of the polygon shape using the shoelace formula
-    private float GetPolygonArea()
+    // Modifies the polygon shape accordingly to the initialization
+    public float ViewDistanceCalculator(int i, int rayCount)
     {
-        float area = 0f;
-        for (int i = 0; i < polygonVertexCount - 1; i++)
+        switch (n)
         {
-            area += polygonVertices[i].x * polygonVertices[i + 1].y - polygonVertices[i + 1].x * polygonVertices[i].y;
+            case 0:
+                polygonFormula = 20;
+                break;
+
+            case 1:
+                polygonFormula = (float)i * (1 / (float)rayCount) * 20;
+                break;
+
+            default: 
+                break;
         }
-        return Mathf.Abs(area / 2f);
+        return polygonFormula;
     }
 }
 

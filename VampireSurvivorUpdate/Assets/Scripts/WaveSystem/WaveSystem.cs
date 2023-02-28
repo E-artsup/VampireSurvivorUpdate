@@ -1,96 +1,45 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
+//this script is managing the ennemy spawn ( push/pull method )
 public class WaveSystem : MonoBehaviour
 {
-    public float spawnDelay = 1f;
-    public int startingWave = 1;
-    public int currentWave;
-    public int maxActiveMonsters = 20;
-    public float spawnRate = 2f;
-    public List<GameObject> monsterPool;
-    public List<PolygonCollider2D> wavePatterns;
-    public Transform playerTransform;
+    [SerializeField] private GameObject _monsterPool1, _monsterPool2, _monsterPool3;
 
-    public int currentActiveMonsters = 0;
-    public bool isWaveActive = false;
+    [SerializeField] public static List<GameObject> monsterPool1, monsterPool2, monsterPool3;
 
-    //start the first wave
-    private void Start()
+    public void Start()
     {
-        currentWave = startingWave;
-        StartCoroutine(SpawnWave());
+        MonsterPoolSetup();
     }
 
-    //how the spawn of the wave work, it just takes the different selected amount of ennmies and teleport them inside the selected spawning zone, and the checks if it can spawn the next wave.
-    private IEnumerator SpawnWave()
+    // Set the pool of ennemies 
+    public void MonsterPoolSetup()
     {
-        isWaveActive = true;
+        _monsterPool1 = GameObject.Find(nameof(monsterPool1));
+        _monsterPool2 = GameObject.Find(nameof(monsterPool2));
+        _monsterPool3 = GameObject.Find(nameof(monsterPool3));
 
-        while (currentActiveMonsters < maxActiveMonsters)
+
+        monsterPool1 = new List<GameObject>();
+        monsterPool2 = new List<GameObject>();
+        monsterPool3 = new List<GameObject>();
+
+        for (int j = 0; j < _monsterPool1.transform.childCount; j++)
         {
-            //get pattern in random, and every X amount of random patter a set boss pattern, there will be a fixed index, make an ARRAY containing all the different poly/spawning zone of every wave, that will be reused with different type of enemies.
-            int patternIndex = Random.Range(0, wavePatterns.Count);
-            PolygonCollider2D wavePattern = wavePatterns[patternIndex];
-
-            StartCoroutine(SpawnEnemies());
-            currentActiveMonsters++;
-            yield return new WaitForSeconds(spawnRate);
+            monsterPool1.Add(_monsterPool1.transform.GetChild(j).gameObject);
         }
 
-        //make a better check for the end of the wave, check the time/ the amount
-        isWaveActive = false;
-        currentActiveMonsters = 0;
-        currentWave++;
-        StartCoroutine(SpawnWave());
-    }
-
-    // how the ennemis will spawn
-    private IEnumerator SpawnEnemies()
-    {
-        //you can do a bunch of things to make this part se the other script and modify it
-        int enemyCount = 0;
-        while (enemyCount < maxActiveMonsters)
+        for (int j = 0; j < _monsterPool2.transform.childCount; j++)
         {
-            // Wait for the spawn delay before spawning the next enemy
-            yield return new WaitForSeconds(spawnDelay);
-
-            // Spawn an enemy in a random position within the polygon shape
-            //Vector2 spawnPosition = GetSpawnPosition();
-
-            //faire un tp des ennemis---------------------------
-
-            //GameObject enemyObject = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            enemyCount++;
-            monsterPool[1].SetActive(true);
-
-        }
-    }
-
-
-    //try to valid the spawn position of the enemy inside the spawning zone
-    private Vector2 GetSpawnPosition(PolygonCollider2D wavePattern)
-    {
-        Vector2 spawnPosition = Vector2.zero;
-
-        bool isPositionValid = false;
-        while (!isPositionValid)
-        {
-            //change this with wave pattern script, make the random point AT THE LIMIT, if it’s valid, good, if not, go towards the inside. That way we don’t have to create weird bound with multiple polys 
-            float randomX = Random.Range(wavePattern.bounds.min.x, wavePattern.bounds.max.x);
-            float randomY = Random.Range(wavePattern.bounds.min.y, wavePattern.bounds.max.y);
-
-            spawnPosition = new Vector2(randomX, randomY);
-
-            //change overlap to the MAX bounds with the script.
-            if (wavePattern.OverlapPoint(spawnPosition))
-            {
-                isPositionValid = true;
-            }
+            monsterPool1.Add(_monsterPool2.transform.GetChild(j).gameObject);
         }
 
-        return spawnPosition;
+        for (int j = 0; j < _monsterPool3.transform.childCount; j++)
+        {
+            monsterPool1.Add(_monsterPool3.transform.GetChild(j).gameObject);
+        }
     }
 }
