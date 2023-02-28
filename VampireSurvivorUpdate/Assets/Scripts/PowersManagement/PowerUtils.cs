@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUtilsCS : MonoBehaviour
+public class PowerUtils : MonoBehaviour
 {
     
     // <summary>
