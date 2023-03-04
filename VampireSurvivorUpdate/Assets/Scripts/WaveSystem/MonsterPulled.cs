@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class MonsterPulled : MonoBehaviour
 {
-    [SerializeField] public GameObject monsterSelected;
+    [SerializeField] public List<GameObject> monsterSelected;
     [SerializeField] public int monsterCount;
     [SerializeField] public bool monsterPoolSelected1;
     [SerializeField] public bool monsterPoolSelected2;
     [SerializeField] public bool monsterPoolSelected3;
-    [SerializeField] private int n;
+    [SerializeField] private int n = 0;
 
     // Initialize the shape of the wave
     public void Start()
@@ -17,50 +18,36 @@ public class MonsterPulled : MonoBehaviour
         TypeOfMonster();
     }
 
-    // Initialize which shape of polygon we want
-    public int TypeOfMonster()
+    // Initialize the monster pool(s) from which we will pick our monsters
+    public void TypeOfMonster()
     {
+        monsterSelected.Clear();
+
         if (monsterPoolSelected1)
         {
-            n = 0;
+            monsterSelected.Add(WaveSystem.monsterPool1[0]);
         }
 
         if (monsterPoolSelected2)
         {
-            n = 1;
+            monsterSelected.Add(WaveSystem.monsterPool2[0]);
         }
 
         if (monsterPoolSelected3)
         {
-            n = 2;
+            monsterSelected.Add(WaveSystem.monsterPool3[0]);
         }
-
-        return n;
     }
 
-    // Modifies the polygon shape accordingly to the initialization
-    public GameObject TypeOfMonsterPulled(int i)
+    // Gives a monster selected in one of the random monster pool we initialized
+    public GameObject TypeOfMonsterPulled()
     {
-        switch (n)
-        {
-            case 0:
-                monsterSelected = WaveSystem.monsterPool1[i];
-                monsterCount = WaveSystem.monsterPool1.Count;
-                break;
+        TypeOfMonster();
 
-            case 1:
-                monsterSelected = WaveSystem.monsterPool2[i];
-                monsterCount = WaveSystem.monsterPool2.Count;
-                break;
+        n++;
 
-            case 2:
-                monsterSelected = WaveSystem.monsterPool3[i];
-                monsterCount = WaveSystem.monsterPool3.Count;
-                break;
+        if(n >= monsterSelected.Count) n = 0;
 
-            default:
-                break;
-        }
-        return monsterSelected;
+        return monsterSelected[n];
     }
 }
