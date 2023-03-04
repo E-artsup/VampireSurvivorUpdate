@@ -10,6 +10,8 @@ public class IABehavior : MonoBehaviour
         #region Variables
         private float healthPoint;
         [SerializeField] private float maxHealthPoint = 5;
+
+        [SerializeField] private int baseATK = 2;
         #endregion
 
         #region Behavior
@@ -26,9 +28,9 @@ public class IABehavior : MonoBehaviour
         target = destinationSetter.target.gameObject;
     }
 
-    private void AttackThePlayer()
+    public void AttackThePlayer()
     {
-        
+        target.GetComponent<PlayerStats>().currentHealth = target.GetComponent<PlayerStats>().currentHealth - baseATK;
     }
 
     [ContextMenu("Take Damage")]
