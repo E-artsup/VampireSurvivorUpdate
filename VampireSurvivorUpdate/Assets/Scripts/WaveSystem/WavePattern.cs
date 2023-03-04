@@ -37,7 +37,7 @@ public class WavePattern : MonoBehaviour
                 break;
 
             case 1:
-                polygonFormula = (float)i * (1 / (float)rayCount) * 20;
+                polygonFormula = (float)i * (1 / (float)rayCount) * 20 + 10;
                 break;
 
             default: 

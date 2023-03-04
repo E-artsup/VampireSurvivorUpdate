@@ -34,12 +34,12 @@ public class WaveSystem : MonoBehaviour
 
         for (int j = 0; j < _monsterPool2.transform.childCount; j++)
         {
-            monsterPool1.Add(_monsterPool2.transform.GetChild(j).gameObject);
+            monsterPool2.Add(_monsterPool2.transform.GetChild(j).gameObject);
         }
 
         for (int j = 0; j < _monsterPool3.transform.childCount; j++)
         {
-            monsterPool1.Add(_monsterPool3.transform.GetChild(j).gameObject);
+            monsterPool3.Add(_monsterPool3.transform.GetChild(j).gameObject);
         }
     }
 }
