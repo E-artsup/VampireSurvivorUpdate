@@ -26,7 +26,7 @@ public class MonsterSpawn : MonoBehaviour
     public void WaveSpawner()
     {
         // Gets the Spawn position inside the PolygonCollider
-        while (EnnemySpawn() == false)
+        while (EnnemySpawn() == false && this.gameObject.GetComponent<PolygonCollider2D>().enabled)
         {
             EnnemySpawn();
         }
@@ -40,8 +40,9 @@ public class MonsterSpawn : MonoBehaviour
         numberOfEnnemies++;
 
         // If all the ennemies we wanted to spawn spawned then stop spawning monster in this wave
-        if(numberOfEnnemies >= maxEnnemies)
+        if(numberOfEnnemies == maxEnnemies)
         {
+            CancelInvoke();
             waveSystem.NextWave();
         }
     }

@@ -257,6 +257,7 @@ MonoBehaviour:
   _monsterPool1: {fileID: 0}
   _monsterPool2: {fileID: 0}
   _monsterPool3: {fileID: 0}
+  waveNumber: 0
 --- !u!4 &105610459
 Transform:
   m_ObjectHideFlags: 0
@@ -270,7 +271,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2115330413}
-  - {fileID: 1008151026}
+  - {fileID: 897805887}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1701,7 +1702,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1008151025
+--- !u!1 &897805886
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1709,22 +1710,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1008151026}
-  m_Layer: 0
+  - component: {fileID: 897805887}
+  - component: {fileID: 897805894}
+  - component: {fileID: 897805893}
+  - component: {fileID: 897805892}
+  - component: {fileID: 897805891}
+  - component: {fileID: 897805890}
+  - component: {fileID: 897805889}
+  - component: {fileID: 897805888}
+  m_Layer: 2
   m_Name: Wave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1008151026
+  m_IsActive: 0
+--- !u!4 &897805887
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008151025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 897805886}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1732,6 +1740,187 @@ Transform:
   m_Father: {fileID: 105610459}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &897805888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0c7073a27b6e14c8e176571c6213a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterSelected: []
+  monsterCount: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 0
+  monsterPoolSelected3: 0
+  n: 0
+--- !u!114 &897805889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5daa1b37241397c4690db8c8acd01a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 3680009163299208362, guid: 3405d5dafb3b6514e88e5f01be9035eb,
+    type: 3}
+  polygonCollider: {fileID: 897805892}
+  monsterPulled: {fileID: 0}
+  waveSystem: {fileID: 0}
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  i: 0
+  n: 0
+  spawnRate: 0.5
+  numberOfEnnemies: 0
+  maxEnnemies: 5
+  randomPoint: {x: 0, y: 0}
+  monsterToPull: {fileID: 0}
+--- !u!114 &897805890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac068bedc7c380438dcc0606c66a318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  polygonFormula: 0
+  snailShape: 0
+  n: 0
+--- !u!114 &897805891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5bfb1f49edd5a4c91daa59418a5c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  mesh: {fileID: 0}
+  polygonCollider: {fileID: 0}
+  wavePattern: {fileID: 0}
+  rayCount: 150
+  fov: 360
+  angle: 0
+  viewDistance: 20
+  innerDistance: 0.6
+  areaOffset: -1
+  VertexIndex: 0
+  outerVertexIndex: 0
+  innerVertexIndex: 0
+  quadIndex: 0
+  outerIndex0: 0
+  outerIndex1: 0
+  innerIndex0: 0
+  innerIndex1: 0
+  direction: {x: 0, y: 0}
+  vertex: {x: 0, y: 0, z: 0}
+  origin: {x: 0, y: 0, z: 0}
+  innerPolygonScale: {x: 0, y: 0, z: 0}
+  innerPosition: {x: 0, y: 0, z: 0}
+  outerPoints: []
+  innerPoints: []
+  vertices: []
+  triangles: 
+--- !u!60 &897805892
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.9510565, y: 0.30901712}
+--- !u!23 &897805893
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &897805894
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897805886}
+  m_Mesh: {fileID: 0}
 --- !u!1 &1035366214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,7 +3605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2115330413
 Transform:
   m_ObjectHideFlags: 0
@@ -3592,7 +3781,7 @@ MonoBehaviour:
   n: 0
   spawnRate: 0.5
   numberOfEnnemies: 0
-  maxEnnemies: 20
+  maxEnnemies: 7
   randomPoint: {x: 0, y: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &2115330422
