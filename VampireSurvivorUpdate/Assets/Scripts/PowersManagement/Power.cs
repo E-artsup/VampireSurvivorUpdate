@@ -6,32 +6,96 @@ public class Power : MonoBehaviour
 {
 
 //#region private variables
-    
+    protected PowersManager powersManager;
+
     private Material icon;
-    private string name;
-    private ElementalType type;
+    private new string name;
+    private int type;
+        // 0 = unknown
+        // 1 = Fire
+        // 2 = Water
+        // 3 = Air
+        // 4 = Lightning
+        // 5 = Light
+        // 6 = Darkness
     private string description;
-    private int maxLevel;
-    private int currentLevel;
-    private int baseDamage;
-    private int levelDamageMultiplier;
+    protected int maxLevel;
+    protected int currentLevel;
+    protected int baseDamage;
+    protected int levelDamageMultiplier;
     private DamageTypeZone damageTypeZone;
-    private float projectileSpeed;
-    private int maxFireAmountAtSameTime;
-    private float duration;
-    private bool autoAttack;
-    private float cooldown;
-    private float cooldownRemaining;
-    private float hitBoxDelay;
+    protected float projectileSpeed;
+    protected int maxFireAmountAtSameTime;
+    protected float duration;
+    protected float cooldown;
+    protected float cooldownRemaining;
+    protected float hitBoxDelay;
     private bool piercing;
-    private bool knockback;
-    private int maxOnScreenAtSameTime;
+    protected float knockback;
+    protected int maxOnScreenAtSameTime;
     private bool blockedByWalls;
 //#endregion
 //#region public variables
 //#endregion
-//#region public methods
-    
+
+//#region constructor
+    //<summary> Constructor of the Power class </summary>
+    //<param name="name"> Name of the power </param>
+    //<param name="type"> Type of the power </param>
+    //<param name="description"> Description of the power </param>
+    //<param name="maxLevel"> Max level of the power </param>
+    //<param name="baseDamage"> Base damage of the power </param>
+    //<param name="levelDamageMultiplier"> Damage multiplier per level of the power </param>
+    //<param name="damageTypeZone"> Type of damage zone of the power </param>
+    //<param name="projectileSpeed"> Speed of the projectile of the power </param>
+    //<param name="maxFireAmountAtSameTime"> Max amount of projectiles that can be fired at the same time </param>
+    //<param name="duration"> Duration of the power </param>
+    //<param name="cooldown"> Cooldown of the power </param>
+    //<param name="hitBoxDelay"> Delay before the hitbox of the power appears </param>
+    //<param name="piercing"> If the power can pierce through enemies </param>
+    //<param name="knockback"> Knockback's strength </param>
+    //<param name="maxOnScreenAtSameTime"> Max amount of projectiles that can be on screen at the same time </param>
+    //<param name="blockedByWalls"> If the power is blocked by walls </param>
+    public Power(
+        string name,
+        int type,
+        string description,
+        int maxLevel,
+        int baseDamage,
+        int levelDamageMultiplier,
+        DamageTypeZone damageTypeZone,
+        float projectileSpeed,
+        int maxFireAmountAtSameTime,
+        float duration,
+        float cooldown,
+        float hitBoxDelay,
+        bool piercing,
+        float knockback,
+        int maxOnScreenAtSameTime,
+        bool blockedByWalls
+    ){
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.maxLevel = maxLevel;
+        this.baseDamage = baseDamage;
+        this.levelDamageMultiplier = levelDamageMultiplier;
+        this.damageTypeZone = damageTypeZone;
+        this.projectileSpeed = projectileSpeed;
+        this.maxFireAmountAtSameTime = maxFireAmountAtSameTime;
+        this.duration = duration;
+        this.cooldown = cooldown;
+        this.hitBoxDelay = hitBoxDelay;
+        this.piercing = piercing;
+        this.knockback = knockback;
+        this.maxOnScreenAtSameTime = maxOnScreenAtSameTime;
+        this.blockedByWalls = blockedByWalls;
+    }
+
+    //#endregion
+
+    //#region public methods
+
     //<summary> Method to attack, please override it when creating an instance of this class </summary>
     public void Attack(){
         cooldownRemaining = cooldown;
@@ -72,7 +136,7 @@ public class Power : MonoBehaviour
         Darkness
     }
 
-    enum DamageTypeZone{
+    public enum DamageTypeZone{
         Unique,
         Area
     }
