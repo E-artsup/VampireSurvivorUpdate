@@ -11,8 +11,11 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] public static List<GameObject> monsterPool1, monsterPool2, monsterPool3;
 
+    [SerializeField] public int waveNumber;
     public void Start()
     {
+        this.gameObject.transform.GetChild(waveNumber).gameObject.SetActive(true);
+
         MonsterPoolSetup();
     }
 
@@ -92,5 +95,12 @@ public class WaveSystem : MonoBehaviour
                 Debug.Log("Something went wrong");
                 break;
         }
+    }
+
+    public void NextWave()
+    {
+        this.gameObject.transform.GetChild(waveNumber).gameObject.SetActive(false);
+        this.gameObject.transform.GetChild(waveNumber + 1).gameObject.SetActive(true);
+        waveNumber++;
     }
 }

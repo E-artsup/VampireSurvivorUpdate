@@ -42,7 +42,7 @@ public class MonsterSpawn : MonoBehaviour
         // If all the ennemies we wanted to spawn spawned then stop spawning monster in this wave
         if(numberOfEnnemies >= maxEnnemies)
         {
-            this.GetComponent<MonsterSpawn>().enabled = false;
+            waveSystem.NextWave();
         }
     }
 
