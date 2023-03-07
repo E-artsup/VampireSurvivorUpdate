@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LaserPower : Power {
-
+    [SerializeField]
+    private GameObject effect;
+    [SerializeField] private Transform player;
     LaserPower(PowersManager powersManager) : base(
         "Laser",
         0,
@@ -24,22 +27,25 @@ public class LaserPower : Power {
     ) {
         this.powersManager = powersManager;
     }
-
+    private void Awake()
+    {
+        this.powersManager = PowersManager.instance;
+    }
     public new void Attack()
     {
         // Gets the objets hit by the laser
         RaycastHit[] hits = Physics.SphereCastAll(
-            this.powersManager.getPlayer().transform.position,
+             player.position,
             0.5f+(0.1f*this.currentLevel),
-            this.powersManager.getPlayer().transform.forward,
+             player.forward,
             5+(0.5f*this.currentLevel)
         );
         if(hits.Length > 0){
             foreach(RaycastHit hit in hits){
                 // If the object hit is an enemy
-                if(hit.collider.gameObject.tag == "Enemy"){
+                if(hit.collider.gameObject.TryGetComponent<IABehavior>(out IABehavior script)){
                     // Deals damage to the enemy
-    
+                    script.TakeDamage(1);
     /* WAITING IMPLEMENTATION OF ENEMY CLASS -> Replace the "Enemy" by the name of the class in the line below */
     
                     //hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(
@@ -56,7 +62,11 @@ public class LaserPower : Power {
             this.cooldownRemaining -= Time.deltaTime;
         } else {
             Attack();
-            this.cooldownRemaining = 0;
+            this.cooldownRemaining = 1;
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(player.position + player.forward * ( 5 + (0.5f * this.currentLevel)), 0.5f + (0.1f * this.currentLevel));
     }
 }

@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PLAYGROUND_KEVIN.unity
     guid: 548ab2633056d1543a215320a044c2e4
+  - enabled: 1
+    path: Assets/Scenes/TESTROOM.unity
+    guid: 95ddc9e7cd98f0847a1dfc3f9c884040
   m_configObjects: {}

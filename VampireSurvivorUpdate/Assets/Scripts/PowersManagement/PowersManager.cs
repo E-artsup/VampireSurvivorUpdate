@@ -6,7 +6,7 @@ public class PowersManager : MonoBehaviour
 {
     public static PowersManager instance;
     //public PlayerStats playerStats;
-    private GameObject player;
+    [SerializeField] private GameObject player;
     private Power[] powers;
 
 
