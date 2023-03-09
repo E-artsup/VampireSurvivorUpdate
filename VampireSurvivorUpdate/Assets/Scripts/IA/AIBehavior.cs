@@ -96,7 +96,8 @@ public class AIBehavior : MonoBehaviour
         
         if(canMove) // Check if can move.
         {
-            agent.SetDestination(target.transform.position); // Move toward the target.
+            //transform.position = Vector3.MoveTowards(transform.position,target.transform.position, baseSpd);
+            agent.SetDestination(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z)); // Move toward the target.
         }
 
     }
