@@ -28,12 +28,19 @@ public class PolygonCreator : MonoBehaviour
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        transform.GetChild(0).GetComponent<MeshFilter>().mesh = mesh;
         polygonCollider = this.gameObject.GetComponent<PolygonCollider2D>();
         polygonCollider.pathCount = 2;
         wavePattern = this.gameObject.GetComponent<WavePattern>();
 
         outerPoints = new List<Vector2>();
         innerPoints = new List<Vector2>();
+
+        if (this.gameObject.GetComponent<MonsterSpawn>().XZPlan)
+        {
+            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     public void LateUpdate()
@@ -59,6 +66,7 @@ public class PolygonCreator : MonoBehaviour
             angle = i * (fov / rayCount);
             direction = new Vector2(Mathf.Cos(angle * 0.01745f), Mathf.Sin(angle * 0.01745f));
             hit = Physics2D.Raycast(origin * 2, direction, viewDistance, layerMask);
+            Debug.DrawRay(origin * 2, direction, Color.red);
             vertex = origin + new Vector3(direction.x, direction.y) * viewDistance;
 
             // Create a different scale for the inner polygon then add vertices for polygon mesh and collider
