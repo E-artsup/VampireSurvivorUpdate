@@ -24,7 +24,8 @@ public class AIBehavior : MonoBehaviour
         #endregion
 
     #endregion
-
+    
+    
     /// <summary>
     /// Initialize some Statistics :
     /// HP <- MaxHP
@@ -102,13 +103,86 @@ public class AIBehavior : MonoBehaviour
         {
             //transform.position = Vector3.MoveTowards(transform.position,target.transform.position, baseSpd);
             agent.SetDestination(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z)); // Move toward the target.
+            
+            Vector3 direction = target.transform.position - transform.position;
+            
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z), Vector3.up);
+            transform.rotation = rotation;
         }
-        
-        Vector3 direction = target.transform.position - transform.position;
-    
-        Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z), Vector3.up);
-        transform.rotation = rotation;
 
     }
 
+    #region Effects Function
+
+    /// <summary>
+    /// Function to slow the speed of the IA by a certain amount for x duration.
+    /// </summary>
+    public void SlowdownForSeconds(float duration, float slowAmount)
+    {
+        StartCoroutine(SlowdownCoroutine(duration, slowAmount));
+    }
+    
+    /// <summary>
+    /// The coroutine for the slowdown function.
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <param name="slowAmount"></param>
+    private IEnumerator SlowdownCoroutine(float duration, float slowAmount)
+    {
+        baseSpd = baseSpd - slowAmount;
+        yield return new WaitForSeconds(duration);
+        baseSpd = baseSpd + slowAmount;
+    }
+    
+    /// <summary>
+    /// Change the target of the AI for x duration.
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <param name="newTarget"></param>
+    public void ChangeTargetForSeconds(float duration, GameObject newTarget)
+    {
+        StartCoroutine(ChangeTargetCoroutine(duration, newTarget));
+    }
+    
+    /// <summary>
+    /// Coroutine for the ChangeTarget function.
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <param name="newTarget"></param>
+    /// <returns></returns>
+    private IEnumerator ChangeTargetCoroutine(float duration, GameObject newTarget)
+    {
+        GameObject oldTarget = target;
+        target = newTarget;
+        
+        yield return new WaitForSeconds(duration);
+
+        target = oldTarget;
+    }
+    
+    /// <summary>
+    /// Freeze the AI for x seconds.
+    /// </summary>
+    /// <param name="duration"></param>
+    public void FreezeForSeconds(float duration)
+    {
+        StartCoroutine(FreezeCoroutine(duration));
+    }
+    
+    /// <summary>
+    /// Coroutine for the Freeze function.
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <returns></returns>
+    private IEnumerator FreezeCoroutine(float duration)
+    {
+        canMove = false;
+        
+        yield return new WaitForSeconds(duration);
+
+        canMove = true;
+    }
+    
+    #endregion
+    
 }
