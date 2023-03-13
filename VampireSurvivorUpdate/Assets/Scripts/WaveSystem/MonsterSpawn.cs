@@ -11,8 +11,8 @@ public class MonsterSpawn : MonoBehaviour
     [SerializeField] public WaveSystem waveSystem;
     [SerializeField] public Bounds bounds;
     [SerializeField] public int i = 0, n, tries, maxTries;
-    [SerializeField] public float spawnRate = 2;
-    [SerializeField] public int numberOfEnnemies, maxEnnemies;
+    [SerializeField] public float waveTimeLength, spawnRate;
+    [SerializeField] public int currentNumberOfEnnemies, numberOfEnnemies;
     [SerializeField] public bool XZPlan;
     [SerializeField] public Vector2 randomPoint;
     [SerializeField] public GameObject monsterToPull;
@@ -20,7 +20,8 @@ public class MonsterSpawn : MonoBehaviour
     {
         monsterPulled = this.gameObject.GetComponent<MonsterPulled>();
         waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
-        InvokeRepeating("WaveSpawner", 0.1f, 1f);
+        spawnRate = waveTimeLength / numberOfEnnemies;
+        InvokeRepeating("WaveSpawner", 0.1f, spawnRate);
     }
 
     public void WaveSpawner()
@@ -47,10 +48,10 @@ public class MonsterSpawn : MonoBehaviour
 
 
 
-        numberOfEnnemies++;
+        currentNumberOfEnnemies++;
 
         // If all the ennemies we wanted to spawn spawned then stop spawning monster in this wave and go to the next wave
-        if(numberOfEnnemies == maxEnnemies)
+        if(currentNumberOfEnnemies == numberOfEnnemies)
         {
             CancelInvoke();
             waveSystem.NextWave();
