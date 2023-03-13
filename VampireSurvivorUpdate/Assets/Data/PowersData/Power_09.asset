@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ed40090570c3be44ad9f19a71019eec, type: 3}
-  m_Name: LaserPowerData
+  m_Name: Power_09
   m_EditorClassIdentifier: 
-  name: LaserPower
-  type: 1
-  description: A laser that deals damage to enemies
-  maxLevel: 8
-  baseDamage: 1
-  levelDamageMultiplier: 2
+  name: Power_09
+  icon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
+  type: 0
+  description: jbcdig
+  maxLevel: 0
+  baseDamage: 0
+  levelDamageMultiplier: 0
   damageTypeZone: 0
   projectileSpeed: 0
   maxFireAmountAtSameTime: 0
   duration: 0
   cooldown: 0
-  hitBoxDelay: 0.25
-  piercing: 1
+  hitBoxDelay: 0
+  piercing: 0
   knockback: 0
   maxOnScreenAtSameTime: 0
   blockedByWalls: 0

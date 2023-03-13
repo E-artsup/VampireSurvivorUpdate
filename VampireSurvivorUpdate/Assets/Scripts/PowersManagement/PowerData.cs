@@ -7,6 +7,9 @@ public class PowerData : ScriptableObject
     [Tooltip("Name of the power")]
     private new string name;
     [SerializeField]
+    [Tooltip("Icon of the power")]
+    private Sprite icon;
+    [SerializeField]
     [Tooltip("Type of the power\n0 = unknown\n1 = Fire\n2 = Water\n3 = Air\n4 = Lightning\n5 = Light\n6 = Darkness")]
     private int type;
     [SerializeField]
@@ -54,6 +57,7 @@ public class PowerData : ScriptableObject
 
 
     public string Name { get => name; }
+    public Sprite Icon { get => icon; }
     public int Type { get => type; }
     public string Description { get => description; }
     public int MaxLevel { get => maxLevel; }
