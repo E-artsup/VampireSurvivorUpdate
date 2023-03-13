@@ -19,6 +19,7 @@ public class AIBehavior : MonoBehaviour
         #region Behavior
         private NavMeshAgent agent;
         private GameObject target;
+        private Rigidbody rb;
         [Tooltip("This IA can move ?")] public bool canMove = true;
         #endregion
 
@@ -36,6 +37,7 @@ public class AIBehavior : MonoBehaviour
     private void Awake() {
         healthPoint = maxHealthPoint; // Set HP into the same amount as the MaxHP.
         target = GameObject.FindGameObjectWithTag("Player"); // Set the player as target.
+        rb = GetComponentInChildren<Rigidbody>(); // Get the rigidbody
         agent = GetComponent<NavMeshAgent>(); // Get the NavMeshAgent.
 
         agent.speed = baseSpd; // Set Agent Speed into base Speed.
@@ -91,14 +93,21 @@ public class AIBehavior : MonoBehaviour
 
     /// <summary>
     /// Check if the AI can move, she will move to the target.
+    /// Face always in the player direction
     /// </summary>
-    private void Update() {
-        
+    private void Update()
+    {
+
         if(canMove) // Check if can move.
         {
             //transform.position = Vector3.MoveTowards(transform.position,target.transform.position, baseSpd);
             agent.SetDestination(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z)); // Move toward the target.
         }
+        
+        Vector3 direction = target.transform.position - transform.position;
+    
+        Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z), Vector3.up);
+        transform.rotation = rotation;
 
     }
 
