@@ -15,11 +15,11 @@ public class PowersManager : MonoBehaviour
         return powers;
     }
 
-    private bool hasPower(Power power)
+    private bool hasPower(string power)
     {
         foreach (Power p in powers)
         {
-            if (p == power)
+            if (p.PowerData.Name == power)
             {
                 return true;
             }

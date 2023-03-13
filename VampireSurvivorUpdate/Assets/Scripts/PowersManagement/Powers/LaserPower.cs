@@ -4,28 +4,9 @@ using UnityEngine;
 
 public class LaserPower : Power {
 
-    LaserPower(PowersManager powersManager) : base(
-        "Laser",
-        0,
-        "A laser that deals damage to enemies",
-        8,
-        5,
-        2,
-        DamageTypeZone.Area,
-        0f,
-        1,
-        0f,
-        0f,
-        0.8f,
-        true,
-        0f,
-        1,
-        true
-    ) {
-        this.powersManager = powersManager;
-    }
+    LaserPower(PowersManager powersManager) : base(powersManager){}
 
-    public new void Attack()
+    public override void Attack()
     {
         // Gets the objets hit by the laser
         RaycastHit[] hits = Physics.SphereCastAll(
@@ -37,14 +18,11 @@ public class LaserPower : Power {
         if(hits.Length > 0){
             foreach(RaycastHit hit in hits){
                 // If the object hit is an enemy
-                if(hit.collider.gameObject.tag == "Enemy"){
+                if(hit.collider.gameObject.TryGetComponent<IABehavior>(out IABehavior enemy)){
                     // Deals damage to the enemy
-    
-    /* WAITING IMPLEMENTATION OF ENEMY CLASS -> Replace the "Enemy" by the name of the class in the line below */
-    
-                    //hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(
-                    //    this.baseDamage+(this.levelDamageMultiplier*this.currentLevel)
-                    //);
+                    enemy.TakeDamage(
+                        this.powerData.BaseDamage+(this.powerData.LevelDamageMultiplier*this.currentLevel)
+                    );
                 }
             }
         }
