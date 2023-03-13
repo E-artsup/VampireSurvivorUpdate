@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class LaserPower : Power {
 
-    LaserPower(PowersManager powersManager) : base(powersManager){}
-
     public override void Attack()
     {
         // Gets the objets hit by the laser
         RaycastHit[] hits = Physics.SphereCastAll(
-            this.powersManager.getPlayer().transform.position,
+            PowersManager.instance.getPlayer().transform.position,
             0.5f+(0.1f*this.currentLevel),
-            this.powersManager.getPlayer().transform.forward,
+            PowersManager.instance.getPlayer().transform.forward,
             5+(0.5f*this.currentLevel)
         );
         if(hits.Length > 0){

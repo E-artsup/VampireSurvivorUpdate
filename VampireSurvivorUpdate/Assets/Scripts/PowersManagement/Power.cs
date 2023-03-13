@@ -6,7 +6,6 @@ public abstract class Power : MonoBehaviour
 {
 
 //#region private variables
-    protected PowersManager powersManager;
     [SerializeField]
     [Tooltip("The power data object containing informations about the power")]
     protected PowerData powerData;
@@ -19,10 +18,7 @@ public abstract class Power : MonoBehaviour
 //#region constructor
     //<summary> Constructor of the Power class </summary>
     //<param name="powersManager"> PowersManager of the player </param>
-   public Power(PowersManager powersManager){
-        this.powersManager = powersManager;
-        if(this.powersManager == null)
-            throw new System.ArgumentNullException("powersManager");
+   public Power(){
         if(this.powerData == null)
             throw new System.ArgumentNullException("powerData");
         currentLevel = 0;
