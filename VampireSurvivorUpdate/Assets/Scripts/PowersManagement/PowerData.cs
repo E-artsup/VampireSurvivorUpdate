@@ -73,4 +73,8 @@ public class PowerData : ScriptableObject
     public float Knockback { get => knockback; }
     public int MaxOnScreenAtSameTime { get => maxOnScreenAtSameTime; }
     public bool BlockedByWalls { get => blockedByWalls; }
+    public float GetDamageCalcul(float currentLevel)
+    {
+        return BaseDamage + (LevelDamageMultiplier * currentLevel);
+    }
 }

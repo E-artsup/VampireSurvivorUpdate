@@ -18,12 +18,6 @@ public abstract class Power : MonoBehaviour
 //#region constructor
     //<summary> Constructor of the Power class </summary>
     //<param name="powersManager"> PowersManager of the player </param>
-   public Power(){
-        if(this.powerData == null)
-            throw new System.ArgumentNullException("powerData");
-        currentLevel = 0;
-        cooldownRemaining = 0;
-    }
 
 //#endregion
 
