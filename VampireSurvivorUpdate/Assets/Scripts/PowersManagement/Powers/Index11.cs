@@ -25,16 +25,17 @@ public class Index11 : Power
     //========
     public override void Attack()
     {
+        attackSound.Play();
         List<GameObject> listOfEnnemysTouch = new();
-        for(int i = 0; i <= 3; i++)
+        for (int i = 0; i <= 3; i++)
         {
             GameObject randomEnnemy = PowerUtils.GetRandomEnemyObject(false);
-            if (randomEnnemy == null) continue;
-            if(randomEnnemy.TryGetComponent<IABehavior>(out IABehavior script))
+            if (randomEnnemy == null) continue;/*
+            if (randomEnnemy.TryGetComponent<AIBehavior>(out AIBehavior script))
             {
+                script.FreezeForSeconds(3);
                 script.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-                //Frezze
-            }
+            }*/
             //Feedback
             if (spookyParticules.Count > i)
             {
@@ -44,7 +45,7 @@ public class Index11 : Power
             listOfEnnemysTouch.Add(randomEnnemy);
             randomEnnemy.tag = "Untagged";
         }
-        foreach(GameObject enemy in listOfEnnemysTouch)
+        foreach (GameObject enemy in listOfEnnemysTouch)
         {
             enemy.tag = "Enemy";
         }

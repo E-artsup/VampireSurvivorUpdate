@@ -26,6 +26,7 @@ public class Index7 : Power
     //========
     public override void Attack()
     {
+        attackSound.Play();
         if (lineBetweenEnnemis == null) return;
         Transform playerRef = PowersManager.instance.getPlayer().transform;
 
@@ -37,13 +38,13 @@ public class Index7 : Power
         for (int i = 0; i <= 4 + currentLevel; i++)
         {
             LineRenderer newLine = Instantiate<LineRenderer>(lineBetweenEnnemis, Vector3.zero, Quaternion.identity);
-            newLine.SetPosition(0, new (previousLocation.x, 1, previousLocation.z));
-            newLine.SetPosition(1, new (nextLocation.Item1.x, 1, nextLocation.Item1.z));
+            newLine.SetPosition(0, new(previousLocation.x, 1, previousLocation.z));
+            newLine.SetPosition(1, new(nextLocation.Item1.x, 1, nextLocation.Item1.z));
 
-            if(nextLocation.Item2.TryGetComponent<IABehavior>(out IABehavior script))
+            /*if (nextLocation.Item2.TryGetComponent<AIBehavior>(out AIBehavior script))
             {
                 script.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-            }
+            }*/
             nextLocation.Item2.tag = "Untagged";
             ennemisTouchByTheAttack.Add(nextLocation.Item2);
 
@@ -52,7 +53,7 @@ public class Index7 : Power
 
             if (nextLocation.Item2 == null) return;
         }
-        foreach(GameObject ennemi in ennemisTouchByTheAttack)
+        foreach (GameObject ennemi in ennemisTouchByTheAttack)
         {
             ennemi.tag = "Enemy";
         }

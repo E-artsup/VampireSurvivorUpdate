@@ -5,13 +5,16 @@ using UnityEngine;
 public abstract class Power : MonoBehaviour
 {
 
-//#region private variables
+#region private variables
     [SerializeField]
     [Tooltip("The power data object containing informations about the power")]
     protected PowerData powerData;
+    [SerializeField]
+    [Tooltip("Sound chen the attack is launch")]
+    protected AudioSource attackSound;
     protected int currentLevel;
     protected float cooldownRemaining;
-//#endregion
+#endregion
 //#region public variables
 //#endregion
 

@@ -23,16 +23,30 @@ public class Index2 : Power
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent<IABehavior>(out IABehavior script))
+        /*
+        if (other.TryGetComponent<AIBehavior>(out AIBehavior script))
         {
             script.TakeDamage(powerData.GetDamageCalcul(currentLevel) * powerData.HitBoxDelay);
         }
+        else
+        {
+            if (other.transform.parent != null)
+            {
+                if (other.transform.parent.TryGetComponent<AIBehavior>(out AIBehavior enemyParent))
+                {
+                    // Deals damage to the enemy
+                    enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
+                }
+            }
+        }
+        */
     }
     //========
     //FONCTION
     //========
     public override void Attack()
     {
+        attackSound.Play();
         Vector3 ennemyPositionInViewport = PowerUtils.GetRandomEnemyPosition(false).Item1;
         transform.position = ennemyPositionInViewport;
 

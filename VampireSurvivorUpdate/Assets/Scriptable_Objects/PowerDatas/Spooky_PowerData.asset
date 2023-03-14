@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Spooky_PowerData
   m_EditorClassIdentifier: 
   name: Spooky
+  icon: {fileID: 0}
   type: 6
   description: 
   maxLevel: 7
@@ -22,7 +23,7 @@ MonoBehaviour:
   projectileSpeed: 0
   maxFireAmountAtSameTime: 0
   duration: 0
-  cooldown: 10
+  cooldown: 6
   hitBoxDelay: 0
   piercing: 1
   knockback: 10
