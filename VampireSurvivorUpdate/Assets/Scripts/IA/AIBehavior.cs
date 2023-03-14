@@ -109,6 +109,10 @@ public class AIBehavior : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z), Vector3.up);
             transform.rotation = rotation;
         }
+        else
+        {
+            agent.SetDestination(transform.position);
+        }
 
     }
 
