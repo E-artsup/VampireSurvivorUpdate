@@ -10,8 +10,8 @@ public class ChangeTextAndIconOfUpgradeButton : MonoBehaviour
     //VARIABLE
     //===========
 
-    [SerializeField] private TextMeshProUGUI nameOfTheWeapon;
-    [SerializeField] private TextMeshProUGUI descriptionOfTheWeapon;
+    [SerializeField] private Text nameOfTheWeapon;
+    [SerializeField] private Text descriptionOfTheWeapon;
     [SerializeField] private Image iconOfTheWeapon;
 
     //===========
