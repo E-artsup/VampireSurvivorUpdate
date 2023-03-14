@@ -619,7 +619,7 @@ Transform:
   m_Children:
   - {fileID: 2115330413}
   - {fileID: 897805887}
-  m_Father: {fileID: 515353367}
+  m_Father: {fileID: 1022793660}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &116804079
@@ -2826,39 +2826,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &515353366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 515353367}
-  m_Layer: 0
-  m_Name: WaveMonsterManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &515353367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515353366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1754392492}
-  - {fileID: 105610459}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516578938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,12 +4893,14 @@ MonoBehaviour:
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
+  monsterSpawn: {fileID: 0}
   rayCount: 150
   fov: 360
   angle: 0
   viewDistance: 20
   innerDistance: 0.6
   areaOffset: -1
+  refreshRate: 0
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -4940,11 +4909,14 @@ MonoBehaviour:
   outerIndex1: 0
   innerIndex0: 0
   innerIndex1: 0
+  XZ: 0
   direction: {x: 0, y: 0}
   vertex: {x: 0, y: 0, z: 0}
   origin: {x: 0, y: 0, z: 0}
   innerPolygonScale: {x: 0, y: 0, z: 0}
   innerPosition: {x: 0, y: 0, z: 0}
+  playerPosition: {x: 0, y: 0, z: 0}
+  playerPositionXZ: {x: 0, y: 0, z: 0}
   outerPoints: []
   innerPoints: []
   vertices: []
@@ -5421,6 +5393,39 @@ PrefabInstance:
       objectReference: {fileID: 1504909775}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2fa3e0d959e2d4ebbb2cc9db7d9fd5, type: 3}
+--- !u!1 &1022793659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022793660}
+  m_Layer: 0
+  m_Name: WaveManagementSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1022793660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022793659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1754392492}
+  - {fileID: 105610459}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035366214
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,7 +8119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504909769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 1, z: -4.25}
+  m_LocalPosition: {x: -10.9, y: 1, z: 22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9846,7 +9851,7 @@ Transform:
   - {fileID: 717581212}
   - {fileID: 500089027}
   - {fileID: 1035366215}
-  m_Father: {fileID: 515353367}
+  m_Father: {fileID: 1022793660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775684910
@@ -11395,12 +11400,14 @@ MonoBehaviour:
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
+  monsterSpawn: {fileID: 0}
   rayCount: 150
   fov: 360
   angle: 0
-  viewDistance: 20
-  innerDistance: 0.6
-  areaOffset: -1
+  viewDistance: 80
+  innerDistance: 0.2
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -11409,11 +11416,14 @@ MonoBehaviour:
   outerIndex1: 0
   innerIndex0: 0
   innerIndex1: 0
+  XZ: 0
   direction: {x: 0, y: 0}
   vertex: {x: 0, y: 0, z: 0}
   origin: {x: 0, y: 0, z: 0}
   innerPolygonScale: {x: 0, y: 0, z: 0}
   innerPosition: {x: 0, y: 0, z: 0}
+  playerPosition: {x: 0, y: 0, z: 0}
+  playerPositionXZ: {x: 0, y: 0, z: 0}
   outerPoints: []
   innerPoints: []
   vertices: []
@@ -11523,9 +11533,9 @@ MonoBehaviour:
   tries: 0
   maxTries: 20
   waveTimeLength: 150
-  spawnRate: 0.5
+  spawnRate: 1
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
+  numberOfEnnemies: 150
   XZPlan: 1
   randomPoint: {x: 0, y: 0}
   monsterToPull: {fileID: 0}
