@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 2757394813982669926}
   - component: {fileID: 3581617750127420060}
   - component: {fileID: 3581617750127420061}
+  - component: {fileID: -2625181772296451933}
   m_Layer: 18
   m_Name: Base_AI
   m_TagString: Untagged
@@ -1250,6 +1251,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-2625181772296451933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581617750127420062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7e40b1c2bba1c4b8c8483328ac2d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPoolNames:
+  - blueXp
 --- !u!1 &3721060096628565753
 GameObject:
   m_ObjectHideFlags: 0
