@@ -4874,6 +4874,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   polygonFormula: 0
   snailShape: 0
+  elipse: 0
+  rectangle: 0
+  star: 0
+  diagonalStar: 0
+  innerPolygonRectangle: 0
   n: 0
 --- !u!114 &897805891
 MonoBehaviour:
@@ -4899,6 +4904,7 @@ MonoBehaviour:
   angle: 0
   viewDistance: 20
   innerDistance: 0.6
+  outerDistance: 0
   areaOffset: -1
   refreshRate: 0
   VertexIndex: 0
@@ -4914,7 +4920,9 @@ MonoBehaviour:
   vertex: {x: 0, y: 0, z: 0}
   origin: {x: 0, y: 0, z: 0}
   innerPolygonScale: {x: 0, y: 0, z: 0}
+  outerPolygonScale: {x: 0, y: 0, z: 0}
   innerPosition: {x: 0, y: 0, z: 0}
+  outerPosition: {x: 0, y: 0, z: 0}
   playerPosition: {x: 0, y: 0, z: 0}
   playerPositionXZ: {x: 0, y: 0, z: 0}
   outerPoints: []
@@ -11381,6 +11389,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   polygonFormula: 0
   snailShape: 0
+  elipse: 0
+  rectangle: 1
+  star: 0
+  diagonalStar: 0
+  innerPolygonRectangle: 0
   n: 0
 --- !u!114 &2115330416
 MonoBehaviour:
@@ -11405,7 +11418,8 @@ MonoBehaviour:
   fov: 360
   angle: 0
   viewDistance: 80
-  innerDistance: 0.2
+  innerDistance: 0.5
+  outerDistance: 1
   areaOffset: 0
   refreshRate: 5
   VertexIndex: 0
@@ -11421,7 +11435,9 @@ MonoBehaviour:
   vertex: {x: 0, y: 0, z: 0}
   origin: {x: 0, y: 0, z: 0}
   innerPolygonScale: {x: 0, y: 0, z: 0}
+  outerPolygonScale: {x: 0, y: 0, z: 0}
   innerPosition: {x: 0, y: 0, z: 0}
+  outerPosition: {x: 0, y: 0, z: 0}
   playerPosition: {x: 0, y: 0, z: 0}
   playerPositionXZ: {x: 0, y: 0, z: 0}
   outerPoints: []
@@ -11535,7 +11551,7 @@ MonoBehaviour:
   waveTimeLength: 150
   spawnRate: 1
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 150
+  numberOfEnnemies: 10
   XZPlan: 1
   randomPoint: {x: 0, y: 0}
   monsterToPull: {fileID: 0}

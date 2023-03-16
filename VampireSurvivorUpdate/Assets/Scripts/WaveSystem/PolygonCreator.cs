@@ -13,12 +13,12 @@ public class PolygonCreator : MonoBehaviour
     [SerializeField] private MonsterSpawn monsterSpawn;
 
     [SerializeField] public int rayCount;
-    [SerializeField] public float fov, angle, viewDistance, innerDistance, areaOffset, refreshRate;
+    [SerializeField] public float fov, angle, viewDistance, innerDistance, outerDistance, areaOffset, refreshRate;
     [SerializeField] private int VertexIndex, outerVertexIndex, innerVertexIndex, quadIndex, outerIndex0, outerIndex1, innerIndex0, innerIndex1, XZ;
 
     [SerializeField] private Vector2 direction;
-    [SerializeField] private Vector3 vertex, origin, innerPolygonScale;
-    [SerializeField] public Vector3 innerPosition, playerPosition, playerPositionXZ;
+    [SerializeField] private Vector3 vertex, origin, innerPolygonScale, outerPolygonScale;
+    [SerializeField] public Vector3 innerPosition, outerPosition, playerPosition, playerPositionXZ;
 
     [SerializeField] private List<Vector2> outerPoints, innerPoints;
 
@@ -64,7 +64,6 @@ public class PolygonCreator : MonoBehaviour
         playerPositionXZ = new Vector3(playerPosition.x, (playerPosition.y * (1 -XZ)) + (playerPosition.z * (XZ)), 0f);
 
         origin = playerPositionXZ;
-        Debug.Log(origin);
         outerVertexIndex = 0;
         innerVertexIndex = rayCount + 1;
         vertices[outerVertexIndex] = origin;
@@ -73,18 +72,24 @@ public class PolygonCreator : MonoBehaviour
 
         for (int i = 0; i <= rayCount; i++)
         {
-            viewDistance = wavePattern.ViewDistanceCalculator(i, rayCount);
-            // Set the angle and direction for the vertex and raycast
             angle = i * (fov / rayCount);
             direction = new Vector2(Mathf.Cos(angle * 0.01745f), Mathf.Sin(angle * 0.01745f));
-            hit = Physics2D.Raycast(origin + (origin * (1 -XZ)), direction, viewDistance, layerMask);
             Debug.DrawRay(origin + (origin * (1 - XZ)), direction, Color.red);
+
+            // Create a vertex and raycast for a specific direction with a certain view distance
+            viewDistance = wavePattern.InnerPolygonRectangleCreator(i, rayCount);
+            hit = Physics2D.Raycast(origin + (origin * (1 - XZ)), direction, viewDistance, layerMask);
             vertex = origin + new Vector3(direction.x, direction.y) * viewDistance;
 
             // Create a different scale for the inner polygon then add vertices for polygon mesh and collider
             innerPolygonScale = origin + (vertex - origin) * innerDistance;
-            vertices[innerVertexIndex + VertexIndex] = innerPolygonScale + innerPosition;
+            vertices[innerVertexIndex + VertexIndex] = innerPosition + innerPolygonScale;
             innerPoints.Add(innerPolygonScale + innerPosition);
+
+            // Create a vertex and raycast for a specific direction with a certain view distance
+            viewDistance = wavePattern.ViewDistanceCalculator(i, rayCount);
+            hit = Physics2D.Raycast(origin + (origin * (1 - XZ)), direction, viewDistance, layerMask);
+            vertex = origin + new Vector3(direction.x, direction.y) * viewDistance;
 
             // If a monster is inside the collider, the vertex will adjust itself so no monsters can spawn in that area
             if (hit.collider != null && hit.collider.CompareTag("Finish") && hit.distance > viewDistance * innerDistance)
@@ -93,8 +98,9 @@ public class PolygonCreator : MonoBehaviour
             }
 
             // Add vertices for the outer polygon mesh and collider after the check so the edge will adjust itself if needed
-            vertices[outerVertexIndex + VertexIndex] = vertex;
-            outerPoints.Add(vertex);
+            outerPolygonScale = origin + (vertex - origin) * outerDistance;
+            vertices[outerVertexIndex + VertexIndex] = outerPosition + outerPolygonScale;
+            outerPoints.Add(outerPosition + outerPolygonScale);
 
             // Checks if a polygon is created and create it
             if (i > 0) 
