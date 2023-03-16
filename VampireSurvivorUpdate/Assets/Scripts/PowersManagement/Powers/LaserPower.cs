@@ -83,7 +83,7 @@ public class LaserPower : Power
     private void LaserRenderer()
     {
         this.gameObject.transform.position = PowersManager.instance.getPlayer().transform.position;
-        this.laserVFX.SetVector3("Orientation", PowersManager.instance.getPlayer().transform.forward);
+        this.laserVFX.SetVector3("Orientation", forwardPlayer);
         //laserRender.SetPosition(0, PowersManager.instance.getPlayer().transform.position);
     }
 }
