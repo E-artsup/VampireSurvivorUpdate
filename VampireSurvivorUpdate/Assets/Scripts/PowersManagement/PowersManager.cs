@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PowersManager : MonoBehaviour
 {
@@ -100,9 +101,9 @@ public class PowersManager : MonoBehaviour
     //<summary> Instantiate and register a power </summary>
     //<param name="pathPrefab"> The path of the prefab of the power to instantiate </param>
     //<returns> The power object instantiated </returns>
-    public Power InstantiateAndRegisterPower(string pathPrefab){
+    public Power InstantiateAndRegisterPower(GameObject powerPrefab){
         // Instantiate the power
-        GameObject _power = Instantiate(Resources.Load(pathPrefab), Vector3.zero, Quaternion.identity) as GameObject;
+        GameObject _power = Instantiate(powerPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         // Register the power
         RegisterPower(_power.GetComponent<Power>());
         return _power.GetComponent<Power>();
