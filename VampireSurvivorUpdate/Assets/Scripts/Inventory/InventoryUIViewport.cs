@@ -11,7 +11,7 @@ public class InventoryUIViewport : MonoBehaviour
     //=======
     //VARIABLES
     //=======
-    [Header("")]
+    [Header("Scene ref")]
     [SerializeField] private RectTransform weaponsIcons;
     [SerializeField] private RectTransform passifsIcons;
 
@@ -34,6 +34,8 @@ public class InventoryUIViewport : MonoBehaviour
         //Get A Refference of all the image in the UI
         listOfWeaponsIcon = GetAllTheChildWithImageList(weaponsIcons);
         listOfPassifIcon = GetAllTheChildWithImageList(passifsIcons);
+
+        InventoryManager.ClearInventory();
     }
 
     //=======

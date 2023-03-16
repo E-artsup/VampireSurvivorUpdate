@@ -21,7 +21,7 @@ public class ChangeTextAndIconOfUpgradeButton : MonoBehaviour
     {
         nameOfTheWeapon.text = weapon.nameOfWeapon;
 
-        if (!weapon.IsThiwWeaponInTheScene())
+        if (!weapon.IsThisWeaponInTheScene(out Power power))
             descriptionOfTheWeapon.text = weapon.descriptionOfTheWeapon;
         else 
             descriptionOfTheWeapon.text = weapon.descriptionOfTheLevelUp;

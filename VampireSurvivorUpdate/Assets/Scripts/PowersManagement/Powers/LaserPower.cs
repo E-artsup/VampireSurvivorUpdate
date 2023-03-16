@@ -36,6 +36,7 @@ public class LaserPower : Power
     //========
     public override void Attack()
     {
+        try { attackSound.Play(); } catch { }
         if (InputManager.instance.move.ReadValue<Vector2>() != Vector2.zero)
         {
             forwardPlayer = new(InputManager.instance.move.ReadValue<Vector2>().normalized.x, 0, InputManager.instance.move.ReadValue<Vector2>().normalized.y);
@@ -43,9 +44,9 @@ public class LaserPower : Power
         // Gets the objets hit by the laser
         RaycastHit[] hits = Physics.SphereCastAll(
             PowersManager.instance.getPlayer().transform.position,
-            0.5f + (0.1f * this.currentLevel),
+            0.5f + (0.1f * this.GetCurrentLevel),
             forwardPlayer,
-            5 + (0.5f * this.currentLevel), laserDetectionLayer
+            5 + (0.5f * this.GetCurrentLevel), laserDetectionLayer
         );
 
         if (hits.Length > 0)

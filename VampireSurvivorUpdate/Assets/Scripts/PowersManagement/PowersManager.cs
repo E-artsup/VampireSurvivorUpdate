@@ -9,16 +9,12 @@ public class PowersManager : MonoBehaviour
     public PlayerStats playerStats;
     [SerializeField]
     private GameObject player;
-    private Power[] powers;
-
-    public PowersManager(){
-        this.powers = new Power[0];
-    }
+    private List<Power> powers = new();
 
 
     //<summary> Get the powers array </summary>
     //<returns> The powers array </returns>
-    public Power[] getPowers()
+    public List<Power> getPowers()
     {
         return powers;
     }
@@ -38,9 +34,12 @@ public class PowersManager : MonoBehaviour
 
     //<summary> Register a power to the powers manager </summary>
     //<param name="power"> The power object to register </param>
-    public void RegisterPower(Power power){
+    public void RegisterPower(Power power)
+    {
+        powers.Add(power);
+        power.ResetLevel();
         // If the power is not already registered
-        if(!hasPower(power.PowerData.Name)){
+        /*if(!hasPower(power.PowerData.Name)){
             // Create a new array with one more element
             Power[] _powers = new Power[powers.Length+1];
             // Copy the powers array to the new array
@@ -52,7 +51,7 @@ public class PowersManager : MonoBehaviour
         } else {
             // throw error if power already registered
             throw new System.Exception("Power already registered");
-        }
+        }*/
     }
 
     //<summary> Check if the powers manager has a power </summary>
@@ -74,9 +73,9 @@ public class PowersManager : MonoBehaviour
 
     public void removePower(Power power){
         // If the power is registered
-        if(hasPower(power.PowerData.Name)){
+        /*if(hasPower(power.PowerData.Name)){
             // Create a new array with one less element
-            Power[] _powers = new Power[powers.Length-1];
+            List<Power> _powers = new Power[powers.Count-1];
             // Create a counter
             int _counter = 0;
             // For each power in the powers array
@@ -95,7 +94,7 @@ public class PowersManager : MonoBehaviour
         } else {
             // throw error if power not registered
             throw new System.Exception("Power not registered");
-        }
+        }*/
     }
 
     //<summary> Instantiate and register a power </summary>

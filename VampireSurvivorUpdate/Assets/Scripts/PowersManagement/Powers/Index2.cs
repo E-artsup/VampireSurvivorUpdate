@@ -18,7 +18,7 @@ public class Index2 : Power
         if (this.cooldownRemaining <= 0)
         {
             Attack();
-            this.cooldownRemaining = powerData.Cooldown - 0.3f * currentLevel;
+            this.cooldownRemaining = powerData.Cooldown - 0.3f * GetCurrentLevel;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -46,7 +46,7 @@ public class Index2 : Power
     //========
     public override void Attack()
     {
-        attackSound.Play();
+        try { attackSound.Play(); } catch { }
         Vector3 ennemyPositionInViewport = PowerUtils.GetRandomEnemyPosition(false).Item1;
         transform.position = ennemyPositionInViewport;
 

@@ -26,7 +26,7 @@ public class Index7 : Power
     //========
     public override void Attack()
     {
-        attackSound.Play();
+        try { attackSound.Play(); } catch { }
         if (lineBetweenEnnemis == null) return;
         Transform playerRef = PowersManager.instance.getPlayer().transform;
 
@@ -35,7 +35,7 @@ public class Index7 : Power
         if (nextLocation.Item2 == null) return;
 
         List<GameObject> ennemisTouchByTheAttack = new();
-        for (int i = 0; i <= 4 + currentLevel; i++)
+        for (int i = 0; i <= 4 + GetCurrentLevel; i++)
         {
             LineRenderer newLine = Instantiate<LineRenderer>(lineBetweenEnnemis, Vector3.zero, Quaternion.identity);
             newLine.SetPosition(0, new(previousLocation.x, 1, previousLocation.z));

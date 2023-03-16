@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e7a7815c552450499152502e0b495ee, type: 3}
-  m_Name: Weapon1 2
+  m_Name: Zap_WeaponSC
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 21300000, guid: 5d52b20f865aff242bfcb08c3b6f61a5, type: 3}
-  nameOfWeapon: ///
-  descriptionOfTheWeapon: noyes
-  descriptionOfTheLevelUp: yes
+  iconImage: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  nameOfWeapon: Zap
+  descriptionOfTheWeapon: Reboud
+  descriptionOfTheLevelUp: More Damage
   speciality: 0
   maxLevelOfTheUpdate: 8
-  prefabsOfTheWeapon: {fileID: 0}
-  UpdateFonction:
-    m_PersistentCalls:
-      m_Calls: []
-  instanceInTheScene: {fileID: 0}
+  prefabsOfTheWeapon: {fileID: 7942452353136102513, guid: c080a086d6d146a478b62da69e6f6147,
+    type: 3}

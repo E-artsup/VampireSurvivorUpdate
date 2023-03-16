@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,19 +13,28 @@ public abstract class Power : MonoBehaviour
     [SerializeField]
     [Tooltip("Sound chen the attack is launch")]
     protected AudioSource attackSound;
-    protected int currentLevel;
+    protected int currentLevel = 1;
     protected float cooldownRemaining;
-#endregion
-//#region public variables
-//#endregion
+    #endregion
 
-//#region constructor
-    //<summary> Constructor of the Power class </summary>
-    //<param name="powersManager"> PowersManager of the player </param>
+    #region Getters and setters
+    //<summary> Get the remaining time of the power's cooldown </summary>
+    //<returns> Remaining time of the power's cooldown </returns>
+    public float getRemainingCooldown()
+    {
+        return cooldownRemaining;
+    }
 
-//#endregion
-
-//#region Private methods
+    //<summary> Get the power data </summary>
+    public PowerData PowerData { get => powerData; }
+    public int GetCurrentLevel { get { return currentLevel; } }
+    public bool IsMaxLevel { get { return currentLevel >= powerData.MaxLevel; } }
+    #endregion
+    #region Private methods
+    private void Awake()
+    {
+        ResetLevel();
+    }
     //<summary> Code to execute every frame </summary>
     private void FixedUpdate(){
         // If the cooldown is not finished
@@ -33,35 +43,33 @@ public abstract class Power : MonoBehaviour
             cooldownRemaining -= Time.deltaTime;
         }
     }
-//#endregion
+#endregion
 
-//#region public methods
+#region public methods
     //<summary> Method to attack, please override it when creating an instance of this class </summary>
     public abstract void Attack();
 
     //<summary> Method to level up the power </summary>
-    public void LevelUp(){
+    public void LevelUp()
+    {
+        print("Level up " + this.name);
         // If the power is not at max level
-        if(currentLevel < powerData.MaxLevel){
+        if (GetCurrentLevel < powerData.MaxLevel){
             // Increase the current level
             currentLevel++;
+            print("Level up " + this.name + "Current Level = " + currentLevel);
         }
     }
-//#endregion
-
-//#region Getters and setters
-    //<summary> Get the remaining time of the power's cooldown </summary>
-    //<returns> Remaining time of the power's cooldown </returns>
-    public float getRemainingCooldown(){
-        return cooldownRemaining;
+    /// <summary>
+    /// Set Current Level to 1
+    /// </summary>
+    public void ResetLevel()
+    {
+        currentLevel = 1;
     }
+    #endregion
 
-    //<summary> Get the power data </summary>
-    public PowerData PowerData { get => powerData; }
-
-//#endregion
-
-//#region sub-classes
+    //#region sub-classes
     public enum DamageTypeZone{
         Unique,
         Area

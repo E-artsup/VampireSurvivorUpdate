@@ -25,7 +25,7 @@ public class Index11 : Power
     //========
     public override void Attack()
     {
-        attackSound.Play();
+        try { attackSound.Play(); } catch { }
         List<GameObject> listOfEnnemysTouch = new();
         for (int i = 0; i <= 3; i++)
         {

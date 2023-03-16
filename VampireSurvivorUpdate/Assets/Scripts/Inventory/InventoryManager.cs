@@ -15,7 +15,7 @@ public static class InventoryManager
     private static List<WeaponSC> allWeaponInInventory = new();
     private static List<WeaponSC> allPassifInInventory = new();
     private static int passifInventoryLimit = 6;
-    private static int weaponInventoryLimit = 2;
+    private static int weaponInventoryLimit = 6;
 
     //===========
     //FONCTION
@@ -44,8 +44,7 @@ public static class InventoryManager
     /// <returns></returns>
     public static bool IsInventoryOfThisSpecialityComplete(WeaponSpeciality speciality)
     {
-        bool value = false;
-
+        bool value;
         if (speciality == WeaponSpeciality.Weapon)
         {
             value = allWeaponInInventory.Count >= weaponInventoryLimit;
@@ -56,5 +55,13 @@ public static class InventoryManager
         }
 
         return value;
+    }
+    /// <summary>
+    /// Clear the static inventory of the weapon
+    /// </summary>
+    public static void ClearInventory()
+    {
+        allWeaponInInventory.Clear();
+        allPassifInInventory.Clear();
     }
 }

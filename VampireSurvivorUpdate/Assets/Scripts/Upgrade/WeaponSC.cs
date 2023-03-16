@@ -19,14 +19,9 @@ public class WeaponSC : ScriptableObject
     /// </summary>
     public string descriptionOfTheLevelUp;
     public WeaponSpeciality speciality;
-    private int actualLevelOfTheUpdate = 0;
-    public int maxLevelOfTheUpdate = 0;
 
     [Header("Weapon Ref")]
-    [SerializeField] private GameObject prefabsOfTheWeapon;
-    [SerializeField] private UnityEvent UpdateFonction;
-
-    [SerializeField] private GameObject instanceInTheScene = null;
+    [SerializeField] private Power prefabsOfTheWeapon;
 
     //===========
     //FONCTION
@@ -37,31 +32,23 @@ public class WeaponSC : ScriptableObject
     /// </summary>
     public void AddTheWeaponToTheSceneAndTheInventory()
     {
-        if(IsThiwWeaponInTheScene() && actualLevelOfTheUpdate > 1)
+        Debug.Log("test");
+        if(IsThisWeaponInTheScene(out Power power))
         {
-            //Get PowerManager Instance
-            //get power related
-            //Level it up
+            power.LevelUp();
+            Debug.Log("1");
+            return;
         }
-        else if(actualLevelOfTheUpdate == 0)
+        else
         {
+            Debug.Log("2");
             //We add the Weapon to the Inventory
             InventoryManager.AddWeaponToInventory(this, speciality);
-            //Get PowerManager Instance
-            //Spawn power related
-            actualLevelOfTheUpdate++;
+            //We spawn the Power In The Scene
+            Instantiate(prefabsOfTheWeapon.gameObject);
+            //We give a ref to the power manager
+            PowersManager.instance.RegisterPower(prefabsOfTheWeapon);
         }
-    }
-    /// <summary>
-    /// Return the level of the weapon
-    /// </summary>
-    /// <returns></returns>
-    public int GetCurrentLevelOfTheWeapon()
-    {
-        //Get PowerManager 
-        //Get weapon related
-        //Get level
-        return actualLevelOfTheUpdate;
     }
     /// <summary>
     /// Return true if the weapon is level max
@@ -69,19 +56,30 @@ public class WeaponSC : ScriptableObject
     /// <returns></returns>
     public bool IsTheWeaponMaxLevel()
     {
-        /*if (GetCurrentLevelOfTheWeapon() >= maxLevelOfTheUpdate)
+        if(IsThisWeaponInTheScene(out Power power))
         {
-            return true;
+            if(power.PowerData.MaxLevel >= 0)
+            {
+                return true;
+            }
         }
-        else*/
-            return false;
+        return false;
     }
     /// <summary>
     /// Did the spell spawn in the Scene
     /// </summary>
-    public bool IsThiwWeaponInTheScene()
+    public bool IsThisWeaponInTheScene(out Power searchedPower)
     {
-        return false;
+        List<Power> powersList = PowersManager.instance.getPowers();
+        searchedPower = null;
+        foreach(Power power in powersList)
+        {
+            if (power.GetType() == prefabsOfTheWeapon.GetType())
+            {
+                searchedPower = power;
+            }
+        }
+        return searchedPower != null;
     }
 }
 

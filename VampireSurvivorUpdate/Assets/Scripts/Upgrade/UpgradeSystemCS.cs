@@ -17,7 +17,7 @@ public class UpgradeSystemCS : MonoBehaviour
     [SerializeField] private List<Button> listOfButtonForUpgrade = new();
     [SerializeField] private List<Button> listOfButtonAfterThePlayerHaveUpgradeEverythings = new();
 
-    [SerializeField] private List<WeaponSC> weaponPullInTheGame = new();
+    [SerializeField] private List<WeaponSC> weaponPullInTheGame;
 
     private static UpgradeSystemCS instance;
 
@@ -40,10 +40,13 @@ public class UpgradeSystemCS : MonoBehaviour
             //We reset the button event
             button.onClick.RemoveAllListeners();
             //We reactivate the button
-            button.gameObject.SetActive(true);
+            button.gameObject.SetActive(false);
         }
-
-        GiveTheButtonTheEventToQuitTheMenu();
+        try 
+        {
+            RemoveMaxLevelWeaponsFromWeaponPull();
+            RemoveSpecialityIfInventoryIsFull();
+        } catch { }
 
         int numberOfWeaponToGenerate = listOfButtonForUpgrade.Count;
 
@@ -51,33 +54,25 @@ public class UpgradeSystemCS : MonoBehaviour
 
         weaponsSelectedForTheButton = GetRandomWeaponThePlayerCanUpgrade(numberOfWeaponToGenerate);
 
-        if (weaponsSelectedForTheButton == null)
+        if (weaponsSelectedForTheButton.Count <= 0)
         {
             //If their is no more weapon the player can have, put the money button
 
-            //We deactivate all the normal buttons
-            foreach(Button button in listOfButtonForUpgrade)
-            {
-                button.gameObject.SetActive(false);
-            }
             //We activate the others
             foreach (Button button in listOfButtonAfterThePlayerHaveUpgradeEverythings)
             {
                 button.gameObject.SetActive(true);
-                return;
             }
+            return;
         }
 
-        for(int i = 0; i < listOfButtonForUpgrade.Count; i++)
+        for(int i = 0; i < weaponsSelectedForTheButton.Count; i++)
         {
             WeaponSC weaponToUpgrade = weaponsSelectedForTheButton[i];
 
-            if (weaponsSelectedForTheButton == null)
-            {
-                //If their is no valid weapon the player can have, we deactivate the button
-                listOfButtonForUpgrade[i].gameObject.SetActive(false);
-            }
             Button button = listOfButtonForUpgrade[i];
+
+            button.gameObject.SetActive(true);
 
             button.onClick.AddListener(weaponToUpgrade.AddTheWeaponToTheSceneAndTheInventory);
 
@@ -86,6 +81,7 @@ public class UpgradeSystemCS : MonoBehaviour
                 script.SetUIToWeapon(weaponToUpgrade);
             }
         }
+        GiveTheButtonTheEventToQuitTheMenu();
     }
     //===========
     //FONCTION
@@ -112,14 +108,6 @@ public class UpgradeSystemCS : MonoBehaviour
             Time.timeScale = 0;
             //Maybe for the animation, we gonna have to find a another way to do it
         }
-    }
-    /// <summary>
-    /// Set the list of Weapon The Player can have in the Game
-    /// </summary>
-    /// <param name="newWeaponPull"></param>
-    public void SetWeaponPull(List<WeaponSC> newWeaponPull)
-    {
-        weaponPullInTheGame = newWeaponPull;
     }
     /// <summary>
     /// Exit The Upgrade Menu if open
@@ -156,23 +144,7 @@ public class UpgradeSystemCS : MonoBehaviour
 
         weaponThePlayerCanGet.AddRange(weaponPullInTheGame);
 
-        foreach (WeaponSC weapon in weaponThePlayerCanGet)
-        {
-            //We remove the Weapon the player have already max level
-            if (weapon.IsTheWeaponMaxLevel())
-            {
-                weaponThePlayerCanGet.Remove(weapon);
-                continue;
-            }
-
-            //We check if the inventory of the speciality of the Weapon (actif/passif) if full
-            if(InventoryManager.IsInventoryOfThisSpecialityComplete(weapon.speciality))
-            {
-                //if yes, we remove it
-                weaponThePlayerCanGet.Remove(weapon);
-                continue;
-            }
-        }
+        if (weaponPullInTheGame.Count <= numberOfWeaponToGenerate) numberOfWeaponToGenerate = weaponPullInTheGame.Count;
 
         //We select randomly a Weapon in the new Weapon List
         List<WeaponSC> randomWeapons = new();
@@ -182,10 +154,37 @@ public class UpgradeSystemCS : MonoBehaviour
             WeaponSC newWeaponToAdd = weaponThePlayerCanGet[Random.Range(0, weaponThePlayerCanGet.Count)];
             Debug.Log("Selected" + newWeaponToAdd.nameOfWeapon);
 
+            //if(!randomWeapons.Contains(newWeaponToAdd))
             randomWeapons.Add(newWeaponToAdd);
             weaponThePlayerCanGet.Remove(newWeaponToAdd);
         }
 
         return randomWeapons;
+    }
+
+    private void RemoveSpecialityIfInventoryIsFull()
+    {
+        foreach(WeaponSC weaponSC in weaponPullInTheGame)
+        {
+            if(InventoryManager.IsInventoryOfThisSpecialityComplete(weaponSC.speciality))
+            {
+                weaponPullInTheGame.Remove(weaponSC);
+            }
+        }
+    }
+
+    private void RemoveMaxLevelWeaponsFromWeaponPull()
+    {
+        foreach (WeaponSC weaponSC in weaponPullInTheGame)
+        {
+            if (weaponSC.IsThisWeaponInTheScene(out Power power))
+            {
+                if (power.IsMaxLevel) 
+                { 
+                    weaponPullInTheGame.Remove(weaponSC);
+                    Debug.Log(weaponSC.name + "is getting removed from the pull at" + power.GetCurrentLevel + "LV");
+                }
+            }
+        }
     }
 }
