@@ -62,6 +62,7 @@ public class Collector : MonoBehaviour
     private void AddXP(int xpAmount)
     {
         playerStats.xp += xpAmount;
+        UIManager.instance.UpdateExpBar();
     }
 
     /// <summary>
@@ -71,6 +72,7 @@ public class Collector : MonoBehaviour
     private void AddGold(int goldAmount)
     {
         playerStats.gold += goldAmount;
+        UIManager.instance.UpdateGoldCounter();
     }
 
     /// <summary>

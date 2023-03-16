@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour
     
     [Tooltip("Gold amount of the player.")]public int gold;
     [Tooltip("Experience amount of the player.")]public int xp;
+    [Tooltip("Limit of experience that the player can reach before leveling up.")]public int maxXp;
     [Tooltip("Level of the player.")]public int level;
     [Tooltip("Number of kills of the player.")]public int kills;
     
