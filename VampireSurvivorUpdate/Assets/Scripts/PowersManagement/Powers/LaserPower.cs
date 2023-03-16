@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class LaserPower : Power 
 {
@@ -11,6 +12,8 @@ public class LaserPower : Power
     [SerializeField] private LineRenderer laserRender;
     [SerializeField] private LayerMask laserDetectionLayer;
     private Vector3 forwardPlayer = Vector2.up;
+    [SerializeField] private VisualEffect laserVFX;
+
     //========
     //MONOBEHAVIOUR
     //========
@@ -73,11 +76,14 @@ public class LaserPower : Power
 
         else
         {
-            laserRender.SetPosition(1, forwardPlayer * (5 + (0.5f * this.currentLevel)) + PowersManager.instance.getPlayer().transform.position);
+            //laserRender.SetPosition(1, forwardPlayer * (5 + (0.5f * this.currentLevel)) + PowersManager.instance.getPlayer().transform.position);
         }
     }
+    
     private void LaserRenderer()
     {
-        laserRender.SetPosition(0, PowersManager.instance.getPlayer().transform.position);
+        this.gameObject.transform.position = PowersManager.instance.getPlayer().transform.position;
+        this.laserVFX.SetVector3("Orientation", PowersManager.instance.getPlayer().transform.forward);
+        //laserRender.SetPosition(0, PowersManager.instance.getPlayer().transform.position);
     }
 }
