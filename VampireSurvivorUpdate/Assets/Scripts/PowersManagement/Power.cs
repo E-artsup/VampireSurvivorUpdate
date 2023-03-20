@@ -50,7 +50,7 @@ public abstract class Power : MonoBehaviour
     public abstract void Attack();
 
     //<summary> Method to level up the power </summary>
-    public void LevelUp()
+    public virtual void LevelUp()
     {
         print("Level up " + this.name);
         // If the power is not at max level

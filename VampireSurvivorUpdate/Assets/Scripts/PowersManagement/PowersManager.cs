@@ -10,6 +10,7 @@ public class PowersManager : MonoBehaviour
     [SerializeField]
     private GameObject player;
     private List<Power> powers = new();
+    private Dictionary<int, int> typeMultiplyers;
 
 
     //<summary> Get the powers array </summary>
@@ -102,6 +103,14 @@ public class PowersManager : MonoBehaviour
             // Destroy the new object if an instance already exists
             Destroy(gameObject);
         }
+
+        typeMultiplyers = new Dictionary<int, int>();
+        typeMultiplyers.Add(1, 0);
+        typeMultiplyers.Add(2, 0);
+        typeMultiplyers.Add(3, 0);
+        typeMultiplyers.Add(4, 0);
+        typeMultiplyers.Add(5, 0);
+        typeMultiplyers.Add(6, 0);
     }
 
 
@@ -111,5 +120,10 @@ public class PowersManager : MonoBehaviour
     public GameObject getPlayer()
     {
         return player;
+    }
+
+    public Dictionary<int, int> getTypeMultiplyers()
+    {
+        return typeMultiplyers;
     }
 }

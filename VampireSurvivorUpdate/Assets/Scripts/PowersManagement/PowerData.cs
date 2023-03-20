@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "PowerData", menuName = "Powers/PowerData")]
 public class PowerData : ScriptableObject
@@ -6,6 +8,9 @@ public class PowerData : ScriptableObject
     [SerializeField]
     [Tooltip("Name of the power")]
     private new string name;
+    [SerializeField]
+    [Tooltip("The type of power (0 = Active, 1 = Passive)")]
+    private int powerType;
     [SerializeField]
     [Tooltip("Icon of the power")]
     private Sprite icon;
@@ -54,9 +59,13 @@ public class PowerData : ScriptableObject
     [SerializeField]
     [Tooltip("If the power is blocked by walls")]
     private bool blockedByWalls;
+    [SerializeField]
+    [Tooltip("The passive effect data of the power")]
+    private List<PassiveEffectData> passiveEffectsData = new List<PassiveEffectData>();
 
 
     public string Name { get => name; }
+    public int PowerType { get => powerType; }
     public Sprite Icon { get => icon; }
     public int Type { get => type; }
     public string Description { get => description; }
@@ -73,8 +82,14 @@ public class PowerData : ScriptableObject
     public float Knockback { get => knockback; }
     public int MaxOnScreenAtSameTime { get => maxOnScreenAtSameTime; }
     public bool BlockedByWalls { get => blockedByWalls; }
-    public float GetDamageCalcul(float currentLevel)
-    {
-        return BaseDamage + (LevelDamageMultiplier * currentLevel);
+    public float getEffectiveDamage(){
+        float _damage = BaseDamage + (LevelDamageMultiplier * (MaxLevel - 1));
+        float bonusPourcentage = 0;
+        foreach(PassiveEffectData passiveEffectData in passiveEffectsData){
+            if(passiveEffectData.Type == this.type)
+            bonusPourcentage += (passiveEffectData.BaseDamagePourcentageModifier + (passiveEffectData.PerLevelDamagePourcentageModifier * (MaxLevel - 1)))/100;
+        }
+        return _damage + (_damage * bonusPourcentage);
     }
+    public List<PassiveEffectData> PassiveEffectsData { get => passiveEffectsData; }
 }
