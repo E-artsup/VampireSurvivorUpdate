@@ -55,6 +55,12 @@ public class UIManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        UpdateExpBar();
+        UpdateGoldCounter();
+    }
+
     #region Experience Functions
 
     public void UpdateExpBar()

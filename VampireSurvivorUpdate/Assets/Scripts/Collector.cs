@@ -61,7 +61,31 @@ public class Collector : MonoBehaviour
     /// <param name="xpAmount"></param>
     private void AddXP(int xpAmount)
     {
-        playerStats.xp += xpAmount;
+
+        if (playerStats.xp+xpAmount > playerStats.maxXp)
+        {
+            int xpAfterIncrease = playerStats.xp + xpAmount;
+            int xpRestAfterLeveling = xpAfterIncrease - playerStats.maxXp;
+            
+            playerStats.xp = xpRestAfterLeveling;
+            playerStats.maxXp = Mathf.RoundToInt(playerStats.maxXp * 1.1f);
+            AddLevel(1);
+        }
+        else
+        {
+            playerStats.xp += xpAmount;
+        }
+        
+        UIManager.instance.UpdateExpBar();
+    }
+    
+    /// <summary>
+    /// Add a level to the player
+    /// </summary>
+    /// <param name="lvlAmount"></param>
+    private void AddLevel(int lvlAmount)
+    {
+        playerStats.level += lvlAmount;
         UIManager.instance.UpdateExpBar();
     }
 
