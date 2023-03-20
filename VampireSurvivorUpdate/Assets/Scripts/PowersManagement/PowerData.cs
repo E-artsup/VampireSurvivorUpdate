@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "PowerData", menuName = "Powers/PowerData")]
+[CreateAssetMenu(fileName = "PowerData", menuName = "Powers/PowerData", order = 1)]
 public class PowerData : ScriptableObject
 {
     [SerializeField]
