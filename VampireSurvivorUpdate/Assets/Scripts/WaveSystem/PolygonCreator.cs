@@ -18,7 +18,7 @@ public class PolygonCreator : MonoBehaviour
 
     [SerializeField] private Vector2 direction;
     [SerializeField] private Vector3 vertex, origin, innerPolygonScale, outerPolygonScale;
-    [SerializeField] public Vector3 innerPosition, outerPosition, playerPosition, playerPositionXZ;
+    [SerializeField] public Vector3 innerPosition, outerPosition, savedOuterPosition, playerPosition, playerPositionXZ;
 
     [SerializeField] private List<Vector2> outerPoints, innerPoints;
 
@@ -97,18 +97,21 @@ public class PolygonCreator : MonoBehaviour
                 vertex = origin + (vertex - origin) * ((hit.distance + areaOffset) / outerViewDistance);
             }
 
-            // Checks for the inner vertices. If the outer vertices becomes inner in the shape it wont allow a inverted shape
             // Add vertices for the outer polygon mesh and collider after the ennemy check so the edge will adjust itself if needed
             outerPolygonScale = origin + (vertex - origin) * outerDistance;
-
+            savedOuterPosition = outerPosition;
+            // Checks for the inner vertices. If the outer vertices becomes inner in the shape, it wont allow a inverted shape and therefore will use the inner vertices
             if (outerViewDistance < innerViewDistance)
             {
                 vertex = origin + new Vector3(direction.x, direction.y) * innerViewDistance;
                 outerPolygonScale = innerPolygonScale;
+                outerPosition = innerPosition;
             }
 
             vertices[outerVertexIndex + VertexIndex] = outerPosition + outerPolygonScale;
             outerPoints.Add(outerPosition + outerPolygonScale);
+            //give back the value to the position of the outerverticies so the next ones are able to get the value
+            outerPosition = savedOuterPosition;
 
             // Checks if a polygon is created and create it
             if (i > 0) 
