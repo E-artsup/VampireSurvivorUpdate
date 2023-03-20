@@ -73,28 +73,8 @@ public class PowersManager : MonoBehaviour
 
     public void removePower(Power power){
         // If the power is registered
-        /*if(hasPower(power.PowerData.Name)){
-            // Create a new array with one less element
-            List<Power> _powers = new Power[powers.Count-1];
-            // Create a counter
-            int _counter = 0;
-            // For each power in the powers array
-            foreach(Power _power in powers){
-                // If the power is not the one we want to remove
-                if(_power.PowerData.Name != power.PowerData.Name){
-                    // Add the power to the new array
-                    _powers[_counter] = _power;
-                    // Increment the counter
-                    _counter++;
-                }
-            }
-            // Set the powers array to the new array
-            powers = _powers;
-            GameObject.Destroy(power.gameObject);
-        } else {
-            // throw error if power not registered
-            throw new System.Exception("Power not registered");
-        }*/
+        this.powers.Remove(power);
+        GameObject.Destroy(power.gameObject);
     }
 
     //<summary> Instantiate and register a power </summary>

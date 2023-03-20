@@ -36,7 +36,7 @@ public class PowerSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PowersManager.instance.hasPower("Ray Of Light")){
+        if(PowersManager.instance.hasPower(Power_09.GetComponent<Power>().PowerData.Name)){
             informationsPower_09.GetComponentInChildren<Image>().color = new Color(0, 1, 0, 1);
         } else {
             informationsPower_09.GetComponentInChildren<Image>().color = new Color(1, 0, 0, 1);
@@ -54,9 +54,9 @@ public class PowerSelector : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             if(!canvas.enabled) return;
-            if(PowersManager.instance.hasPower("Ray Of Light")){
+            if(PowersManager.instance.hasPower(Power_09.GetComponent<Power>().PowerData.Name)){
                 foreach(Power _power in PowersManager.instance.getPowers()){
-                    if(_power.PowerData.Name == "Ray Of Light"){
+                    if(_power.PowerData.Name == Power_09.GetComponent<Power>().PowerData.Name){
                         PowersManager.instance.removePower(_power);
                     }
                 }
