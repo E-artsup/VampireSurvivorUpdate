@@ -67,12 +67,12 @@ public class WaveSystem : MonoBehaviour
                 break;
 
             default:
-                Debug.Log("Something went wrong");
+                Debug.Log("Something went wrong while activating");
                 break;
         }
     }
     
-    public void Deactivate(GameObject monster, int n)
+    public void Deactivate(GameObject monster)
     {
         monster.SetActive(false);
         monster.transform.SetParent(monster.transform.parent.parent.Find("Deactivated"), false);
@@ -92,7 +92,7 @@ public class WaveSystem : MonoBehaviour
                 break;
 
             default:
-                Debug.Log("Something went wrong");
+                Debug.Log("Something went wrong while deactivating");
                 break;
         }
     }

@@ -17,6 +17,7 @@ public class IABehavior : MonoBehaviour
         #region Behavior
         private AIDestinationSetter destinationSetter;
         private GameObject target;
+        private WaveSystem waveSystem;
         #endregion
 
     #endregion
@@ -25,6 +26,7 @@ public class IABehavior : MonoBehaviour
         healthPoint = maxHealthPoint;
 
         destinationSetter = GetComponent<AIDestinationSetter>();
+        waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
         target = destinationSetter.target.gameObject;
     }
 
@@ -61,7 +63,7 @@ public class IABehavior : MonoBehaviour
 
     private void Death()
     {
-        gameObject.SetActive(false);
+        waveSystem.Deactivate(this.gameObject);
     }
 
 }

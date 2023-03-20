@@ -7,9 +7,9 @@ using UnityEngineInternal;
 // this script makes you able to edit your waves: the shape of the wave, the ennemy pool that spawn in it 
 public class WavePattern : MonoBehaviour
 {
-    [SerializeField] private float polygonFormula;
+    [SerializeField] private float polygonFormula, rectangleWidth, rectangleLength, rLenght, rWidth;
     [SerializeField] public bool snailShape, elipse, rectangle, star, diagonalStar, innerPolygonRectangle;
-    [SerializeField] private int n;
+    [SerializeField] private int n, N;
 
     // Initialize the shape of the wave
     public void Start()
@@ -52,34 +52,42 @@ public class WavePattern : MonoBehaviour
     public float ViewDistanceCalculator(int i, int rayCount)
     {
         switch (n)
-        {
+        {   
+            // Formula for the base circle shape
             case 0:
                 polygonFormula = 20;
                 break;
 
+            // Formula for a spiral type of shape
             case 1:
                 polygonFormula = 20 + (float)i * (1 / (float)rayCount) * 20;
                 break;
-            
+
+            // Formula for a eclipse shape (slightly crushed circle + 2 clamp to strech the extremities for a better render)
             case 2:
                 polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5
                                     - Mathf.Abs(Mathf.Clamp(i - rayCount / 12, 0, rayCount / 3) - rayCount / 6) * 0.1f
                                     - Mathf.Abs(Mathf.Clamp(i - rayCount / 1.7f, 0, rayCount / 3) - rayCount / 6) * 0.1f;
                 break;
-
+            
+            // Formula for a rectangle shape (we take the slightly crushed circle and then push inwards the extremities)
             case 3:
+                rLenght = rectangleLength / 100 * rayCount;
+                rWidth = rectangleWidth / 100 * rayCount;
                 polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5
-                                    + Mathf.Abs(Mathf.Clamp(i + rayCount / 12, 0, rayCount / 6) - rayCount / 12) * 0.3f 
-                                    + Mathf.Abs(Mathf.Clamp(i - rayCount / 12, 0, rayCount / 3) - rayCount / 6) * 0.1f
-                                    + Mathf.Abs(Mathf.Clamp(i - rayCount / 2.4f, 0, rayCount / 6) - rayCount / 12) * 0.3f
-                                    + Mathf.Abs(Mathf.Clamp(i - rayCount / 1.7f, 0, rayCount / 3) - rayCount / 6) * 0.1f
-                                    + Mathf.Abs(Mathf.Clamp(i - rayCount / 1.08f, 0, rayCount / 6) - rayCount / 13) * 0.3f;
+                                    + Mathf.Abs(Mathf.Clamp(i + rWidth * 0.5f, 0, rWidth) - rWidth/2) * 0.3f 
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f, 0, rLenght) - rLenght/2) * 0.1f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f - rLenght, 0, rWidth) - rWidth/2) * 0.3f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLenght, 0, rLenght) - rLenght/2) * 0.1f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLenght * 2, 0, rWidth) - rWidth/2) * 0.3f;
                 break;
 
+            // Formula for a star shape (this used with a rectangle for the inside of the shape creates 4 circles on the sides) 
             case 4:
                 polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5 + Mathf.Cos((float)i / 6) * 20;
                 break;
 
+            // Formula for a star shape (this used with a rectangle for the inside of the shape creates 4 circles on the diagonals)
             case 5:
                 polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 3
                                     + Mathf.Clamp(Mathf.Cos((float)i / (rayCount / 24)), 0.5f, 0.5f) * 15
@@ -92,16 +100,15 @@ public class WavePattern : MonoBehaviour
         return polygonFormula;
     }
 
+    // If the option is enabled, we change the shape of the inner shape for the rectangle shape
     public float InnerPolygonRectangleCreator(int i, int rayCount)
     {
         if (innerPolygonRectangle)
         {
-            polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5
-            + Mathf.Abs(Mathf.Clamp(i + rayCount / 12, 0, rayCount / 6) - rayCount / 12) * 0.3f
-            + Mathf.Abs(Mathf.Clamp(i - rayCount / 12, 0, rayCount / 3) - rayCount / 6) * 0.1f
-            + Mathf.Abs(Mathf.Clamp(i - rayCount / 2.4f, 0, rayCount / 6) - rayCount / 12) * 0.3f
-            + Mathf.Abs(Mathf.Clamp(i - rayCount / 1.7f, 0, rayCount / 3) - rayCount / 6) * 0.1f
-            + Mathf.Abs(Mathf.Clamp(i - rayCount / 1.08f, 0, rayCount / 6) - rayCount / 13) * 0.3f;
+            N = n;
+            n = 3;
+            ViewDistanceCalculator(i,rayCount);
+            n = N;
         }
         else
         {
