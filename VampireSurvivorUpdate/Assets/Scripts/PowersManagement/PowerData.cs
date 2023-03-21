@@ -63,7 +63,7 @@ public class PowerData : ScriptableObject
     [Tooltip("The passive effect data of the power")]
     private List<PassiveEffectData> passiveEffectsData = new List<PassiveEffectData>();
 
-
+    // Getters
     public string Name { get => name; }
     public int PowerType { get => powerType; }
     public Sprite Icon { get => icon; }
