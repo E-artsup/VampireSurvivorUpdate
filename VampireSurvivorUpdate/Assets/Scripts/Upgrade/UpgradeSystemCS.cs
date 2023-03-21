@@ -93,7 +93,7 @@ public class UpgradeSystemCS : MonoBehaviour
     public static void SpawnUpgradeMenu()
     {
         //We check if the menu is in the scene
-        if (instance != null)
+        if (instance == null)
         {
             //if no add the menu to the scene;
             Debug.LogError("The Upgrade UI is not in the Scene");
