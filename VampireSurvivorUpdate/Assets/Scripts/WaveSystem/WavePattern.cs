@@ -7,7 +7,7 @@ using UnityEngineInternal;
 // this script makes you able to edit your waves: the shape of the wave, the ennemy pool that spawn in it 
 public class WavePattern : MonoBehaviour
 {
-    [SerializeField] private float polygonFormula, rectangleWidth, rectangleLength, rLenght, rWidth;
+    [SerializeField] public float polygonFormula, rectangleWidth, rectangleLength, rLength, rWidth;
     [SerializeField] public bool snailShape, elipse, rectangle, star, diagonalStar, innerPolygonRectangle;
     [SerializeField] private int n, N;
 
@@ -72,14 +72,14 @@ public class WavePattern : MonoBehaviour
             
             // Formula for a rectangle shape (we take the slightly crushed circle and then push inwards the extremities)
             case 3:
-                rLenght = rectangleLength / 100 * rayCount;
+                rLength = rectangleLength / 100 * rayCount;
                 rWidth = rectangleWidth / 100 * rayCount;
                 polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5
                                     + Mathf.Abs(Mathf.Clamp(i + rWidth * 0.5f, 0, rWidth) - rWidth/2) * 0.3f 
-                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f, 0, rLenght) - rLenght/2) * 0.1f
-                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f - rLenght, 0, rWidth) - rWidth/2) * 0.3f
-                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLenght, 0, rLenght) - rLenght/2) * 0.1f
-                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLenght * 2, 0, rWidth) - rWidth/2) * 0.3f;
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f, 0, rLength) - rLength/2) * 0.1f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f - rLength, 0, rWidth) - rWidth/2) * 0.3f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLength, 0, rLength) - rLength/2) * 0.1f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLength * 2, 0, rWidth) - rWidth/2) * 0.3f;
                 break;
 
             // Formula for a star shape (this used with a rectangle for the inside of the shape creates 4 circles on the sides) 

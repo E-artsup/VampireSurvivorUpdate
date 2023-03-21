@@ -10,8 +10,8 @@ public class MonsterSpawn : MonoBehaviour
     [SerializeField] public MonsterPulled monsterPulled;
     [SerializeField] public WaveSystem waveSystem;
     [SerializeField] public Bounds bounds;
-    [SerializeField] public int i = 0, n, tries, maxTries;
-    [SerializeField] public float waveTimeLength, spawnRate;
+    [SerializeField] public int i = 0, n, tries, maxTries, waveTimeLength;
+    [SerializeField] public float spawnRate;
     [SerializeField] public int currentNumberOfEnnemies, numberOfEnnemies;
     [SerializeField] public bool XZPlan;
     [SerializeField] public Vector2 randomPoint;
