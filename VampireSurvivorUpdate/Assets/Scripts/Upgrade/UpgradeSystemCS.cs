@@ -120,6 +120,8 @@ public class UpgradeSystemCS : MonoBehaviour
 
         //We deactive the Gameobject in the scene
         instance.gameObject.SetActive(false);
+
+        Time.timeScale = 1;
     }
     /// <summary>
     /// Play In Awake,subscribe the quit upgrade menu to all the button clicked event
