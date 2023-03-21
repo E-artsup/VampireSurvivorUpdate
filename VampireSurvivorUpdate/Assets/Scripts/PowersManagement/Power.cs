@@ -13,6 +13,7 @@ public abstract class Power : MonoBehaviour
     [SerializeField]
     [Tooltip("Sound chen the attack is launch")]
     protected AudioSource attackSound;
+    [SerializeField]
     protected int currentLevel = 1;
     protected float cooldownRemaining;
     #endregion
@@ -68,6 +69,8 @@ public abstract class Power : MonoBehaviour
         currentLevel = 1;
     }
     #endregion
+
+    public int CurrentLevel { set => currentLevel = value; }
 
     //#region sub-classes
     public enum DamageTypeZone{

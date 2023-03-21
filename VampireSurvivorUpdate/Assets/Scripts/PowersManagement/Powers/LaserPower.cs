@@ -54,6 +54,7 @@ public class LaserPower : Power
             laserRender.SetPosition(1, new(hits[0].transform.position.x, 1, hits[0].transform.position.z));
             foreach (RaycastHit hit in hits)
             {
+                Debug.Log("Dealing "+this.powerData.getEffectiveDamage()+" damage to "+hit.collider.gameObject.name);
                 /*
                 // If the object hit is an enemy
                 if (hit.collider.gameObject.TryGetComponent<AIBehavior>(out AIBehavior enemy))

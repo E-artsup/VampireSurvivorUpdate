@@ -26,11 +26,15 @@ public class PowerSelector : MonoBehaviour
     [SerializeField]
     private GameObject Power_12;
 
+    [SerializeField]
+    private GameObject Power_13;
+
 
     // Start is called before the first frame update
     void Start()
     {
         canvas.enabled = false;
+        GameObject.Instantiate(Power_13, PowersManager.instance.transform);
     }
 
     // Update is called once per frame
