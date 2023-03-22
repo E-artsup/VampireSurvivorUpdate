@@ -50,34 +50,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614846}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614861}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614863}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614868}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614870}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614872}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614875}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614888}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614894}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614896}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614901}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614706}
@@ -97,25 +76,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614722}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614737}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614739}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614746}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614717}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614719}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614751}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614781}
       id: 0
       isStickyNote: 0
   stickyNoteInfos: []
@@ -1363,7 +1330,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"9c0c0a8fa8a3ea340a4abc4622dab16d","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"ec3cb42d1aba59940836e3cf10210923","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: _MainText
@@ -1535,7 +1502,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-5.0,"y":0.0}'
+      m_SerializableObject: '{"x":-1.0,"y":0.0}'
     m_Space: 2147483647
   m_Property:
     name: _DistorsionSpeed
@@ -1991,7 +1958,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.4000000059604645,"y":2.0,"z":1.0}'
+      m_SerializableObject: '{"x":0.15000000596046449,"y":2.0,"z":1.0}'
     m_Space: 2147483647
   m_Property:
     name: Scale
@@ -2724,7 +2691,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"9c0c0a8fa8a3ea340a4abc4622dab16d","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"ec3cb42d1aba59940836e3cf10210923","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: _MainText
@@ -2896,7 +2863,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-5.0,"y":0.0}'
+      m_SerializableObject: '{"x":-1.0,"y":0.0}'
     m_Space: 2147483647
   m_Property:
     name: _DistorsionSpeed
@@ -3189,7 +3156,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.4000000059604645,"y":2.0,"z":1.0}'
+      m_SerializableObject: '{"x":0.1599999964237213,"y":2.0,"z":1.0}'
     m_Space: 2147483647
   m_Property:
     name: Scale
@@ -5251,7 +5218,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.444
+      m_SerializableObject: 0.252
     m_Space: 2147483647
   m_Property:
     name: _Opacity
