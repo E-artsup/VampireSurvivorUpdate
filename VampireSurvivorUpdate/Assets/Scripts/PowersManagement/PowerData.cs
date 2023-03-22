@@ -76,7 +76,7 @@ public class PowerData : ScriptableObject
     public float ProjectileSpeed { get => projectileSpeed; }
     public int MaxFireAmountAtSameTime { get => maxFireAmountAtSameTime; }
     public float Duration { get => duration; }
-    public float Cooldown { get => cooldown; }
+    public float Cooldown { get => cooldown - ((cooldown * PowersManager.instance.playerStats.attackCooldown) / 100); }
     public float HitBoxDelay { get => hitBoxDelay; }
     public bool Piercing { get => piercing; }
     public float Knockback { get => knockback; }

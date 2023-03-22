@@ -17,5 +17,5 @@ MonoBehaviour:
   descriptionOfTheWeapon: + Electric +Earth -Fire
   descriptionOfTheLevelUp: + Electric +Earth -Fire
   speciality: 1
-  prefabsOfTheWeapon: {fileID: -8681360857493504950, guid: e352aaa68692d89438b0c3155a1283f5,
+  prefabsOfTheWeapon: {fileID: -8169344413935350103, guid: e352aaa68692d89438b0c3155a1283f5,
     type: 3}

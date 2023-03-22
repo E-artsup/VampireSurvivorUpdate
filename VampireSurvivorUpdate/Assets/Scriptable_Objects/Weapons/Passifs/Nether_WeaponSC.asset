@@ -17,5 +17,5 @@ MonoBehaviour:
   descriptionOfTheWeapon: + Fire +Darkness -Earth
   descriptionOfTheLevelUp: + Fire +Darkness -Earth
   speciality: 1
-  prefabsOfTheWeapon: {fileID: -8827587544282326291, guid: 67411baebf3cf234298615302f39929a,
+  prefabsOfTheWeapon: {fileID: 7048679083866118010, guid: 67411baebf3cf234298615302f39929a,
     type: 3}
