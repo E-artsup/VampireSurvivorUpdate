@@ -50,6 +50,48 @@ public class CollectiblePool : MonoBehaviour
     }
 
     /// <summary>
+    /// Get the transform of the object get from the pool using the name of the pool
+    /// </summary>
+    /// <param name="poolName">Only name allowed : blueXp, greenXp, redXp, smallGold, midGold, bigGold, magnet, heal, nuke</param>
+    /// <returns></returns>
+    public Transform GetPoolObjectTransformByPoolName(string poolName)    //Replace Transform by the returning type you want (if you need something else than this type) | Or create the same function with another return Type
+    {
+        Transform itemTransform = null;
+        
+        switch (poolName) //Use a string to get the needed object from a certain pool
+        {
+            case "blueXp":
+                itemTransform = blueXpPool.Get().transform;
+                break;
+            case "greenXp":
+                itemTransform = greenXpPool.Get().transform;
+                break;
+            case "redXp":
+                itemTransform = redXpPool.Get().transform;
+                break;
+            case "smallGold":
+                itemTransform = smallGoldPool.Get().transform;
+                break;
+            case "midGold":
+                itemTransform = midGoldPool.Get().transform;
+                break;
+            case "bigGold":
+                itemTransform = bigGoldPool.Get().transform;
+                break;
+            case "magnet":
+                itemTransform = magnetPool.Get().transform;
+                break;
+            case "heal":
+                itemTransform = healPool.Get().transform;
+                break;
+            case "nuke":    //TODO
+                break;
+        }
+
+        return itemTransform;
+    }
+    
+    /// <summary>
     /// Initialize every item pool when called
     /// </summary>
     private void InitializePool()
