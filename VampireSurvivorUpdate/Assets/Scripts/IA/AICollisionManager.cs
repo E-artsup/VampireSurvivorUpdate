@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IACollisionManager : MonoBehaviour
+public class AICollisionManager : MonoBehaviour
 {
-    private IABehavior behavior;
+    private AIBehavior behavior;
 
     private void Awake() {
-        behavior = GetComponentInParent<IABehavior>();
+        behavior = GetComponentInParent<AIBehavior>(); // Get the AI Behavior
     }
 
     private void OnTriggerEnter(Collider col)
