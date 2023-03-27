@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a5bddb81c5965489beaeb2ad668fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 5
-  baseATK: 2
+  maxHealthPoint: 10
+  baseATK: 5
 --- !u!114 &6290668820679040500
 MonoBehaviour:
   m_ObjectHideFlags: 0

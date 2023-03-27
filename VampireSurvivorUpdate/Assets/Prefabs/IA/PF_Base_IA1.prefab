@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a5bddb81c5965489beaeb2ad668fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoint: 5
+  maxHealthPoint: 15
   baseATK: 2
 --- !u!114 &8773156376719893416
 MonoBehaviour:

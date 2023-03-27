@@ -15,7 +15,6 @@ public class WaveEditor : EditorWindow
     WavePattern wavePattern;
     float rectangleWidthPattern;
     float rectangleLengthPattern;
-    bool circleShapePattern;
     bool elipseShapePattern;
     bool rectangleShapePattern;
     bool circlesOnSidesShapePattern;
@@ -26,7 +25,9 @@ public class WaveEditor : EditorWindow
     int triesToSpawnMonster;
     int waveTimeLength;
     int numberOfEnnemiesNeededToSpawn;
-    int numberOfEnnemiesSpawnedPerSpawn;
+    bool groupOfEnnemies;
+    int numberOfEnnemiesPerGroup;
+    float ennemyInGroupSpawnRange;
 
     MonsterPulled monsterPulled;
     bool usingMonsterPool1;
@@ -60,7 +61,6 @@ public class WaveEditor : EditorWindow
 
         rectangleWidthPattern = EditorGUILayout.FloatField(nameof(rectangleWidthPattern), rectangleWidthPattern);
         rectangleLengthPattern = EditorGUILayout.FloatField(nameof(rectangleLengthPattern), rectangleLengthPattern);
-        circleShapePattern = EditorGUILayout.Toggle(nameof(circleShapePattern),circleShapePattern);
         elipseShapePattern = EditorGUILayout.Toggle(nameof(elipseShapePattern),elipseShapePattern);
         rectangleShapePattern = EditorGUILayout.Toggle(nameof(rectangleShapePattern),rectangleShapePattern);
         circlesOnSidesShapePattern = EditorGUILayout.Toggle(nameof(circlesOnSidesShapePattern),circlesOnSidesShapePattern);
@@ -70,7 +70,9 @@ public class WaveEditor : EditorWindow
         triesToSpawnMonster = EditorGUILayout.IntField(nameof(triesToSpawnMonster),triesToSpawnMonster);
         waveTimeLength = EditorGUILayout.IntField(nameof(waveTimeLength),waveTimeLength);
         numberOfEnnemiesNeededToSpawn = EditorGUILayout.IntField(nameof(numberOfEnnemiesNeededToSpawn),numberOfEnnemiesNeededToSpawn);
-        numberOfEnnemiesSpawnedPerSpawn = EditorGUILayout.IntField(nameof(numberOfEnnemiesSpawnedPerSpawn),numberOfEnnemiesSpawnedPerSpawn);
+        groupOfEnnemies = EditorGUILayout.Toggle(nameof(groupOfEnnemies), groupOfEnnemies);
+        numberOfEnnemiesPerGroup = EditorGUILayout.IntField(nameof(numberOfEnnemiesPerGroup), numberOfEnnemiesPerGroup);
+        ennemyInGroupSpawnRange = EditorGUILayout.FloatField(nameof(ennemyInGroupSpawnRange), ennemyInGroupSpawnRange);
 
         usingMonsterPool1 = EditorGUILayout.Toggle(nameof(usingMonsterPool1),usingMonsterPool1);
         usingMonsterPool2 = EditorGUILayout.Toggle(nameof(usingMonsterPool2),usingMonsterPool2);
@@ -106,7 +108,9 @@ public class WaveEditor : EditorWindow
                     triesToSpawnMonster = monsterSpawn.maxTries;
                     waveTimeLength = monsterSpawn.waveTimeLength;
                     numberOfEnnemiesNeededToSpawn = monsterSpawn.numberOfEnnemies;
-                    //numberOfEnnemiesSpawnedPerSpawn = monsterSpawn.numberOfSpawns;
+                    groupOfEnnemies = monsterSpawn.EnnemyGroup;
+                    numberOfEnnemiesPerGroup = monsterSpawn.numberOfEnnemiesPerGroup;
+                    ennemyInGroupSpawnRange = monsterSpawn.spawnRange;
 
                     usingMonsterPool1 = monsterPulled.monsterPoolSelected1;
                     usingMonsterPool2 = monsterPulled.monsterPoolSelected2;
@@ -115,7 +119,7 @@ public class WaveEditor : EditorWindow
             }
         }
 
-        if (GUILayout.Button("Actualize"))
+        if (GUILayout.Button("Apply"))
         {
             foreach (GameObject thisWave in Selection.gameObjects)
             {
@@ -123,6 +127,11 @@ public class WaveEditor : EditorWindow
                 wavePattern = thisWave.GetComponent<WavePattern>();
                 monsterSpawn = thisWave.GetComponent<MonsterSpawn>();
                 monsterPulled = thisWave.GetComponent<MonsterPulled>();
+
+                EditorUtility.SetDirty(polygonCreator);
+                EditorUtility.SetDirty(wavePattern);
+                EditorUtility.SetDirty(monsterSpawn);
+                EditorUtility.SetDirty(monsterPulled);
 
                 if (thisWave.transform.parent.gameObject == waveManager)
                 {
@@ -145,7 +154,9 @@ public class WaveEditor : EditorWindow
                     monsterSpawn.maxTries = triesToSpawnMonster;
                     monsterSpawn.waveTimeLength = waveTimeLength;
                     monsterSpawn.numberOfEnnemies = numberOfEnnemiesNeededToSpawn;
-                    //monsterSpawn.numberOfSpawns = numberOfEnnemiesSpawnedPerSpawn;
+                    monsterSpawn.EnnemyGroup = groupOfEnnemies;
+                    monsterSpawn.numberOfEnnemiesPerGroup = numberOfEnnemiesPerGroup;
+                    monsterSpawn.spawnRange = ennemyInGroupSpawnRange;
 
                     monsterPulled.monsterPoolSelected1 = usingMonsterPool1;
                     monsterPulled.monsterPoolSelected2 = usingMonsterPool2;
