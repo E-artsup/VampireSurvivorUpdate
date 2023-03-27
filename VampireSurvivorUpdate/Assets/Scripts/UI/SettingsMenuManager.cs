@@ -13,6 +13,7 @@ namespace UI
         
         [Header("Audio Section")]
         [SerializeField] private AudioMixer mixer;
+        [SerializeField] private AudioMixerGroup mixeGroup;
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider sfxSlider;
         
