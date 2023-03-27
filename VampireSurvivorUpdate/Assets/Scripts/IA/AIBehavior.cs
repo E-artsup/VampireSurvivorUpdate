@@ -20,6 +20,7 @@ public class AIBehavior : MonoBehaviour
         private NavMeshAgent agent;
         private GameObject target;
         private Rigidbody rb;
+        private WaveSystem waveSystem;
         [Tooltip("This IA can move ?")] public bool canMove = true;
         #endregion
 
@@ -41,6 +42,7 @@ public class AIBehavior : MonoBehaviour
         rb = GetComponentInChildren<Rigidbody>(); // Get the rigidbody
         agent = GetComponent<NavMeshAgent>(); // Get the NavMeshAgent.
 
+        waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
         agent.speed = baseSpd; // Set Agent Speed into base Speed.
         agent.acceleration = baseAcn; // Set Agent Acceleration into base Acceleration.
     }
@@ -89,7 +91,7 @@ public class AIBehavior : MonoBehaviour
     /// </summary>
     private void Death()
     {
-        gameObject.SetActive(false);
+        waveSystem.Deactivate(this.gameObject);
     }
 
     /// <summary>
