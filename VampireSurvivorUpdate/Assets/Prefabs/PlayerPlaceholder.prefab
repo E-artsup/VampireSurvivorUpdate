@@ -925,7 +925,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1459176519}
-  rigidbody: {fileID: 7992793897550422603}
 --- !u!1 &1449785971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,7 +2794,7 @@ GameObject:
   - component: {fileID: 628234224}
   m_Layer: 0
   m_Name: PlayerPlaceholder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2828,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52636a9fbf4caad44aaacfea3e321c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 7
 --- !u!114 &1561234698337840599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,9 +2840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c1fc14f92e00546a6bf3a8967782fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  regenRate: 0
+  maxHealth: 10
+  currentHealth: 10
+  regenRate: 0.1
   armor: 0
   moveSpeed: 0
   power: 0
