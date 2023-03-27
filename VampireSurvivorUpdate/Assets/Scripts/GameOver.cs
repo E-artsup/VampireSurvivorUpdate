@@ -24,4 +24,11 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //For the moment it only reload the active scene. If you want to reload anther scene like main menu or something else just use the build index
     }
+    /// <summary>
+    /// Take the player back to the Main Menu
+    /// </summary>
+    public void OnQuit()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
