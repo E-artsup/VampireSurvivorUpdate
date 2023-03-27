@@ -36,10 +36,12 @@ public class SoundData : ScriptableObject
     [SerializeField]
     [Tooltip("The curve of volume that will be applied to the sound. The curve is applied to the sound when the sound is played.")]
     private AnimationCurve volumeCurve = AnimationCurve.Linear(0, 1, 1, 1);
+    private bool linkToCurve = true;
     
 
 
     public string Name => name;
+    public SoundGroup SoundGroup => soundGroup;
     public AudioClip Clip => clip;
     public float Volume => volume;
     public float Pitch => pitch;
@@ -49,10 +51,12 @@ public class SoundData : ScriptableObject
     public SoundData SoundToPlayAfter => soundToPlayAfter;
     public AudioSource Source { get => source; set => source = value; }
     public AnimationCurve VolumeCurve => volumeCurve;
+    public bool LinkToCurve { get => linkToCurve; set => linkToCurve = value; }
 
-    public enum SoundGroup
-    {
-        Music,
-        SFX
-    }
+}
+
+public enum SoundGroup
+{
+    Music,
+    SFX
 }
