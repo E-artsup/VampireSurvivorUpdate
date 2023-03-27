@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
     }
-    
+
     /// <summary>
     /// Will move the player at a certain speed and in the direction pressed by the player
     /// </summary>
