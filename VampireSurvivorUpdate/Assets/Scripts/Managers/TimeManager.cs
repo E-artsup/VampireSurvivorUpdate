@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour
+namespace Managers
 {
-    #region Variables
+    public class TimeManager : MonoBehaviour
+    {
+        #region Variables
 
         #region Components
 
@@ -27,28 +28,30 @@ public class TimeManager : MonoBehaviour
         
         #endregion
 
-    #endregion
+        #endregion
     
 
-    /// <summary>
-    /// Check if timer is a countDown, if yes, 
-    /// </summary>
-    void Update()
-    {
-        currentTime = countDown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
-
-        if (hasLimit && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit)))
+        /// <summary>
+        /// Check if timer is a countDown, if yes, 
+        /// </summary>
+        void Update()
         {
-            currentTime = timerLimit;
-            SetTimerText();
-            timerText.color = limitColor;
-        }
-        
-        SetTimerText();
-    }
+            currentTime = countDown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
 
-    private void SetTimerText()
-    {
-        timerText.text = currentTime.ToString("00:00");
+            if (hasLimit && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit)))
+            {
+                currentTime = timerLimit;
+                SetTimerText();
+                timerText.color = limitColor;
+            }
+        
+            SetTimerText();
+        }
+
+        private void SetTimerText()
+        {
+            TimeSpan ts = TimeSpan.FromSeconds(currentTime);
+            timerText.text = ts.ToString(@"mm\:ss");
+        }
     }
 }

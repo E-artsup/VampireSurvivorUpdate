@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Collectible_Items;
+using Managers;
+using UI;
 using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
     [Tooltip("The attraction speed of the magnet on the xp")]
     [SerializeField] private float attractionSpeed = 1f;
+    
+    [SerializeField] private GoldCounter_SO goldCounterSo;
     
     private PlayerStats playerStats;
     private List<XP> xpToAttract = new List<XP>();
@@ -97,6 +102,14 @@ public class Collector : MonoBehaviour
     {
         playerStats.gold += goldAmount;
         UIManager.instance.UpdateGoldCounter();
+        goldCounterSo.goldAccumulated = goldCounterSo.goldAccumulated + goldAmount;
+        UIManager.instance.UpdateGoldAccumulated();
+    }
+
+    [ContextMenu("GoldInfinite")]
+    public void TestGold()
+    {
+        AddGold(20000);
     }
 
     /// <summary>
