@@ -71,14 +71,14 @@ public class WavePattern : MonoBehaviour
             
             // Formula for a rectangle shape (we take the slightly crushed circle and then push inwards the extremities)
             case 3:
-                rLength = (rectangleLength * lengthRatio) / 100 * rayCount;
+                rLength = rectangleLength / 100 * rayCount;
                 rWidth = rectangleWidth / 100 * rayCount;
-                polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5
-                                    + Mathf.Abs(Mathf.Clamp(i + rWidth * 0.5f, 0, rWidth) - rWidth/2) * 0.3f 
+                polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5 * lengthRatio
+                                    + Mathf.Abs(Mathf.Clamp(i + rWidth * 0.5f, 0, rWidth) - rWidth/2) * 0.3f
                                     + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f, 0, rLength) - rLength/2) * 0.1f
-                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f - rLength, 0, rWidth) - rWidth/2) * 0.3f
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 0.5f - rLength, 0, rWidth) - rWidth/2) * 0.3f 
                                     + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLength, 0, rLength) - rLength/2) * 0.1f
-                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLength * 2, 0, rWidth) - rWidth/2) * 0.3f;
+                                    + Mathf.Abs(Mathf.Clamp(i - rWidth * 1.5f - rLength * 2, 0, rWidth) - rWidth/2) * 0.3f; 
                 break;
 
             // Formula for a star shape (this used with a rectangle for the inside of the shape creates 4 circles on the sides) 
@@ -88,9 +88,7 @@ public class WavePattern : MonoBehaviour
 
             // Formula for a star shape (this used with a rectangle for the inside of the shape creates 4 circles on the diagonals)
             case 5:
-                polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 3
-                                    + Mathf.Clamp(Mathf.Cos((float)i / (rayCount / 24)), 0.5f, 0.5f) * 15
-                                    + Mathf.Clamp(Mathf.Cos((float)i / (rayCount / 24)), -1, -0.5f) * 20;
+                polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5 + Mathf.Cos((float)i / 4) * 20;
                 break;
 
             default: 
@@ -106,7 +104,7 @@ public class WavePattern : MonoBehaviour
         {
             N = n;
             n = 3;
-            lengthRatio = innerPolygonLengthRatio;
+            lengthRatio = innerPolygonLengthRatio + 1;
             ViewDistanceCalculator(i, rayCount);
             n = N;
             lengthRatio = 1;
