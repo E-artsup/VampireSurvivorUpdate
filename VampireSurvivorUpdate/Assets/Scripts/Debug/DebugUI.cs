@@ -6,8 +6,6 @@ using UnityEngine.UI;
  * Debug only, no need to use this script int he game. It's only use in build testing for people to test the feature and changes parameters without the need to go in the editor and start Unity
  */
 
-namespace Debug
-{
     public class DebugUI : MonoBehaviour
     {
         [Header("Other")]
@@ -149,4 +147,3 @@ namespace Debug
         
         }
     }
-}
