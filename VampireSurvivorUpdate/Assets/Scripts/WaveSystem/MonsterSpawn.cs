@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterSpawn : MonoBehaviour
@@ -20,7 +19,7 @@ public class MonsterSpawn : MonoBehaviour
     {
         monsterPulled = this.gameObject.GetComponent<MonsterPulled>();
         waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
-        //spawnRate = waveTimeLength / numberOfEnnemies;
+        spawnRate = (float)waveTimeLength / (float)numberOfEnnemies;
         InvokeRepeating("WaveSpawner", 1f, spawnRate);
     }
 
@@ -85,8 +84,11 @@ public class MonsterSpawn : MonoBehaviour
     {
         // Checks which monster needs to be pulled then activates him and teleport the monster to its desired location
         monsterToPull = monsterPulled.TypeOfMonsterPulled();
-        waveSystem.Activate(monsterToPull);
-        monsterToPull.transform.position = randomPoint;
-        currentNumberOfEnnemies++;
+        if(monsterToPull != null)
+        {
+            waveSystem.Activate(monsterToPull);
+            monsterToPull.transform.position = randomPoint;
+            currentNumberOfEnnemies++;
+        }
     }
 }

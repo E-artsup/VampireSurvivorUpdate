@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngineInternal;
 
 // this script makes you able to edit your waves: the shape of the wave, the ennemy pool that spawn in it 
 public class WavePattern : MonoBehaviour

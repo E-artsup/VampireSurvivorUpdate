@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 
-#if UNITY_EDITOR
 public class WaveEditor : EditorWindow
 {
     PolygonCreator polygonCreator;
@@ -167,4 +166,3 @@ public class WaveEditor : EditorWindow
         }
     }
 }
-#endif
