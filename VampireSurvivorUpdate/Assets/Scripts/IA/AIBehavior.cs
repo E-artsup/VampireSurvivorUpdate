@@ -20,6 +20,7 @@ public class AIBehavior : MonoBehaviour
         private NavMeshAgent agent;
         private GameObject target;
         private Rigidbody rb;
+        private WaveSystem waveSystem;
         [Tooltip("This IA can move ?")] public bool canMove = true;
         #endregion
 
@@ -41,6 +42,7 @@ public class AIBehavior : MonoBehaviour
         rb = GetComponentInChildren<Rigidbody>(); // Get the rigidbody
         agent = GetComponent<NavMeshAgent>(); // Get the NavMeshAgent.
 
+        waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
         agent.speed = baseSpd; // Set Agent Speed into base Speed.
         agent.acceleration = baseAcn; // Set Agent Acceleration into base Acceleration.
     }
@@ -50,7 +52,7 @@ public class AIBehavior : MonoBehaviour
     /// </summary>
     public void AttackThePlayer()
     {
-        target.GetComponent<PlayerStats>().currentHealth = target.GetComponent<PlayerStats>().currentHealth - baseAtk;
+        target.GetComponent<PlayerHealth>().TakeDamage(baseAtk);
     }
 
     /// <summary>
@@ -72,6 +74,8 @@ public class AIBehavior : MonoBehaviour
         float _healthPointAfterDamage = healthPoint - damage; // Calculate the HP after taking damage.
         float _actualDamageTaken = healthPoint - _healthPointAfterDamage; // Compare the HP between before and after taking damage, to save the actual taken damage.
 
+        FastTextManager.instance.MakeTextAtLocation(damage.ToString(), transform.position); //Feedback Of The Damagez
+
         healthPoint = _healthPointAfterDamage; // Apply damage.
 
         if(healthPoint <= 0) // Check if HP are below or equal to zero
@@ -89,7 +93,7 @@ public class AIBehavior : MonoBehaviour
     /// </summary>
     private void Death()
     {
-        gameObject.SetActive(false);
+        waveSystem.Deactivate(this.gameObject);
     }
 
     /// <summary>

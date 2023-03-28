@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Collectible_Items;
 using UnityEngine;
 using UnityEngine.Pool;
 
