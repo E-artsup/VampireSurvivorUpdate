@@ -82,8 +82,8 @@ public class PowerData : ScriptableObject
     public float Knockback { get => knockback; }
     public int MaxOnScreenAtSameTime { get => maxOnScreenAtSameTime; }
     public bool BlockedByWalls { get => blockedByWalls; }
-    public float getEffectiveDamage(){
-        float _damage = BaseDamage + (LevelDamageMultiplier * (MaxLevel - 1));
+    public float GetDamageCalcul(float getCurrentLevel){
+        float _damage = BaseDamage + (LevelDamageMultiplier * (getCurrentLevel - 1));
         float bonusPourcentage = 0;
         foreach(PassiveEffectData passiveEffectData in passiveEffectsData){
             if(passiveEffectData.Type == this.type)

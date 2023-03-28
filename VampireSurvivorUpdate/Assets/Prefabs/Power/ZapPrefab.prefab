@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerData: {fileID: 11400000, guid: d7a91b3d1f918214aa0ad0f977165f95, type: 2}
   attackSound: {fileID: 3971415457408074725}
-  lineBetweenEnnemis: {fileID: 4659511871740543575, guid: 900e46d4e7c4c8d4a9162e5da40e4b2d,
-    type: 3}
+  currentLevel: 1
+  zapVFX: {fileID: 958638101797660333, guid: f4a430cac3d95504ab867625d0039e86, type: 3}
 --- !u!82 &3971415457408074725
 AudioSource:
   m_ObjectHideFlags: 0

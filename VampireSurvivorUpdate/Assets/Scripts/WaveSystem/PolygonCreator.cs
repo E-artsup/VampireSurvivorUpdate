@@ -60,7 +60,7 @@ public class PolygonCreator : MonoBehaviour
         vertices = new Vector3[(rayCount + 1) * 2];
         triangles = new int[rayCount * 2 * 2 * 3];
 
-        playerPosition = GameObject.Find("Target").gameObject.transform.position;
+        playerPosition = GameObject.FindGameObjectWithTag("Player").gameObject.transform.position;
         playerPositionXZ = new Vector3(playerPosition.x, (playerPosition.y * (1 -XZ)) + (playerPosition.z * (XZ)), 0f);
 
         origin = playerPositionXZ;

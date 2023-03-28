@@ -50,10 +50,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerData: {fileID: 11400000, guid: b8a18b499bd8d11419e3dd483f60df6d, type: 2}
   attackSound: {fileID: 6477739457191194800}
+  currentLevel: 1
   laserRender: {fileID: 1779853652}
   laserDetectionLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262145
   laserVFX: {fileID: 350835854962887931}
 --- !u!120 &1779853652
 LineRenderer:

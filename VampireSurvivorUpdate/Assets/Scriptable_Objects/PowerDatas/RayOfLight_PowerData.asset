@@ -25,7 +25,7 @@ MonoBehaviour:
   maxFireAmountAtSameTime: 0
   duration: 0
   cooldown: 10
-  hitBoxDelay: 0
+  hitBoxDelay: 0.8
   piercing: 1
   knockback: 10
   maxOnScreenAtSameTime: 0

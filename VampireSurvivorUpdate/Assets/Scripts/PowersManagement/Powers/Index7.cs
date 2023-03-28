@@ -7,7 +7,7 @@ public class Index7 : Power
     //========
     //VARIABLE
     //========
-    [SerializeField] private LineRenderer lineBetweenEnnemis;
+    [SerializeField] private Transform zapVFX;
 
     //========
     //MONOBEHAVIOUR
@@ -27,7 +27,7 @@ public class Index7 : Power
     public override void Attack()
     {
         try { attackSound.Play(); } catch { }
-        if (lineBetweenEnnemis == null) return;
+        if (zapVFX == null) return;
         Transform playerRef = PowersManager.instance.getPlayer().transform;
 
         Vector3 previousLocation = playerRef.position;
@@ -37,14 +37,16 @@ public class Index7 : Power
         List<GameObject> ennemisTouchByTheAttack = new();
         for (int i = 0; i <= 4 + GetCurrentLevel; i++)
         {
-            LineRenderer newLine = Instantiate<LineRenderer>(lineBetweenEnnemis, Vector3.zero, Quaternion.identity);
-            newLine.SetPosition(0, new(previousLocation.x, 1, previousLocation.z));
-            newLine.SetPosition(1, new(nextLocation.Item1.x, 1, nextLocation.Item1.z));
+            Transform newVFX = Instantiate(zapVFX, Vector3.zero, Quaternion.identity);
+            newVFX.GetChild(1).position = new(previousLocation.x, 1, previousLocation.z);
+            newVFX.GetChild(2).position = new(previousLocation.x, 1, previousLocation.z);
+            newVFX.GetChild(3).position = new(nextLocation.Item1.x, 1, nextLocation.Item1.z);
+            newVFX.GetChild(4).position = new(nextLocation.Item1.x, 1, nextLocation.Item1.z);
 
-            /*if (nextLocation.Item2.TryGetComponent<AIBehavior>(out AIBehavior script))
+            if (nextLocation.Item2.TryGetComponent<AIBehavior>(out AIBehavior script))
             {
                 script.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-            }*/
+            }
             nextLocation.Item2.tag = "Untagged";
             ennemisTouchByTheAttack.Add(nextLocation.Item2);
 

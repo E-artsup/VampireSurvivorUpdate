@@ -30,12 +30,12 @@ public class Index11 : Power
         for (int i = 0; i <= 3; i++)
         {
             GameObject randomEnnemy = PowerUtils.GetRandomEnemyObject(false);
-            if (randomEnnemy == null) continue;/*
+            if (randomEnnemy == null) continue;
             if (randomEnnemy.TryGetComponent<AIBehavior>(out AIBehavior script))
             {
                 script.FreezeForSeconds(3);
                 script.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-            }*/
+            }
             //Feedback
             if (spookyParticules.Count > i)
             {

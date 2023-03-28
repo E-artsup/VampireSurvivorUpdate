@@ -74,6 +74,8 @@ public class AIBehavior : MonoBehaviour
         float _healthPointAfterDamage = healthPoint - damage; // Calculate the HP after taking damage.
         float _actualDamageTaken = healthPoint - _healthPointAfterDamage; // Compare the HP between before and after taking damage, to save the actual taken damage.
 
+        FastTextManager.instance.MakeTextAtLocation(damage.ToString(), transform.position); //Feedback Of The Damagez
+
         healthPoint = _healthPointAfterDamage; // Apply damage.
 
         if(healthPoint <= 0) // Check if HP are below or equal to zero

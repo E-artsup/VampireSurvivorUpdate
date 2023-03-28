@@ -23,7 +23,7 @@ public class Index2 : Power
     }
     private void OnTriggerStay(Collider other)
     {
-        /*
+        
         if (other.TryGetComponent<AIBehavior>(out AIBehavior script))
         {
             script.TakeDamage(powerData.GetDamageCalcul(currentLevel) * powerData.HitBoxDelay);
@@ -39,7 +39,6 @@ public class Index2 : Power
                 }
             }
         }
-        */
     }
     //========
     //FONCTION
