@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:VampireSurvivorUpdate/Assets/Models/Characters.meta
+guid: 6294f4b0206a20442affcdf2264c996b
+folderAsset: yes
+=======
 guid: 5ff33274753f4364e91900e7266e15d3
+>>>>>>> 2f32abae371f1cb17fb7a216ac39ec38d3e4fdb7:VampireSurvivorUpdate/Assets/Scenes/MainMenu_Scene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
