@@ -40,9 +40,9 @@ public class LaserPower : Power
         // Gets the objets hit by the laser
         RaycastHit[] hits = Physics.SphereCastAll(
             PowersManager.instance.getPlayer().transform.position,
-            0.5f + (0.1f * this.GetCurrentLevel),
+            0.5f + (0.1f * currentLevel),
             forwardPlayer,
-            5 + (0.5f * this.GetCurrentLevel), laserDetectionLayer
+            5 + (0.5f * currentLevel), laserDetectionLayer
         );
 
         if (hits.Length > 0)
@@ -50,7 +50,7 @@ public class LaserPower : Power
             laserRender.SetPosition(1, new(hits[0].transform.position.x, 1, hits[0].transform.position.z));
             foreach (RaycastHit hit in hits)
             {
-                Debug.Log("Dealing "+this.powerData.GetDamageCalcul(currentLevel) + " damage to "+hit.collider.gameObject.name);
+                UnityEngine.Debug.Log("Dealing "+this.powerData.GetDamageCalcul(currentLevel) + " damage to "+hit.collider.gameObject.name);
                 
                 // If the object hit is an enemy
                 if (hit.collider.gameObject.TryGetComponent<AIBehavior>(out AIBehavior enemy))
@@ -74,7 +74,7 @@ public class LaserPower : Power
                 if(hit.collider.gameObject.TryGetComponent<Drop>(out Drop dropScript))
                 {
                     hit.collider.gameObject.SetActive(false);
-                    FastTextManager.instance.MakeTextAtLocation(powerData.GetDamageCalcul(currentLevel).ToString(), hit.collider.transform.position); //Feedback Of The Damage
+                    FastTextManager.instance.MakeTextAtLocation("BREAK !", hit.collider.transform.position); //Feedback Of The Damage
                 }
             }
         }

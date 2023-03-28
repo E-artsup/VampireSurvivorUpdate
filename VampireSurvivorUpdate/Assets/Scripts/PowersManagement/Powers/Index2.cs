@@ -8,7 +8,6 @@ public class Index2 : Power
     //========
     //VARIABLE
     //========
-    [SerializeField] private ParticleSystem particleFeedback;
     [SerializeField] private Collider damageTrigger;
     //========
     //MONOBEHAVIOUR
@@ -18,7 +17,7 @@ public class Index2 : Power
         if (this.cooldownRemaining <= 0)
         {
             Attack();
-            this.cooldownRemaining = powerData.Cooldown - 0.3f * GetCurrentLevel;
+            this.cooldownRemaining = powerData.Cooldown - 0.3f * currentLevel;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -35,7 +34,7 @@ public class Index2 : Power
                 if (other.transform.parent.TryGetComponent<AIBehavior>(out AIBehavior enemyParent))
                 {
                     // Deals damage to the enemy
-                    enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
+                    enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel) * powerData.HitBoxDelay * Time.deltaTime);
                 }
             }
         }
@@ -48,7 +47,5 @@ public class Index2 : Power
         try { attackSound.Play(); } catch { }
         Vector3 ennemyPositionInViewport = PowerUtils.GetRandomEnemyPosition(false).Item1;
         transform.position = ennemyPositionInViewport;
-
-        particleFeedback.Play();
     }
 }

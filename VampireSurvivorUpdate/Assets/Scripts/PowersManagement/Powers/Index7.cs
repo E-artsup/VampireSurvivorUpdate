@@ -35,7 +35,7 @@ public class Index7 : Power
         if (nextLocation.Item2 == null) return;
 
         List<GameObject> ennemisTouchByTheAttack = new();
-        for (int i = 0; i <= 4 + GetCurrentLevel; i++)
+        for (int i = 0; i <= 4 + currentLevel; i++)
         {
             Transform newVFX = Instantiate(zapVFX, Vector3.zero, Quaternion.identity);
             newVFX.GetChild(1).position = new(previousLocation.x, 1, previousLocation.z);

@@ -52,7 +52,7 @@ public class AIBehavior : MonoBehaviour
     /// </summary>
     public void AttackThePlayer()
     {
-        target.GetComponent<PlayerStats>().currentHealth = target.GetComponent<PlayerStats>().currentHealth - baseAtk;
+        target.GetComponent<PlayerHealth>().TakeDamage(baseAtk);
     }
 
     /// <summary>
