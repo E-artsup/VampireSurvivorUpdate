@@ -74,7 +74,7 @@ public class PolygonCreator : MonoBehaviour
         {
             angle = i * (fov / rayCount);
             direction = new Vector2(Mathf.Cos(angle * 0.01745f), Mathf.Sin(angle * 0.01745f));
-            Debug.DrawRay(origin + (origin * (1 - XZ)), direction, Color.red);
+            UnityEngine.Debug.DrawRay(origin + (origin * (1 - XZ)), direction, Color.red);
 
             // Create a vertex and raycast for a specific direction with a certain view distance for the inner point
             innerViewDistance = wavePattern.InnerPolygonRectangleCreator(i, rayCount);

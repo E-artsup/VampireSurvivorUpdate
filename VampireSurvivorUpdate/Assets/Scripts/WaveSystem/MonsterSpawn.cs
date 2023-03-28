@@ -20,7 +20,7 @@ public class MonsterSpawn : MonoBehaviour
     {
         monsterPulled = this.gameObject.GetComponent<MonsterPulled>();
         waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
-        spawnRate = waveTimeLength / numberOfEnnemies;
+        //spawnRate = waveTimeLength / numberOfEnnemies;
         InvokeRepeating("WaveSpawner", 1f, spawnRate);
     }
 

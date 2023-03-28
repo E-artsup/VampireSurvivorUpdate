@@ -96,12 +96,12 @@ public class UpgradeSystemCS : MonoBehaviour
         if (instance == null)
         {
             //if no add the menu to the scene;
-            Debug.LogError("The Upgrade UI is not in the Scene");
+            UnityEngine.Debug.LogError("The Upgrade UI is not in the Scene");
         }
         //if yes, we configure the button and set the Update canvas to Active
         else
         {
-
+            if (PowersManager.instance.getPlayer().GetComponent<PlayerStats>().currentHealth <= 0) return;
             instance.gameObject.SetActive(true);
 
             //We stop the time to let the player chose
@@ -112,7 +112,7 @@ public class UpgradeSystemCS : MonoBehaviour
     /// <summary>
     /// Exit The Upgrade Menu if open
     /// </summary>
-    private void QuitTheUpgradeMenu()
+    public void QuitTheUpgradeMenu()
     {
         //Null check
         if (instance == null) return;
@@ -154,7 +154,7 @@ public class UpgradeSystemCS : MonoBehaviour
         for(int i = 0; i < numberOfWeaponToGenerate; i++)
         {
             WeaponSC newWeaponToAdd = weaponThePlayerCanGet[Random.Range(0, weaponThePlayerCanGet.Count)];
-            Debug.Log("Selected" + newWeaponToAdd.nameOfWeapon);
+            UnityEngine.Debug.Log("Selected" + newWeaponToAdd.nameOfWeapon);
 
             //if(!randomWeapons.Contains(newWeaponToAdd))
             randomWeapons.Add(newWeaponToAdd);
@@ -184,7 +184,7 @@ public class UpgradeSystemCS : MonoBehaviour
                 if (power.IsMaxLevel) 
                 { 
                     weaponPullInTheGame.Remove(weaponSC);
-                    Debug.Log(weaponSC.name + "is getting removed from the pull at" + power.GetCurrentLevel + "LV");
+                    UnityEngine.Debug.Log(weaponSC.name + "is getting removed from the pull at" + power.GetCurrentLevel + "LV");
                 }
             }
         }

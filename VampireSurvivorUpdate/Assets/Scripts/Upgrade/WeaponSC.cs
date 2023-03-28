@@ -32,16 +32,13 @@ public class WeaponSC : ScriptableObject
     /// </summary>
     public void AddTheWeaponToTheSceneAndTheInventory()
     {
-        Debug.Log("test");
         if(IsThisWeaponInTheScene(out Power power))
         {
             power.LevelUp();
-            Debug.Log("1");
             return;
         }
         else
         {
-            Debug.Log("2");
             //We add the Weapon to the Inventory
             InventoryManager.AddWeaponToInventory(this, speciality);
             //We spawn the Power In The Scene
@@ -70,7 +67,9 @@ public class WeaponSC : ScriptableObject
     /// </summary>
     public bool IsThisWeaponInTheScene(out Power searchedPower)
     {
-        List<Power> powersList = PowersManager.instance.getPowers();
+        //List<Power> powersList = PowersManager.instance.getPowers();
+        Power[] powersList = FindObjectsOfType<Power>();
+
         searchedPower = null;
         foreach(Power power in powersList)
         {

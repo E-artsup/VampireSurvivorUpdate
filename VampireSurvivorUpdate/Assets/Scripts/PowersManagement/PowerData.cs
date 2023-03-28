@@ -87,7 +87,7 @@ public class PowerData : ScriptableObject
         float bonusPourcentage = 0;
         foreach(PassiveEffectData passiveEffectData in passiveEffectsData){
             if(passiveEffectData.Type == this.type)
-            bonusPourcentage += (passiveEffectData.BaseDamagePourcentageModifier + (passiveEffectData.PerLevelDamagePourcentageModifier * (MaxLevel - 1)))/100;
+            bonusPourcentage += (passiveEffectData.BaseDamagePourcentageModifier + (passiveEffectData.PerLevelDamagePourcentageModifier * (getCurrentLevel - 1)))/100;
         }
         return _damage + (_damage * bonusPourcentage);
     }
