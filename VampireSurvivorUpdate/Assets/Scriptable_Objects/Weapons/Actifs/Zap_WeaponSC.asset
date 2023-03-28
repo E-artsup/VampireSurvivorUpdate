@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 21300000, guid: d5335c67ab987ac449ca1c7a68c7ca85, type: 3}
   nameOfWeapon: Zap
-  descriptionOfTheWeapon: Reboud
+  descriptionOfTheWeapon: Pass through 4 enemies
   descriptionOfTheLevelUp: More Damage
   speciality: 0
   prefabsOfTheWeapon: {fileID: 7942452353136102513, guid: c080a086d6d146a478b62da69e6f6147,

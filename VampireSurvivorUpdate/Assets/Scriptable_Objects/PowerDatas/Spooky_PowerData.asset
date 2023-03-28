@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Spooky_PowerData
   m_EditorClassIdentifier: 
   name: Spooky
+  powerType: 0
   icon: {fileID: 0}
   type: 6
   description: 
   maxLevel: 7
-  baseDamage: 3
+  baseDamage: 8
   levelDamageMultiplier: 3
   damageTypeZone: 0
   projectileSpeed: 0
@@ -29,3 +30,4 @@ MonoBehaviour:
   knockback: 10
   maxOnScreenAtSameTime: 0
   blockedByWalls: 0
+  passiveEffectsData: []

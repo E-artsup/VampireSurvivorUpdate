@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
+using Managers;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameOver gameOverUI;
     private PlayerStats playerStats;
     private float lerpTimer = 0;
+    private bool isThePlayerDead = false;
 
     //============
     //MONOBEHAVIOUR
@@ -42,10 +45,30 @@ public class PlayerHealth : MonoBehaviour
 
         if (playerStats.currentHealth >0)   //If player's health is below 0 then print "Game Over" in the Console
             return;
-
+        if (isThePlayerDead) return;
         gameOverUI.gameObject.SetActive(true);
 
+        //No TimeScale = 0, because Animation
+        //This do many error but it work
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        InputManager.instance = null;
+        FindObjectOfType<TimeManager>().enabled = false;
+        FindObjectOfType<WaveSystem>().gameObject.SetActive(false);
+        foreach(AIBehavior ennemiScript in FindObjectsOfType<AIBehavior>())
+        {
+            ennemiScript.canMove = false;
+        }
+
+        //Screenshake for gamefeel
+        CinemachineImpulseSource screenshake = gameOverUI.gameObject.GetComponent<CinemachineImpulseSource>();
+        screenshake.GenerateImpulseWithVelocity(Vector3.one);
         UnityEngine.Debug.Log("Game Over");
+
+        //No double screenshake
+        isThePlayerDead = true;
     }
     /// <summary>
     /// Manager the fill amount of the health bar
