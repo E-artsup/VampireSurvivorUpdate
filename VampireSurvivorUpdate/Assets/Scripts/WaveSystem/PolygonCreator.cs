@@ -60,7 +60,7 @@ public class PolygonCreator : MonoBehaviour
         vertices = new Vector3[(rayCount + 1) * 2];
         triangles = new int[rayCount * 2 * 2 * 3];
 
-        playerPosition = GameObject.Find("Target").gameObject.transform.position;
+        playerPosition = GameObject.FindGameObjectWithTag("Player").gameObject.transform.position;
         playerPositionXZ = new Vector3(playerPosition.x, (playerPosition.y * (1 -XZ)) + (playerPosition.z * (XZ)), 0f);
 
         origin = playerPositionXZ;
@@ -74,7 +74,7 @@ public class PolygonCreator : MonoBehaviour
         {
             angle = i * (fov / rayCount);
             direction = new Vector2(Mathf.Cos(angle * 0.01745f), Mathf.Sin(angle * 0.01745f));
-            Debug.DrawRay(origin + (origin * (1 - XZ)), direction, Color.red);
+            UnityEngine.Debug.DrawRay(origin + (origin * (1 - XZ)), direction, Color.red);
 
             // Create a vertex and raycast for a specific direction with a certain view distance for the inner point
             innerViewDistance = wavePattern.InnerPolygonRectangleCreator(i, rayCount);

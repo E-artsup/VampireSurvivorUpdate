@@ -1,63 +1,98 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
-namespace PowersManagement.Powers
+public class LaserPower : Power 
 {
-    public class LaserPower : Power {
+    //========
+    //VARIABLE
+    //========
 
-        LaserPower(PowersManager powersManager) : base(
-            "Laser",
-            0,
-            "A laser that deals damage to enemies",
-            8,
-            5,
-            2,
-            DamageTypeZone.Area,
-            0f,
-            1,
-            0f,
-            0f,
-            0.8f,
-            true,
-            0f,
-            1,
-            true
-        ) {
-            this.powersManager = powersManager;
-        }
+    [SerializeField] private LineRenderer laserRender;
+    [SerializeField] private LayerMask laserDetectionLayer;
+    private Vector3 forwardPlayer = Vector2.up;
+    [SerializeField] private VisualEffect laserVFX;
 
-        public new void Attack()
+    //========
+    //MONOBEHAVIOUR
+    //========
+    public void Update()
+    {
+        if (this.cooldownRemaining > 0)
         {
-            // Gets the objets hit by the laser
-            RaycastHit[] hits = Physics.SphereCastAll(
-                this.powersManager.getPlayer().transform.position,
-                0.5f+(0.1f*this.currentLevel),
-                this.powersManager.getPlayer().transform.forward,
-                5+(0.5f*this.currentLevel)
-            );
-            if(hits.Length > 0){
-                foreach(RaycastHit hit in hits){
-                    // If the object hit is an enemy
-                    if(hit.collider.gameObject.tag == "Enemy"){
-                        // Deals damage to the enemy
-    
-                        /* WAITING IMPLEMENTATION OF ENEMY CLASS -> Replace the "Enemy" by the name of the class in the line below */
-    
-                        //hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(
-                        //    this.baseDamage+(this.levelDamageMultiplier*this.currentLevel)
-                        //);
+            this.cooldownRemaining -= Time.deltaTime;
+        }
+        else
+        {
+            Attack();
+            this.cooldownRemaining = powerData.HitBoxDelay;
+        }
+        LaserRenderer();
+    }
+
+    //========
+    //FONCTION
+    //========
+    public override void Attack()
+    {
+        try { attackSound.Play(); } catch { }
+        // Gets the objets hit by the laser
+        RaycastHit[] hits = Physics.SphereCastAll(
+            PowersManager.instance.getPlayer().transform.position,
+            0.5f + (0.1f * currentLevel),
+            forwardPlayer,
+            5 + (0.5f * currentLevel), laserDetectionLayer
+        );
+
+        if (hits.Length > 0)
+        {
+            laserRender.SetPosition(1, new(hits[0].transform.position.x, 1, hits[0].transform.position.z));
+            foreach (RaycastHit hit in hits)
+            {
+                UnityEngine.Debug.Log("Dealing "+this.powerData.GetDamageCalcul(currentLevel) + " damage to "+hit.collider.gameObject.name);
+                
+                // If the object hit is an enemy
+                if (hit.collider.gameObject.TryGetComponent<AIBehavior>(out AIBehavior enemy))
+                {
+                    // Deals damage to the enemy
+                    enemy.TakeDamage(powerData.GetDamageCalcul(currentLevel));
+                    return;
+                }
+                else
+                {
+                    if (hit.transform.parent != null)
+                    {
+                        if (hit.transform.parent.TryGetComponent<AIBehavior>(out AIBehavior enemyParent))
+                        {
+                            // Deals damage to the enemy
+                            enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
+                            return;
+                        }
                     }
+                }
+                if(hit.collider.gameObject.TryGetComponent<Drop>(out Drop dropScript))
+                {
+                    hit.collider.gameObject.SetActive(false);
+                    FastTextManager.instance.MakeTextAtLocation("BREAK !", hit.collider.transform.position); //Feedback Of The Damage
                 }
             }
         }
 
-        public void Update()
+        else
         {
-            if(this.cooldownRemaining > 0){
-                this.cooldownRemaining -= Time.deltaTime;
-            } else {
-                Attack();
-                this.cooldownRemaining = 0;
-            }
+            //laserRender.SetPosition(1, forwardPlayer * (5 + (0.5f * this.currentLevel)) + PowersManager.instance.getPlayer().transform.position);
         }
+    }
+    
+    private void LaserRenderer()
+    {
+        if (InputManager.instance.move.ReadValue<Vector2>() != Vector2.zero)
+        {
+            forwardPlayer = new(InputManager.instance.move.ReadValue<Vector2>().normalized.x, 0, InputManager.instance.move.ReadValue<Vector2>().normalized.y);
+        }
+        this.gameObject.transform.position = PowersManager.instance.getPlayer().transform.position;
+        this.laserVFX.SetVector3("Orientation", new Vector3(forwardPlayer.x, 0, forwardPlayer.z));
+        //laserRender.SetPosition(0, PowersManager.instance.getPlayer().transform.position);
     }
 }

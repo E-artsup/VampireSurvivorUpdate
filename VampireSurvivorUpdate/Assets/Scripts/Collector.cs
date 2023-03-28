@@ -75,6 +75,7 @@ public class Collector : MonoBehaviour
             playerStats.xp = xpRestAfterLeveling;
             playerStats.maxXp = Mathf.RoundToInt(playerStats.maxXp * 1.1f);
             AddLevel(1);
+            UpgradeSystemCS.SpawnUpgradeMenu();
         }
         else
         {

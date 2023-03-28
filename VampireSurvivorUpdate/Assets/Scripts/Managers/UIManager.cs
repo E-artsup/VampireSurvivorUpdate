@@ -131,8 +131,7 @@ namespace Managers
 
         public void UpdateGoldAccumulated()
         {
-
-            mainMenuUIManager.UpdateGoldAccumulated();
+            try { mainMenuUIManager.UpdateGoldAccumulated(); } catch { }
 
         }
 
