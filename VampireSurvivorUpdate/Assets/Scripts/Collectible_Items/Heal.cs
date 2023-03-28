@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
-public class Heal : MonoBehaviour, ICollectible
+namespace Collectible_Items
 {
-
-    public static event Action OnHealCollected;
-    
-    public void Collect()
+    public class Heal : MonoBehaviour, ICollectible
     {
-        OnHealCollected?.Invoke();
-        CollectiblePool.instance.healPool.Release(this);
+
+        public static event Action OnHealCollected;
+    
+        public void Collect()
+        {
+            OnHealCollected?.Invoke();
+            CollectiblePool.instance.healPool.Release(this);
+        }
     }
 }
