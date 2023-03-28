@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AICollisionManager : MonoBehaviour
+namespace IA
 {
-    private AIBehavior behavior;
-
-    private void Awake() {
-        behavior = GetComponentInParent<AIBehavior>(); // Get the AI Behavior
-    }
-
-    private void OnTriggerEnter(Collider col)
+    public class AICollisionManager : MonoBehaviour
     {
-        
-        if(col.CompareTag("Player"))
-        {
-            Debug.Log("IA : PlayerInRange = true");
+        private AIBehavior behavior;
 
-            behavior.AttackThePlayer();
+        private void Awake() {
+            behavior = GetComponentInParent<AIBehavior>(); // Get the AI Behavior
         }
 
+        private void OnTriggerEnter(Collider col)
+        {
+        
+            if(col.CompareTag("Player"))
+            {
+                UnityEngine.Debug.Log("IA : PlayerInRange = true");
+
+                behavior.AttackThePlayer();
+            }
+
+        }
     }
 }
