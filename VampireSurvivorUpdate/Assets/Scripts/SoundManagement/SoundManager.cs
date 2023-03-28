@@ -38,14 +38,14 @@ public class SoundManager : MonoBehaviour
     }
 
     public void Start(){
-        foreach(SoundData _data in this._soundsDatas){
-            if(_data.Autoplay){
-                if(_data.Delay > 0){
-                    playSoundAfter(_data, _data.Delay);
-                }
-                else {
-                    this.playSound(_data);
-                }
+        foreach(SoundData _data in this._soundsDatas)
+        {
+            if (!_data.Autoplay) continue;
+            if(_data.Delay > 0){
+                playSoundAfter(_data, _data.Delay);
+            }
+            else {
+                this.playSound(_data);
             }
         }
     }
@@ -131,7 +131,7 @@ public class SoundManager : MonoBehaviour
         this.playSound(soundData);
     }
 
-    // <summary> Change the volume of a cound smmoothly over some time.\n WARNING ! This will unlink the sound from his curve and can cause damage ! </summary>
+    // <summary> Change the volume of a sound smoothly over some time.\n WARNING ! This will unlink the sound from his curve and can cause damage ! </summary>
     // <param name="soundData">The sound to change the volume.</param>
     // <param name="targetVolume">The target volume.</param>
     // <param name="duration">The duration of the change.</param> 
@@ -144,7 +144,7 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(ChangeVolumeSmoothlyRoutine(soundData, targetVolume, duration));
     }
 
-    // <summary> Change the volume of a cound smmoothly over some time.\n WARNING ! This will unlink the sound from his curve and can cause damage ! </summary>
+    // <summary> Change the volume of a sound smoothly over some time.\n WARNING ! This will unlink the sound from his curve and can cause damage ! </summary>
     // <param name="soundName">The sound to change the volume.</param>
     // <param name="targetVolume">The target volume.</param>
     // <param name="duration">The duration of the change.</param> 
@@ -158,14 +158,14 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(ChangeVolumeSmoothlyRoutine(_soundData, targetVolume, duration));
     }
 
-    private IEnumerator ChangeVolumeSmoothlyRoutine(SoundData sounData, float targetVolume, float duration){
+    private IEnumerator ChangeVolumeSmoothlyRoutine(SoundData soundData, float targetVolume, float duration){
         // set time to 0 and get the start volume
         float currentTime = 0f;
-        float startVolume = sounData.Source.volume;
+        float startVolume = soundData.Source.volume;
         while(currentTime < duration){
             // update the time and the volume
             currentTime += Time.deltaTime;
-            sounData.Source.volume = Mathf.Lerp(startVolume, targetVolume, currentTime / duration);
+            soundData.Source.volume = Mathf.Lerp(startVolume, targetVolume, currentTime / duration);
             yield return null;
         }
         yield break;
