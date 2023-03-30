@@ -67,7 +67,7 @@ public class WaveSystem : MonoBehaviour
                 break;
 
             default:
-                Debug.Log("Something went wrong while activating");
+                UnityEngine.Debug.Log("Something went wrong while activating");
                 break;
         }
     }
@@ -92,7 +92,7 @@ public class WaveSystem : MonoBehaviour
                 break;
 
             default:
-                Debug.Log("Something went wrong while deactivating");
+                UnityEngine.Debug.Log("Something went wrong while deactivating");
                 break;
         }
     }

@@ -28,7 +28,7 @@ public class PowersManager : MonoBehaviour
             try{
                 RegisterPower(_power);
             } catch(System.Exception e){
-                Debug.LogError(e.Message);
+                UnityEngine.Debug.LogError(e.Message);
             }
         }
     }
@@ -38,7 +38,6 @@ public class PowersManager : MonoBehaviour
     public void RegisterPower(Power power)
     {
         powers.Add(power);
-        power.ResetLevel();
         // If the power is not already registered
         /*if(!hasPower(power.PowerData.Name)){
             // Create a new array with one more element

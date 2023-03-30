@@ -6,16 +6,4 @@ using UnityEngine;
 /// </summary>
 public class UpgradeEventManager : MonoBehaviour
 {
-    //===========
-    //VARIABLE
-    //===========
-
-    //===========
-    //Spawn
-    //===========
-
-    public void UpgradeWallOfFire()
-    {
-        Debug.Log("Upgrade The Wall Of Fire");
-    }
 }

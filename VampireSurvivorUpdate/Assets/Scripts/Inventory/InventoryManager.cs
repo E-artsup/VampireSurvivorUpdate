@@ -32,7 +32,7 @@ public static class InventoryManager
             inventoryUI.AddPassifToTheUI(newWeapon);
             allPassifInInventory.Add(newWeapon);
         }
-        Debug.Log(newWeapon.nameOfWeapon + " is added to the inventory");
+        UnityEngine.Debug.Log(newWeapon.nameOfWeapon + " is added to the inventory");
     }
     public static void SetInventoryUIViewport(InventoryUIViewport newInventoryUI)
     {

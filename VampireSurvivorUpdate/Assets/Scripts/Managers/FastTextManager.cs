@@ -8,7 +8,7 @@ public class FastTextManager : MonoBehaviour
     //VARIABLE
     //========
     public static FastTextManager instance;
-    [SerializeField] private GameObject prefabOfText = new();
+    [SerializeField] private GameObject prefabOfText;
     [SerializeField] private float heightOfDamageText = 1;
     [SerializeField] private Color damageColorOfText = Color.red;
 

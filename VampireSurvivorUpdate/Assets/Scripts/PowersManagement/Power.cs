@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Power : MonoBehaviour
+public class Power : MonoBehaviour
 {
 
 #region private variables
@@ -28,7 +28,7 @@ public abstract class Power : MonoBehaviour
 
     //<summary> Get the power data </summary>
     public PowerData PowerData { get => powerData; }
-    public int GetCurrentLevel { get { return currentLevel; } }
+    public int GetCurrentLevel { get { return currentLevel; }}
     public bool IsMaxLevel { get { return currentLevel >= powerData.MaxLevel; } }
     #endregion
     #region Private methods
@@ -44,22 +44,18 @@ public abstract class Power : MonoBehaviour
             cooldownRemaining -= Time.deltaTime;
         }
     }
-#endregion
+    #endregion
 
-#region public methods
+    #region public methods
     //<summary> Method to attack, please override it when creating an instance of this class </summary>
-    public abstract void Attack();
+    public virtual void Attack() { }
 
     //<summary> Method to level up the power </summary>
-    public virtual void LevelUp()
+    public void LevelUp()
     {
-        print("Level up " + this.name);
-        // If the power is not at max level
-        if (GetCurrentLevel < powerData.MaxLevel){
-            // Increase the current level
-            currentLevel++;
-            print("Level up " + this.name + "Current Level = " + currentLevel);
-        }
+        // Increase the current level
+        currentLevel++;
+        print("Level up " + this.name + " Current Level = " + currentLevel);
     }
     /// <summary>
     /// Set Current Level to 1
