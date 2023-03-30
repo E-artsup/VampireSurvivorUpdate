@@ -17,7 +17,8 @@ public class Index3 : Power
     {
         StartCoroutine(DamageFonction(true, powerData.HitBoxDelay));
         transform.parent = PowersManager.instance.getPlayer().transform.GetChild(0);
-        transform.localPosition = - Vector3.forward * 3;
+        transform.localPosition = - Vector3.forward * 1.5f;
+        transform.rotation = Quaternion.Euler(0, 190, 0);
     }
     public void Update()
     {

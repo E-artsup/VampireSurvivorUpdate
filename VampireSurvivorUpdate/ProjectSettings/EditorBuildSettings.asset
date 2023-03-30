@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu_Scene.unity
+    guid: 6294f4b0206a20442affcdf2264c996b
+  - enabled: 1
     path: Assets/Scenes/TESTROOM_LOUIS.unity
     guid: 3772c6ad62ec65d45a53f5df3ef2b77f
   m_configObjects: {}
