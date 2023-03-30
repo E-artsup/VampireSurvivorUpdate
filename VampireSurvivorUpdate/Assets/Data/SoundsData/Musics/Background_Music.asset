@@ -10,56 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 705b86989a6f51546b634e1935fd4528, type: 3}
-  m_Name: SoundData
+  m_Name: Background_Music
   m_EditorClassIdentifier: 
-  name: Ambiance_01
+  name: Background_Music
   soundGroup: 0
-  clip: {fileID: 8300000, guid: 406d71264e685024f9d5939064593864, type: 3}
-  volume: 1
+  clip: {fileID: 8300000, guid: ab69e28f345391f47b8833217a7dbb70, type: 3}
+  volume: 0.7
   pitch: 1
-  loop: 0
-  autoplay: 1
-  delay: 3.5
+  loop: 1
+  autoplay: 0
+  delay: 10
   soundToPlayAfter: {fileID: 0}
   volumeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 2
-      inSlope: -44.097034
-      outSlope: -44.097034
-      tangentMode: 0
+      value: 0
+      inSlope: 0.39056605
+      outSlope: 44.915092
+      tangentMode: 1
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.012628227
+      outWeight: 0.18115942
     - serializedVersion: 3
-      time: 0.0577153
-      value: 0
-      inSlope: -25.706179
-      outSlope: 619.75183
+      time: 0.02
+      value: 1
+      inSlope: 1.3552215
+      outSlope: 0
       tangentMode: 65
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.059334785
-      value: 1.0036783
-      inSlope: 619.75183
-      outSlope: -2.5840554
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.40945023
-      value: 0.09896067
-      inSlope: 2.1174726
-      outSlope: 10.639244
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.13044631
-      outWeight: 0.028263543
     - serializedVersion: 3
       time: 1
       value: 1
