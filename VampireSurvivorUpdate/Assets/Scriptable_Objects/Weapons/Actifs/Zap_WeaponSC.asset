@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7a7815c552450499152502e0b495ee, type: 3}
   m_Name: Zap_WeaponSC
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 21300000, guid: d5335c67ab987ac449ca1c7a68c7ca85, type: 3}
+  iconImage: {fileID: 21300000, guid: 6ade4018c58755344aa3e8b4f4d021bc, type: 3}
   nameOfWeapon: Zap
   descriptionOfTheWeapon: Pass through 4 enemies
   descriptionOfTheLevelUp: More Damage
