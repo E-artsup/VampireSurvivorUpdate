@@ -1,19 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngineInternal;
 
 // this script makes you able to edit your waves: the shape of the wave, the ennemy pool that spawn in it 
 public class WavePattern : MonoBehaviour
 {
-    [SerializeField] public float polygonFormula, rectangleWidth, rectangleLength, rLength, rWidth;
+    [SerializeField] public float polygonFormula, rectangleWidth, rectangleLength, rLength, rWidth, innerPolygonLengthRatio, lengthRatio;
     [SerializeField] public bool snailShape, elipse, rectangle, star, diagonalStar, innerPolygonRectangle;
     [SerializeField] private int n, N;
 
     // Initialize the shape of the wave
     public void Start()
     {
+        lengthRatio = 1;
         TypeOfShape();
     }
 
@@ -72,7 +71,7 @@ public class WavePattern : MonoBehaviour
             
             // Formula for a rectangle shape (we take the slightly crushed circle and then push inwards the extremities)
             case 3:
-                rLength = rectangleLength / 100 * rayCount;
+                rLength = (rectangleLength * lengthRatio) / 100 * rayCount;
                 rWidth = rectangleWidth / 100 * rayCount;
                 polygonFormula = 20 + Mathf.Cos((float)i / (rayCount / 12)) * 5
                                     + Mathf.Abs(Mathf.Clamp(i + rWidth * 0.5f, 0, rWidth) - rWidth/2) * 0.3f 
@@ -107,8 +106,11 @@ public class WavePattern : MonoBehaviour
         {
             N = n;
             n = 3;
-            ViewDistanceCalculator(i,rayCount);
+            lengthRatio = innerPolygonLengthRatio;
+            ViewDistanceCalculator(i, rayCount);
             n = N;
+            lengthRatio = 1;
+
         }
         else
         {

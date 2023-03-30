@@ -3,10 +3,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-namespace UI
+
+public class SettingsMenuManager : MonoBehaviour
 {
-    public class SettingsMenuManager : MonoBehaviour
-    {
         
         #region Variables
     
@@ -55,6 +54,5 @@ namespace UI
 
         #endregion
 
-    }
-    
 }
+

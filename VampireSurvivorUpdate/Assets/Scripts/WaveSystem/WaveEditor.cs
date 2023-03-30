@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 
-#if UNITY_EDITOR
 public class WaveEditor : EditorWindow
 {
     PolygonCreator polygonCreator;
@@ -21,6 +20,7 @@ public class WaveEditor : EditorWindow
     bool circlesOnSidesShapePattern;
     bool circlesOnDiagonalsShapePattern;
     bool isInnerShapeARectanglePattern;
+    float innerPolygonLengthRatioPattern;
 
     MonsterSpawn monsterSpawn;
     int triesToSpawnMonster;
@@ -53,32 +53,33 @@ public class WaveEditor : EditorWindow
         GUILayout.Label("Welcome to the Wave Editor", EditorStyles.boldLabel);
 
         polygonRayCount = EditorGUILayout.IntField(nameof(polygonRayCount), polygonRayCount);
-        innerPolygonSize = EditorGUILayout.FloatField(nameof(innerPolygonSize),innerPolygonSize);
-        outerPolygonSize = EditorGUILayout.FloatField(nameof(outerPolygonSize),outerPolygonSize);
+        innerPolygonSize = EditorGUILayout.FloatField(nameof(innerPolygonSize), innerPolygonSize);
+        outerPolygonSize = EditorGUILayout.FloatField(nameof(outerPolygonSize), outerPolygonSize);
         ennemyPolygonHitAreaOffset = EditorGUILayout.FloatField(nameof(ennemyPolygonHitAreaOffset), ennemyPolygonHitAreaOffset);
         polygonRefreshRate = EditorGUILayout.FloatField(nameof(polygonRefreshRate), polygonRefreshRate);
-        innerPolygonPosition = EditorGUILayout.Vector3Field(nameof(innerPolygonPosition),innerPolygonPosition);
+        innerPolygonPosition = EditorGUILayout.Vector3Field(nameof(innerPolygonPosition), innerPolygonPosition);
         outerPolygonPosition = EditorGUILayout.Vector3Field(nameof(outerPolygonPosition), outerPolygonPosition);
 
         rectangleWidthPattern = EditorGUILayout.FloatField(nameof(rectangleWidthPattern), rectangleWidthPattern);
         rectangleLengthPattern = EditorGUILayout.FloatField(nameof(rectangleLengthPattern), rectangleLengthPattern);
-        elipseShapePattern = EditorGUILayout.Toggle(nameof(elipseShapePattern),elipseShapePattern);
-        rectangleShapePattern = EditorGUILayout.Toggle(nameof(rectangleShapePattern),rectangleShapePattern);
-        circlesOnSidesShapePattern = EditorGUILayout.Toggle(nameof(circlesOnSidesShapePattern),circlesOnSidesShapePattern);
-        circlesOnDiagonalsShapePattern = EditorGUILayout.Toggle(nameof(circlesOnDiagonalsShapePattern),circlesOnDiagonalsShapePattern);
-        isInnerShapeARectanglePattern = EditorGUILayout.Toggle(nameof(isInnerShapeARectanglePattern),isInnerShapeARectanglePattern);
+        elipseShapePattern = EditorGUILayout.Toggle(nameof(elipseShapePattern), elipseShapePattern);
+        rectangleShapePattern = EditorGUILayout.Toggle(nameof(rectangleShapePattern), rectangleShapePattern);
+        circlesOnSidesShapePattern = EditorGUILayout.Toggle(nameof(circlesOnSidesShapePattern), circlesOnSidesShapePattern);
+        circlesOnDiagonalsShapePattern = EditorGUILayout.Toggle(nameof(circlesOnDiagonalsShapePattern), circlesOnDiagonalsShapePattern);
+        isInnerShapeARectanglePattern = EditorGUILayout.Toggle(nameof(isInnerShapeARectanglePattern), isInnerShapeARectanglePattern);
+        innerPolygonLengthRatioPattern = EditorGUILayout.FloatField(nameof(innerPolygonLengthRatioPattern), innerPolygonLengthRatioPattern);
 
-        triesToSpawnMonster = EditorGUILayout.IntField(nameof(triesToSpawnMonster),triesToSpawnMonster);
-        waveTimeLength = EditorGUILayout.IntField(nameof(waveTimeLength),waveTimeLength);
-        numberOfEnnemiesNeededToSpawn = EditorGUILayout.IntField(nameof(numberOfEnnemiesNeededToSpawn),numberOfEnnemiesNeededToSpawn);
+        triesToSpawnMonster = EditorGUILayout.IntField(nameof(triesToSpawnMonster), triesToSpawnMonster);
+        waveTimeLength = EditorGUILayout.IntField(nameof(waveTimeLength), waveTimeLength);
+        numberOfEnnemiesNeededToSpawn = EditorGUILayout.IntField(nameof(numberOfEnnemiesNeededToSpawn), numberOfEnnemiesNeededToSpawn);
         groupOfEnnemies = EditorGUILayout.Toggle(nameof(groupOfEnnemies), groupOfEnnemies);
         numberOfEnnemiesPerGroup = EditorGUILayout.IntField(nameof(numberOfEnnemiesPerGroup), numberOfEnnemiesPerGroup);
         ennemyInGroupSpawnRange = EditorGUILayout.FloatField(nameof(ennemyInGroupSpawnRange), ennemyInGroupSpawnRange);
 
-        usingMonsterPool1 = EditorGUILayout.Toggle(nameof(usingMonsterPool1),usingMonsterPool1);
-        usingMonsterPool2 = EditorGUILayout.Toggle(nameof(usingMonsterPool2),usingMonsterPool2);
-        usingMonsterPool3 = EditorGUILayout.Toggle(nameof(usingMonsterPool3),usingMonsterPool3);
-
+        usingMonsterPool1 = EditorGUILayout.Toggle(nameof(usingMonsterPool1), usingMonsterPool1);
+        usingMonsterPool2 = EditorGUILayout.Toggle(nameof(usingMonsterPool2), usingMonsterPool2);
+        usingMonsterPool3 = EditorGUILayout.Toggle(nameof(usingMonsterPool3), usingMonsterPool3);
+        
         if (GUILayout.Button("GetWaveValues"))
         {
             foreach (GameObject thisWave in Selection.gameObjects)
@@ -105,6 +106,7 @@ public class WaveEditor : EditorWindow
                     circlesOnSidesShapePattern = wavePattern.star;
                     circlesOnDiagonalsShapePattern = wavePattern.diagonalStar;
                     isInnerShapeARectanglePattern = wavePattern.innerPolygonRectangle;
+                    innerPolygonLengthRatioPattern = wavePattern.innerPolygonLengthRatio;
 
                     triesToSpawnMonster = monsterSpawn.maxTries;
                     waveTimeLength = monsterSpawn.waveTimeLength;
@@ -151,6 +153,7 @@ public class WaveEditor : EditorWindow
                     wavePattern.star = circlesOnSidesShapePattern;
                     wavePattern.diagonalStar = circlesOnDiagonalsShapePattern;
                     wavePattern.innerPolygonRectangle = isInnerShapeARectanglePattern;
+                    wavePattern.innerPolygonLengthRatio = innerPolygonLengthRatioPattern;
 
                     monsterSpawn.maxTries = triesToSpawnMonster;
                     monsterSpawn.waveTimeLength = waveTimeLength;
@@ -167,4 +170,3 @@ public class WaveEditor : EditorWindow
         }
     }
 }
-#endif

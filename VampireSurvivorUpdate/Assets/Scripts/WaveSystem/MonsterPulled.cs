@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class MonsterPulled : MonoBehaviour
@@ -22,21 +22,24 @@ public class MonsterPulled : MonoBehaviour
     public void TypeOfMonster()
     {
         monsterSelected.Clear();
-
-        if (monsterPoolSelected1)
+        try
         {
-            monsterSelected.Add(WaveSystem.monsterPool1[0]);
-        }
+            if (monsterPoolSelected1)
+            {
+                monsterSelected.Add(WaveSystem.monsterPool1[0]);
+            }
 
-        if (monsterPoolSelected2)
-        {
-            monsterSelected.Add(WaveSystem.monsterPool2[0]);
-        }
+            if (monsterPoolSelected2)
+            {
+                monsterSelected.Add(WaveSystem.monsterPool2[0]);
+            }
 
-        if (monsterPoolSelected3)
-        {
-            monsterSelected.Add(WaveSystem.monsterPool3[0]);
-        }
+            if (monsterPoolSelected3)
+            {
+                monsterSelected.Add(WaveSystem.monsterPool3[0]);
+            }
+        }catch (ArgumentOutOfRangeException) { }
+
     }
 
     // Gives a monster selected in one of the random monster pool we initialized
@@ -47,7 +50,11 @@ public class MonsterPulled : MonoBehaviour
         n++;
 
         if(n >= monsterSelected.Count) n = 0;
+        
+        try 
+        {
+            return monsterSelected[n];
+        }catch (ArgumentOutOfRangeException) { return null; }
 
-        return monsterSelected[n];
     }
 }
