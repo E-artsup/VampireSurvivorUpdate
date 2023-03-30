@@ -61,8 +61,8 @@ public class AIBehavior : MonoBehaviour
     {
         AtkMulti = (int)(time / 300);
         HealthMulti = (int)(time / 150);
-        healthPoint = maxHealthPoint * HealthMulti;
-        baseAtk = baseAtkStat * AtkMulti;
+        healthPoint = maxHealthPoint * (HealthMulti + 1);
+        baseAtk = baseAtkStat * (AtkMulti + 1);
     }
 
     /// <summary>
