@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361740882994843
 Transform:
@@ -111,7 +111,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361740970632239
 Transform:
@@ -154,7 +154,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741097252808
 Transform:
@@ -251,7 +251,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741255244782
 Transform:
@@ -348,7 +348,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741258565766
 Transform:
@@ -445,7 +445,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741407426302
 Transform:
@@ -539,7 +539,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741593456633
 Transform:
@@ -592,7 +592,7 @@ Transform:
   - {fileID: 8786361741156625336}
   - {fileID: 8786361742112645120}
   m_Father: {fileID: 8786361741711648932}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8786361741610751616
 GameObject:
@@ -611,7 +611,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741610751617
 Transform:
@@ -705,7 +705,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741711648932
 Transform:
@@ -719,7 +719,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8786361742882043991}
   - {fileID: 8786361741593456633}
   m_Father: {fileID: 8786361743001039229}
   m_RootOrder: 0
@@ -741,7 +740,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741725229850
 Transform:
@@ -838,7 +837,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361741851138443
 Transform:
@@ -935,7 +934,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742003287763
 Transform:
@@ -1032,7 +1031,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742112645120
 Transform:
@@ -1130,7 +1129,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742176700965
 Transform:
@@ -1227,7 +1226,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742462908268
 Transform:
@@ -1324,7 +1323,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742786293261
 Transform:
@@ -1418,7 +1417,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742839086288
 Transform:
@@ -1451,103 +1450,6 @@ Transform:
   m_Father: {fileID: 8786361743001039229}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8786361742882043990
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8786361742882043991}
-  - component: {fileID: 8786361742882043994}
-  - component: {fileID: 8786361742882043989}
-  - component: {fileID: 8786361742882043988}
-  m_Layer: 0
-  m_Name: Floor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8786361742882043991
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786361742882043990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 90, y: 1, z: 70}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8786361741711648932}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8786361742882043994
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786361742882043990}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8786361742882043989
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786361742882043990}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8786361742882043988
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786361742882043990}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8786361742885146726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1467,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742885146727
 Transform:
@@ -1662,7 +1564,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742896667223
 Transform:
@@ -1756,7 +1658,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361742984332436
 Transform:
@@ -1802,7 +1704,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8786361743001039229
 Transform:
@@ -1833,6 +1735,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -1956,10 +1862,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -1979,6 +1895,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -2051,6 +1971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2121,6 +2045,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -2193,6 +2121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -2263,6 +2195,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -2386,10 +2322,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -2409,6 +2355,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -2537,6 +2487,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a9174dae3ed2d2c4e82334503c54fe4c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933599897032950135, guid: a9174dae3ed2d2c4e82334503c54fe4c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9174dae3ed2d2c4e82334503c54fe4c, type: 3}
 --- !u!4 &9107918981959325764 stripped
@@ -2555,6 +2515,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -2683,6 +2647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918981939223165 stripped
@@ -2758,6 +2727,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_rock_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a9174dae3ed2d2c4e82334503c54fe4c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933599897032950135, guid: a9174dae3ed2d2c4e82334503c54fe4c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9174dae3ed2d2c4e82334503c54fe4c, type: 3}
 --- !u!4 &9107918981868218788 stripped
@@ -2776,6 +2755,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -2899,10 +2882,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -2922,6 +2915,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -2994,6 +2991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -3064,6 +3065,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -3192,6 +3197,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_rock_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a9174dae3ed2d2c4e82334503c54fe4c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933599897032950135, guid: a9174dae3ed2d2c4e82334503c54fe4c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9174dae3ed2d2c4e82334503c54fe4c, type: 3}
 --- !u!4 &9107918981593988765 stripped
@@ -3210,6 +3225,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -3338,6 +3357,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918981565547857 stripped
@@ -3413,6 +3437,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918981459517271 stripped
@@ -3431,6 +3460,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -3554,10 +3587,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -3577,6 +3620,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -3705,6 +3752,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_rock_02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575802914436858422, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84065e9923d5d9f468c2c099b28f38a5, type: 3}
 --- !u!4 &9107918981372238802 stripped
@@ -3723,6 +3780,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -3795,6 +3856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3865,6 +3930,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -3988,10 +4057,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -4011,6 +4090,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -4083,6 +4166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4153,6 +4240,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -4276,10 +4367,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -4299,6 +4400,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -4371,6 +4476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -4441,6 +4550,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -4569,6 +4682,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918980959683496 stripped
@@ -4587,6 +4705,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -4715,6 +4837,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918980910065756 stripped
@@ -4733,6 +4860,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -4804,6 +4935,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -4932,6 +5067,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918980905789554 stripped
@@ -4950,6 +5090,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -5078,6 +5222,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918980870743228 stripped
@@ -5096,6 +5245,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -5168,6 +5321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -5238,6 +5395,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -5310,6 +5471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5380,6 +5545,10 @@ PrefabInstance:
     - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
@@ -5452,6 +5621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -5523,6 +5696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_02 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 160846, guid: cc039b3c30759d544adad101fc990039, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 437574, guid: cc039b3c30759d544adad101fc990039, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -5593,6 +5770,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -5716,10 +5897,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -5739,6 +5930,10 @@ PrefabInstance:
     - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Flat_Large_04 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 190336, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 477060, guid: 8a90dd870a487f54b95ffa06c49bc854, type: 3}
       propertyPath: m_RootOrder
@@ -5867,6 +6062,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918980531689100 stripped
@@ -5941,6 +6141,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_rock_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575802914436858422, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84065e9923d5d9f468c2c099b28f38a5, type: 3}
@@ -6017,6 +6227,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_case_planks_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f03cdb0ad275b7d43b5bc92ae26f7960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f03cdb0ad275b7d43b5bc92ae26f7960, type: 3}
 --- !u!4 &9107918980534113953 stripped
@@ -6087,10 +6302,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1456580634757355494, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
         type: 3}
       propertyPath: m_Name
       value: Props_rock_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc87e822012173845a45fcc79e7d3be2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc87e822012173845a45fcc79e7d3be2, type: 3}
@@ -6167,6 +6392,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_rock_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575802914436858422, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84065e9923d5d9f468c2c099b28f38a5, type: 3}
 --- !u!4 &9107918980471031277 stripped
@@ -6241,6 +6476,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_rock_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575802914436858422, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84065e9923d5d9f468c2c099b28f38a5, type: 3}
@@ -6317,6 +6562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_pickaxe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90f79741a6c45a34f87da4c903fb8417,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90f79741a6c45a34f87da4c903fb8417, type: 3}
 --- !u!4 &9107918980421349542 stripped
@@ -6391,6 +6641,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Props_rock_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575802914436858422, guid: 84065e9923d5d9f468c2c099b28f38a5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84065e9923d5d9f468c2c099b28f38a5, type: 3}
