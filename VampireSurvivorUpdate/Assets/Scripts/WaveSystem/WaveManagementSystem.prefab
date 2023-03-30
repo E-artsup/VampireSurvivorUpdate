@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213164750881941343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -226,10 +226,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -266,13 +266,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -302,13 +304,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -327,8 +329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &641246345717522998
@@ -379,7 +381,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641246345717522998}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -547,7 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -557,10 +559,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -597,13 +599,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -633,13 +637,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 150
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -658,8 +662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &832663241701388152
@@ -710,7 +714,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832663241701388152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -793,7 +797,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857750765250309341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -961,7 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -971,10 +975,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -1011,16 +1015,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 15
+  rectangleLength: 35
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 2
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
   star: 0
-  diagonalStar: 0
-  innerPolygonRectangle: 0
+  diagonalStar: 1
+  innerPolygonRectangle: 1
   n: 0
   N: 0
 --- !u!114 &4509899616446040443
@@ -1047,15 +1053,15 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
-  EnnemyGroup: 0
+  EnnemyGroup: 1
   randomPoint: {x: 0, y: 0, z: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &4375694218105922334
@@ -1072,8 +1078,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &1015609267444497560
@@ -1209,7 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -1219,10 +1225,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -1259,13 +1265,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -1295,13 +1303,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -1320,8 +1328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &1224111564104377860
@@ -1372,7 +1380,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224111564104377860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1540,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -1550,10 +1558,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -1590,13 +1598,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -1626,13 +1636,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -1651,8 +1661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &1427480470762084515
@@ -1703,7 +1713,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427480470762084515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1871,7 +1881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -1881,10 +1891,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -1921,13 +1931,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -1957,13 +1969,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -1982,8 +1994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &1649388349826635225
@@ -2034,7 +2046,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649388349826635225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2117,7 +2129,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670280837188785220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2200,7 +2212,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726096017360337424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2283,7 +2295,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2276928629821482631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2451,7 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -2461,10 +2473,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -2501,16 +2513,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 15
+  rectangleLength: 35
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
-  star: 0
+  star: 1
   diagonalStar: 0
-  innerPolygonRectangle: 0
+  innerPolygonRectangle: 1
   n: 0
   N: 0
 --- !u!114 &8254578546674753331
@@ -2537,15 +2551,15 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 2
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 35
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
-  EnnemyGroup: 0
+  EnnemyGroup: 1
   randomPoint: {x: 0, y: 0, z: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &3251752784206918433
@@ -2562,9 +2576,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
-  monsterPoolSelected3: 1
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
+  monsterPoolSelected3: 0
   n: 0
 --- !u!1 &2923488178680703077
 GameObject:
@@ -2614,7 +2628,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2923488178680703077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2782,7 +2796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -2792,10 +2806,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -2832,13 +2846,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: -1
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -2868,13 +2884,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -2893,8 +2909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &3074063976933844766
@@ -3030,7 +3046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -3040,10 +3056,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -3080,13 +3096,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -3116,13 +3134,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -3141,8 +3159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &3168154092246272235
@@ -3278,7 +3296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -3288,10 +3306,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -3328,13 +3346,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -3364,13 +3384,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -3389,8 +3409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &3191128650910659241
@@ -3526,7 +3546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -3536,10 +3556,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 1.1
+  outerDistance: 1.5
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -3576,10 +3596,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 15
+  rectangleLength: 35
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
@@ -3612,13 +3634,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 150
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -3637,9 +3659,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
-  monsterPoolSelected3: 1
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
+  monsterPoolSelected3: 0
   n: 0
 --- !u!1 &3325073305380520082
 GameObject:
@@ -3689,7 +3711,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325073305380520082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3772,7 +3794,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3382714830488578268}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3855,7 +3877,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3383338030531085810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4023,7 +4045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -4033,10 +4055,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -4073,13 +4095,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -4109,13 +4133,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 260
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -4134,8 +4158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &3906046605701595158
@@ -4271,7 +4295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -4281,10 +4305,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.9
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -4321,16 +4345,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: -1
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
-  innerPolygonRectangle: 0
+  innerPolygonRectangle: 1
   n: 0
   N: 0
 --- !u!114 &2199217784360210582
@@ -4356,14 +4382,14 @@ MonoBehaviour:
   i: 0
   n: 0
   tries: 0
-  maxTries: 20
-  waveTimeLength: 150
+  maxTries: 10
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -4382,9 +4408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
+  monsterPoolSelected1: 1
   monsterPoolSelected2: 0
-  monsterPoolSelected3: 1
+  monsterPoolSelected3: 0
   n: 0
 --- !u!1 &3961669846443363849
 GameObject:
@@ -4434,7 +4460,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3961669846443363849}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4602,7 +4628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -4612,10 +4638,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -4652,13 +4678,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -4688,15 +4716,15 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
-  EnnemyGroup: 0
+  EnnemyGroup: 1
   randomPoint: {x: 0, y: 0, z: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &5260714732501519538
@@ -4713,8 +4741,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &4385354202065561545
@@ -4850,7 +4878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -4860,10 +4888,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -4900,13 +4928,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -4935,14 +4965,14 @@ MonoBehaviour:
   i: 0
   n: 0
   tries: 0
-  maxTries: 20
-  waveTimeLength: 150
+  maxTries: 10
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 360
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -4961,9 +4991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
+  monsterPoolSelected1: 1
   monsterPoolSelected2: 0
-  monsterPoolSelected3: 1
+  monsterPoolSelected3: 0
   n: 0
 --- !u!1 &4447050111852685282
 GameObject:
@@ -5098,7 +5128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -5108,10 +5138,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -5148,13 +5178,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -5184,13 +5216,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -5209,8 +5241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &4561558564906346201
@@ -5261,7 +5293,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4561558564906346201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5344,7 +5376,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4665099070495515374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5427,7 +5459,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4880874858946094288}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5510,7 +5542,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5288644644900685199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5593,7 +5625,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5845121078338423188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5761,7 +5793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -5771,10 +5803,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -5811,13 +5843,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -5847,13 +5881,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 130
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -5872,8 +5906,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &6468306134970311974
@@ -6009,7 +6043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -6019,10 +6053,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -6059,13 +6093,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -6095,13 +6131,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -6120,8 +6156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &6521529974206834697
@@ -6172,7 +6208,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6521529974206834697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6340,7 +6376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -6350,10 +6386,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -6390,13 +6426,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -6426,13 +6464,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 120
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -6451,9 +6489,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
-  monsterPoolSelected3: 1
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
+  monsterPoolSelected3: 0
   n: 0
 --- !u!1 &6521529974409192418
 GameObject:
@@ -6825,7 +6863,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6521529975198505868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6993,7 +7031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -7003,7 +7041,7 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.5
+  innerDistance: 0.65
   outerDistance: 1
   areaOffset: 0
   refreshRate: 5
@@ -7043,10 +7081,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 15
-  rectangleLength: 35
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 1
@@ -7079,13 +7119,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 1
-  spawnRange: 0
+  spawnRange: 1
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 10
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 120
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -7104,9 +7144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
+  monsterPoolSelected1: 1
   monsterPoolSelected2: 0
-  monsterPoolSelected3: 1
+  monsterPoolSelected3: 0
   n: 0
 --- !u!1 &6521529975699368719
 GameObject:
@@ -7499,7 +7539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -7509,10 +7549,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -7549,16 +7589,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 15
+  rectangleLength: 35
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
-  star: 0
+  star: 1
   diagonalStar: 0
-  innerPolygonRectangle: 0
+  innerPolygonRectangle: 1
   n: 0
   N: 0
 --- !u!114 &8889423657079956326
@@ -7585,15 +7627,15 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
-  EnnemyGroup: 0
+  EnnemyGroup: 1
   randomPoint: {x: 0, y: 0, z: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &9144841371870703007
@@ -7610,8 +7652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &7340140256337019319
@@ -7747,7 +7789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -7757,10 +7799,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -7797,13 +7839,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -7833,13 +7877,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -7858,8 +7902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &7543125629080320614
@@ -7995,7 +8039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -8005,10 +8049,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -8045,13 +8089,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -8081,15 +8127,15 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 150
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
-  EnnemyGroup: 0
+  EnnemyGroup: 1
   randomPoint: {x: 0, y: 0, z: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &3833890687811183578
@@ -8106,8 +8152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &7555244633302838608
@@ -8158,7 +8204,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7555244633302838608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8241,7 +8287,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7646318910832700408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8409,7 +8455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -8419,10 +8465,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -8459,16 +8505,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 15
+  rectangleLength: 35
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 2
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
   star: 0
-  diagonalStar: 0
-  innerPolygonRectangle: 0
+  diagonalStar: 1
+  innerPolygonRectangle: 1
   n: 0
   N: 0
 --- !u!114 &661822767138931897
@@ -8495,15 +8543,15 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
-  EnnemyGroup: 0
+  EnnemyGroup: 1
   randomPoint: {x: 0, y: 0, z: 0}
   monsterToPull: {fileID: 0}
 --- !u!114 &306332165902988055
@@ -8520,8 +8568,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &8022189896755339066
@@ -8572,7 +8620,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8022189896755339066}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8740,7 +8788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -8750,10 +8798,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -8790,13 +8838,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -8826,13 +8876,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -8851,8 +8901,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &8160695215453050856
@@ -8903,7 +8953,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8160695215453050856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9071,7 +9121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -9081,10 +9131,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -9121,13 +9171,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -9157,13 +9209,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -9182,8 +9234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &8369278887817865192
@@ -9234,7 +9286,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8369278887817865192}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9402,7 +9454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -9412,10 +9464,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -9452,13 +9504,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 1
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -9488,13 +9542,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -9513,8 +9567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &8714319363637985857
@@ -9650,7 +9704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -9660,10 +9714,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -9700,13 +9754,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 1
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -9736,13 +9792,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -9761,8 +9817,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &8758714699746961749
@@ -9813,7 +9869,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8758714699746961749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9981,7 +10037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -9991,10 +10047,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -10031,13 +10087,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -10067,13 +10125,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -10092,8 +10150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &8801202359281034319
@@ -10229,7 +10287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 262144
   mesh: {fileID: 0}
   polygonCollider: {fileID: 0}
   wavePattern: {fileID: 0}
@@ -10239,10 +10297,10 @@ MonoBehaviour:
   angle: 0
   innerViewDistance: 0
   outerViewDistance: 0
-  innerDistance: 0.6
-  outerDistance: 0
-  areaOffset: -1
-  refreshRate: 0
+  innerDistance: 0.65
+  outerDistance: 1
+  areaOffset: 0
+  refreshRate: 5
   VertexIndex: 0
   outerVertexIndex: 0
   innerVertexIndex: 0
@@ -10279,13 +10337,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polygonFormula: 0
-  rectangleWidth: 0
-  rectangleLength: 0
+  rectangleWidth: 10
+  rectangleLength: 40
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
-  rectangle: 0
+  rectangle: 1
   star: 0
   diagonalStar: 0
   innerPolygonRectangle: 0
@@ -10315,13 +10375,13 @@ MonoBehaviour:
   n: 0
   tries: 0
   maxTries: 20
-  waveTimeLength: 150
+  waveTimeLength: 60
   spawnRate: 0.5
   spawnRange: 0
   spawnOffset: 0
   currentNumberOfEnnemies: 0
-  numberOfEnnemies: 60
-  numberOfEnnemiesPerGroup: 0
+  numberOfEnnemies: 300
+  numberOfEnnemiesPerGroup: 4
   XZPlan: 1
   EnnemyGroup: 0
   randomPoint: {x: 0, y: 0, z: 0}
@@ -10340,8 +10400,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSelected: []
   monsterCount: 0
-  monsterPoolSelected1: 0
-  monsterPoolSelected2: 0
+  monsterPoolSelected1: 1
+  monsterPoolSelected2: 1
   monsterPoolSelected3: 1
   n: 0
 --- !u!1 &9125364088432630575
@@ -10392,7 +10452,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9125364088432630575}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10475,7 +10535,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9207206335448741858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

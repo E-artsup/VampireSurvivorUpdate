@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f350bcc7dd8baae4c9899732cd52601e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleCollider: {fileID: 127118150724620779}
+  circleCollider: {fileID: 0}
 --- !u!1 &270824209129496372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1609,6 @@ GameObject:
   - component: {fileID: 3581617750127420060}
   - component: {fileID: 3581617750127420061}
   - component: {fileID: 2238219102495790900}
-  - component: {fileID: 127118150724620779}
   m_Layer: 18
   m_Name: Tank_AI
   m_TagString: Enemy
@@ -1633,6 +1632,7 @@ Transform:
   - {fileID: 2757394813106927472}
   - {fileID: 5425201746466188006}
   - {fileID: 794595324034143381}
+  - {fileID: 5666497113338859089}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1650,8 +1650,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoint: 50
   baseAtk: 5
+  baseAtkStat: 0
+  HealthMulti: 0
+  AtkMulti: 0
   baseSpd: 3.5
   baseAcn: 8
+  time: 0
   canMove: 1
 --- !u!195 &3581617750127420061
 NavMeshAgent:
@@ -1689,22 +1693,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPoolNames:
   - redXp
---- !u!58 &127118150724620779
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3581617750127420062}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &3665692055156579911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3060,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8617486185757682360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5666497113338859089}
+  - component: {fileID: 7295165308294921671}
+  m_Layer: 18
+  m_Name: 2DCollider
+  m_TagString: Finish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5666497113338859089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617486185757682360}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000014662743, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2757394813982669926}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7295165308294921671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617486185757682360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f350bcc7dd8baae4c9899732cd52601e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleCollider: {fileID: 0}
 --- !u!1 &8722121739415007001
 GameObject:
   m_ObjectHideFlags: 0
