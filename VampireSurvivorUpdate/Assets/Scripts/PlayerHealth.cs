@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Cinemachine;
 using Managers;
 
+
 public class PlayerHealth : MonoBehaviour
 {
     //======
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     private float lerpTimer = 0;
     private bool isThePlayerDead = false;
 
+
     //============
     //MONOBEHAVIOUR
     //============
@@ -32,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         //Regen
         playerStats.currentHealth += playerStats.regenRate * Time.deltaTime;
         playerStats.currentHealth = Mathf.Clamp(playerStats.currentHealth, 0, playerStats.maxHealth);
+
     }
 
     //============
@@ -72,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
 
         //No double screenshake
         isThePlayerDead = true;
+
     }
     /// <summary>
     /// Manager the fill amount of the health bar
@@ -96,6 +100,7 @@ public class PlayerHealth : MonoBehaviour
             float percentComplete = lerpTimer / chipSpeed;
             frontHealthBar.fillAmount = Mathf.Lerp(fillB, hFraction, percentComplete);
         }
+
 
         Color healthColor = Color.Lerp(Color.red, Color.green, hFraction);
         frontHealthBar.color = healthColor;
