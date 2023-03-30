@@ -1,32 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Index2 : Power
+public class Index3 : Power
 {
     //========
     //VARIABLE
     //========
-    private List<GameObject> ennemiInHellFire = new();
 
+    private List<GameObject> ennemiInHellFire = new();
+    private Vector3 forwardPlayer = Vector3.up;
     //========
     //MONOBEHAVIOUR
     //========
-    private void Awake()
+    private void Start()
     {
         StartCoroutine(DamageFonction(true, powerData.HitBoxDelay));
+        transform.parent = PowersManager.instance.getPlayer().transform.GetChild(0);
+        transform.localPosition = - Vector3.forward * 3;
     }
     public void Update()
     {
-        if (this.cooldownRemaining <= 0)
+        foreach(GameObject ennemi in ennemiInHellFire)
         {
-            Attack();
-            this.cooldownRemaining = powerData.Cooldown - 0.3f * currentLevel;
-        }
-        foreach (GameObject ennemi in ennemiInHellFire)
-        {
-            if (!ennemi.activeInHierarchy)
+            if(!ennemi.activeInHierarchy)
             {
                 ennemiInHellFire.Remove(ennemi.gameObject);
             }
@@ -38,7 +35,7 @@ public class Index2 : Power
     }
     private void OnTriggerExit(Collider other)
     {
-        if(ennemiInHellFire.Contains(other.gameObject))
+        if (ennemiInHellFire.Contains(other.gameObject))
         {
             ennemiInHellFire.Remove(other.gameObject);
         }
@@ -48,10 +45,6 @@ public class Index2 : Power
     //========
     public override void Attack()
     {
-        try { attackSound.Play(); } catch { }
-        Vector3 ennemyPositionInViewport = PowerUtils.GetRandomEnemyPosition(false).Item1;
-        transform.position = ennemyPositionInViewport;
-        DamageFonction(false, 0);
     }
     private IEnumerator DamageFonction(bool repeat, float delai)
     {
@@ -76,7 +69,6 @@ public class Index2 : Power
                 }
             }
         }
-        if(repeat) StartCoroutine(DamageFonction(true, powerData.HitBoxDelay));
+        if (repeat) StartCoroutine(DamageFonction(true, powerData.HitBoxDelay));
     }
 }
-

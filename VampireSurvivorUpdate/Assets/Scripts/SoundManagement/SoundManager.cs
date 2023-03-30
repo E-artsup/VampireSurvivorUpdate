@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    /*
     public static SoundManager instance;
     [SerializeField]
     [Tooltip("The list of sounds to register in the game. A sound can be registered by name calling the 'registerSound()' method.")]
@@ -267,5 +268,5 @@ public class SoundManager : MonoBehaviour
             return;
         }
         _soundData.Source.UnPause();
-    }
+    }*/
 }

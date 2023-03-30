@@ -18,8 +18,8 @@ MonoBehaviour:
   type: 0
   description: 
   maxLevel: 8
-  baseDamage: 0
-  levelDamageMultiplier: 0
+  baseDamage: 10
+  levelDamageMultiplier: 5
   damageTypeZone: 0
   projectileSpeed: 0
   maxFireAmountAtSameTime: 0

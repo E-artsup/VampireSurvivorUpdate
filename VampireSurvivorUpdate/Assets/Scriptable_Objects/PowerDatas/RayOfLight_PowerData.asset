@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RayOfLight_PowerData
   m_EditorClassIdentifier: 
   name: Ray Of Light
-  powerType: 0
+  powerType: 5
   icon: {fileID: 0}
   type: 1
   description: 

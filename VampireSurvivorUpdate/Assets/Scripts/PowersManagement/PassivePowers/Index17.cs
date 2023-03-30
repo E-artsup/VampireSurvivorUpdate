@@ -8,8 +8,7 @@ public class Index17 : Power
     //VARIABLE
     //==========
 
-    [SerializeField] private float m;
-
+    private float berserkPower = 0;
     //===========
     //MONOBEHAVIOUR
     //==========
@@ -33,12 +32,14 @@ public class Index17 : Power
     public override void Attack()
     {
         try { attackSound.Play(); } catch { }
-        PowersManager.instance.playerStats.attackCooldown -= 10 - 5 * currentLevel;
+        berserkPower = powerData.BaseDamage + powerData.LevelDamageMultiplier * currentLevel;
+
+        PowersManager.instance.playerStats.attackCooldown += berserkPower;
         StartCoroutine(DurationOfTheBersekerEffect(powerData.Duration + currentLevel));
     }
     private IEnumerator DurationOfTheBersekerEffect(float time)
     {
         yield return new WaitForSeconds(time);
-        PowersManager.instance.playerStats.attackCooldown += 10 - 5 * currentLevel;
+        PowersManager.instance.playerStats.attackCooldown = 0;
     }
 }

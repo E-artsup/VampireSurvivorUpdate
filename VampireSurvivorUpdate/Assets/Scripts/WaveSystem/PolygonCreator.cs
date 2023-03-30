@@ -45,7 +45,7 @@ public class PolygonCreator : MonoBehaviour
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
-
+        
         InvokeRepeating("Polygon", 0.99f, monsterSpawn.spawnRate / refreshRate);
     }
 

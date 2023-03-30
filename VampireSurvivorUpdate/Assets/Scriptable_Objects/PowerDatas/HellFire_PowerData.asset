@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: HellFire_PowerData
   m_EditorClassIdentifier: 
   name: Hellfire
+  powerType: 1
+  icon: {fileID: 0}
   type: 1
   description: 
   maxLevel: 7
@@ -23,8 +25,9 @@ MonoBehaviour:
   maxFireAmountAtSameTime: 0
   duration: 5
   cooldown: 5
-  hitBoxDelay: 0
+  hitBoxDelay: 0.8
   piercing: 1
   knockback: 10
   maxOnScreenAtSameTime: 0
   blockedByWalls: 0
+  passiveEffectsData: []

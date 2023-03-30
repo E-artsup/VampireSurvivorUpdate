@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 48722909012732580}
   - component: {fileID: 4754526167139681623}
   - component: {fileID: 2938592217013229098}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: HellFirePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,8 +50,6 @@ MonoBehaviour:
   powerData: {fileID: 11400000, guid: ce2d0bbd6c573c34fa0407cdc9f394ec, type: 2}
   attackSound: {fileID: 0}
   currentLevel: 1
-  particleFeedback: {fileID: 0}
-  damageTrigger: {fileID: 4754526167139681623}
 --- !u!135 &4754526167139681623
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -172,7 +170,7 @@ GameObject:
   - component: {fileID: 4476451851964275452}
   - component: {fileID: 4517313014720913139}
   - component: {fileID: 1118111094097006763}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: vfxgraph_Hellfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +226,19 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 2800000, guid: accaefed2869c5b4e987a0b68dc34fc1, type: 3}
+        m_Name: Texture2D 0
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: 5239438c321aec349b323e41ab4544ce, type: 3}
+        m_Name: Texture2D 1
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: a4565523897b36941a0e19ebef13a4a9, type: 3}
+        m_Name: Texture2D 2
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: 79d0cba2e257a234bb7015eedb80277e, type: 3}
+        m_Name: Texture2D 3
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!73398921 &1118111094097006763

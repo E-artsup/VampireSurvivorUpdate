@@ -30,6 +30,26 @@ public class LaserPower : Power
         }
         LaserRenderer();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<AIBehavior>(out AIBehavior enemy))
+        {
+            // Deals damage to the enemy
+            enemy.TakeDamage(powerData.GetDamageCalcul(currentLevel));
+
+        }
+        else
+        {
+            if (other.transform.parent != null)
+            {
+                if (other.transform.parent.TryGetComponent<AIBehavior>(out AIBehavior enemyParent))
+                {
+                    // Deals damage to the enemy
+                    enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
+                }
+            }
+        }
+    }
 
     //========
     //FONCTION
@@ -37,6 +57,7 @@ public class LaserPower : Power
     public override void Attack()
     {
         try { attackSound.Play(); } catch { }
+        laserVFX.Play();
         // Gets the objets hit by the laser
         RaycastHit[] hits = Physics.SphereCastAll(
             PowersManager.instance.getPlayer().transform.position,
@@ -50,14 +71,13 @@ public class LaserPower : Power
             laserRender.SetPosition(1, new(hits[0].transform.position.x, 1, hits[0].transform.position.z));
             foreach (RaycastHit hit in hits)
             {
-                UnityEngine.Debug.Log("Dealing "+this.powerData.GetDamageCalcul(currentLevel) + " damage to "+hit.collider.gameObject.name);
-                
                 // If the object hit is an enemy
                 if (hit.collider.gameObject.TryGetComponent<AIBehavior>(out AIBehavior enemy))
                 {
                     // Deals damage to the enemy
                     enemy.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-                    return;
+                    
+                    continue;
                 }
                 else
                 {
@@ -67,7 +87,7 @@ public class LaserPower : Power
                         {
                             // Deals damage to the enemy
                             enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-                            return;
+                            continue;
                         }
                     }
                 }
@@ -92,7 +112,9 @@ public class LaserPower : Power
             forwardPlayer = new(InputManager.instance.move.ReadValue<Vector2>().normalized.x, 0, InputManager.instance.move.ReadValue<Vector2>().normalized.y);
         }
         this.gameObject.transform.position = PowersManager.instance.getPlayer().transform.position;
-        this.laserVFX.SetVector3("Orientation", new Vector3(forwardPlayer.x, 0, forwardPlayer.z));
+        transform.rotation = PowersManager.instance.getPlayer().transform.GetChild(0).rotation;
+        //laserVFX.Play();
+        //this.laserVFX.SetVector3("Orientation", new Vector3(forwardPlayer.x, 0, forwardPlayer.z));
         //laserRender.SetPosition(0, PowersManager.instance.getPlayer().transform.position);
     }
 }

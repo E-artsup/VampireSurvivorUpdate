@@ -73,7 +73,7 @@ public class Collector : MonoBehaviour
             int xpRestAfterLeveling = xpAfterIncrease - playerStats.maxXp;
             
             playerStats.xp = xpRestAfterLeveling;
-            playerStats.maxXp = Mathf.RoundToInt(playerStats.maxXp * 1.1f);
+            playerStats.maxXp = Mathf.RoundToInt(0.045f * playerStats.currentHealth * playerStats.currentHealth + 10);
             AddLevel(1);
             UpgradeSystemCS.SpawnUpgradeMenu();
         }
