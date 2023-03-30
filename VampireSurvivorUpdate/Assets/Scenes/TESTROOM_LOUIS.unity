@@ -62558,6 +62558,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 9089967453996440400, guid: b56ba0e13a89d7f43b6a9496d54d3378,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9089967453996440412, guid: b56ba0e13a89d7f43b6a9496d54d3378,
         type: 3}
       propertyPath: m_Pivot.x
