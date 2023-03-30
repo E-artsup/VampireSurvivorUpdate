@@ -31,7 +31,6 @@ public class FastTextManager : MonoBehaviour
     /// <param name="color"></param>
     public void MakeTextAtLocation(string text, Vector3 worldposition)
     {
-        print(worldposition);
         GameObject randomText = Instantiate(prefabOfText, worldposition, Quaternion.identity);
         randomText.transform.position = new( worldposition.x, worldposition.y + heightOfDamageText, worldposition.z);
         randomText.GetComponentInChildren<TextMesh>().text = text;

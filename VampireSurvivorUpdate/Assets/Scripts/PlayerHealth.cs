@@ -29,6 +29,9 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         ManageUIHealthBar();
+        //Regen
+        playerStats.currentHealth += playerStats.regenRate * Time.deltaTime;
+        playerStats.currentHealth = Mathf.Clamp(playerStats.currentHealth, 0, playerStats.maxHealth);
     }
 
     //============
@@ -85,6 +88,13 @@ public class PlayerHealth : MonoBehaviour
             lerpTimer += Time.deltaTime;
             float percentComplete = lerpTimer / chipSpeed;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, hFraction, percentComplete);
+        }
+        else if(fillB < hFraction)
+        {
+            backHealthBar.fillAmount = hFraction;
+            lerpTimer += Time.deltaTime;
+            float percentComplete = lerpTimer / chipSpeed;
+            frontHealthBar.fillAmount = Mathf.Lerp(fillB, hFraction, percentComplete);
         }
 
         Color healthColor = Color.Lerp(Color.red, Color.green, hFraction);
