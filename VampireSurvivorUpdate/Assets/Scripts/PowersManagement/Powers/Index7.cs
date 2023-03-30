@@ -26,9 +26,9 @@ public class Index7 : Power
     //========
     public override void Attack()
     {
-        try { attackSound.Play(); } catch { }
         if (zapVFX == null) return;
         Transform playerRef = PowersManager.instance.getPlayer().transform;
+        SoundManager.instance.playSound("Electric_Zap");
 
         Vector3 previousLocation = playerRef.position;
         (Vector3, GameObject) nextLocation = PowerUtils.GetNearestEnemyLocation(playerRef.position);

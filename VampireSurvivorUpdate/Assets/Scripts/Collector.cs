@@ -81,7 +81,7 @@ public class Collector : MonoBehaviour
         {
             playerStats.xp += xpAmount;
         }
-        
+        SoundManager.instance.playSound("Item_Collection");
         UIManager.instance.UpdateExpBar();
     }
     
@@ -93,6 +93,7 @@ public class Collector : MonoBehaviour
     {
         playerStats.level += lvlAmount;
         UIManager.instance.UpdateExpBar();
+        SoundManager.instance.playSound("Level_Up");
     }
 
     /// <summary>
@@ -105,6 +106,7 @@ public class Collector : MonoBehaviour
         UIManager.instance.UpdateGoldCounter();
         goldCounterSo.goldAccumulated = goldCounterSo.goldAccumulated + goldAmount;
         UIManager.instance.UpdateGoldAccumulated();
+        SoundManager.instance.playSound("Item_Collection");
     }
 
     [ContextMenu("GoldInfinite")]
@@ -119,6 +121,7 @@ public class Collector : MonoBehaviour
     private void AddHealth()
     {
         playerStats.currentHealth += Mathf.Clamp(playerStats.maxHealth * 0.1f, 0, playerStats.maxHealth);
+        SoundManager.instance.playSound("Item_Collection");
     }
     
     /// <summary>
@@ -129,6 +132,7 @@ public class Collector : MonoBehaviour
         xpToAttract.Clear();
         xpToAttract = CollectiblePool.instance.onMapXpList.ToList(); //Bug - It tracks the onMapXpList permanently if we don't use ToList()
         isMagnetActivated = true;
+        SoundManager.instance.playSound("Item_Collection");
     }
 
     /// <summary>

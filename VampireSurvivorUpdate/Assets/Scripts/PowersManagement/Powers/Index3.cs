@@ -30,6 +30,7 @@ public class Index3 : Power
                 ennemiInHellFire.Remove(ennemi.gameObject);
             }
         }
+        transform.rotation = Quaternion.Euler(0, 190, 0);
     }
     private void OnTriggerEnter(Collider other)
     {

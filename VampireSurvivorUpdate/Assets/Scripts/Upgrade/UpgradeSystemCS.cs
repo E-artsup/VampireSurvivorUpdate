@@ -120,6 +120,8 @@ public class UpgradeSystemCS : MonoBehaviour
 
         //We deactive the Gameobject in the scene
         instance.gameObject.SetActive(false);
+        SoundManager.instance.playSound("UI_Button");
+
 
         Time.timeScale = 1;
     }

@@ -96,11 +96,14 @@ public class AIBehavior : MonoBehaviour
 
         healthPoint = _healthPointAfterDamage; // Apply damage.
 
-        if(healthPoint <= 0) // Check if HP are below or equal to zero
+        SoundManager.instance.playSound("Damage_Inflicted");
+
+        if (healthPoint <= 0) // Check if HP are below or equal to zero
         {
-            Death(); // 
+            Death(); //
+            SoundManager.instance.playSound("Enemy_Death");
         }
-        
+
         // print(healthPoint + " / " + maxHealthPoint);
         // print("Acutal Damage Taken : " + _actualDamageTaken);
         return _actualDamageTaken;

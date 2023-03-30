@@ -54,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
         //No TimeScale = 0, because Animation
         //This do many error but it work
+        SoundManager.instance.playSound("Character_Death");
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
@@ -61,8 +62,9 @@ public class PlayerHealth : MonoBehaviour
         InputManager.instance = null;
         FindObjectOfType<TimeManager>().enabled = false;
         FindObjectOfType<WaveSystem>().gameObject.SetActive(false);
+        FindObjectOfType<QuickPauseMenu>().gameObject.SetActive(false);
 
-        foreach(AIBehavior ennemiScript in FindObjectsOfType<AIBehavior>())
+        foreach (AIBehavior ennemiScript in FindObjectsOfType<AIBehavior>())
         {
             ennemiScript.canMove = false;
         }

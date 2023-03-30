@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector3(InputManager.instance.move.ReadValue<Vector2>().normalized.x * (speed * speedModifier), 0,
                 InputManager.instance.move.ReadValue<Vector2>().normalized.y * (speed * speedModifier));
+        if(rb.velocity == Vector3.zero) SoundManager.instance.playSound("Character_Movement");
     }
     
 }
