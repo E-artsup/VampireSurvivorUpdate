@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 705b86989a6f51546b634e1935fd4528, type: 3}
-  m_Name: DefaultAmbianceMusicData
+  m_Name: Background_Music
   m_EditorClassIdentifier: 
-  name: DefaultAmbiance
+  name: Background_Music
   soundGroup: 0
   clip: {fileID: 8300000, guid: ab69e28f345391f47b8833217a7dbb70, type: 3}
   volume: 0.7
