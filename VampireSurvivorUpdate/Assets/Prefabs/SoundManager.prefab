@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5021668971066099037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377930578453373287}
+  - component: {fileID: 1685328018503976635}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &377930578453373287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021668971066099037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 455.804, y: -313.99707, z: 199.20703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685328018503976635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021668971066099037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810d359151b05e447be8e14209cde8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundsDatas:
+  - {fileID: 11400000, guid: d21d31200017f144ca765ed54e3cf56e, type: 2}
+  - {fileID: 11400000, guid: 8bac1ace812373047b839d1d63cd7d65, type: 2}
+  - {fileID: 11400000, guid: 2e53858cc45e51041b18572b35084414, type: 2}
+  - {fileID: 11400000, guid: 6a1659c2834b43f46b97da6b0067cd4c, type: 2}
+  - {fileID: 11400000, guid: c631646ed1e89de408e977fbd7d92396, type: 2}
+  - {fileID: 11400000, guid: ab14227f7d0edd64892c2ae13c8485d8, type: 2}
+  - {fileID: 11400000, guid: deafb18dadbd3754d8f121b2e31f0139, type: 2}
+  - {fileID: 11400000, guid: 1490fd1be0f85b64eb55d1e50388a7ce, type: 2}
+  - {fileID: 11400000, guid: 9a36b9ed340d7df449ddb37ebcfb112a, type: 2}
+  - {fileID: 11400000, guid: cd56bbcd36caa2c4ca252b414e45ea33, type: 2}
+  - {fileID: 11400000, guid: 0c832cbfb4fe1b44d952b320f7cece3c, type: 2}
+  musicMixerGroup: {fileID: 2886077552931626951, guid: 5f48fd0413d376d4cb9c5f2b7e2016c9,
+    type: 2}
+  sfxMixerGroup: {fileID: -5212209030789465010, guid: 5f48fd0413d376d4cb9c5f2b7e2016c9,
+    type: 2}

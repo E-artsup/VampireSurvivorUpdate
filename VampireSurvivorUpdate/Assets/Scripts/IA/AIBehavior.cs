@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,16 +11,21 @@ public class AIBehavior : MonoBehaviour
 
         #region Stats
         private float healthPoint;
-        [SerializeField] [Tooltip("IA's max health.")] private float maxHealthPoint = 5;
+        [SerializeField] [Tooltip("IA's base max health.")] private float maxHealthPoint = 5;
         [SerializeField] [Tooltip("IA's attack stat.")] private int baseAtk = 2;
+        [SerializeField][Tooltip("IA's attack stat.")] private int baseAtkStat;
+        [SerializeField] [Tooltip("IA's max health multiplier.")] private int HealthMulti;
+        [SerializeField] [Tooltip("IA's attack stat multiplier.")] private int AtkMulti;
         [SerializeField] [Tooltip("IA's speed stat.")] private float baseSpd = 3.5f;
         [SerializeField] [Tooltip("IA's acceleration.")] private float baseAcn = 8;
+        [SerializeField][Tooltip("In game time")] private float time;
         #endregion
 
-        #region Behavior
-        private NavMeshAgent agent;
+    #region Behavior
+    private NavMeshAgent agent;
         private GameObject target;
         private Rigidbody rb;
+        private WaveSystem waveSystem;
         [Tooltip("This IA can move ?")] public bool canMove = true;
         #endregion
 
@@ -36,13 +42,27 @@ public class AIBehavior : MonoBehaviour
     /// Agent Acceleration <- base Acceleration
     /// </summary>
     private void Awake() {
+        baseAtkStat = baseAtk;
         healthPoint = maxHealthPoint; // Set HP into the same amount as the MaxHP.
         target = GameObject.FindGameObjectWithTag("Player"); // Set the player as target.
         rb = GetComponentInChildren<Rigidbody>(); // Get the rigidbody
         agent = GetComponent<NavMeshAgent>(); // Get the NavMeshAgent.
+        time = GameObject.Find("Timer").GetComponent<TimeManager>().currentTime;
 
+        waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
         agent.speed = baseSpd; // Set Agent Speed into base Speed.
         agent.acceleration = baseAcn; // Set Agent Acceleration into base Acceleration.
+    }
+
+    /// <summary>
+    /// Update the Stats depending on the game timer
+    /// </summary>
+    public void OnEnable()
+    {
+        AtkMulti = (int)(time / 300);
+        HealthMulti = (int)(time / 150);
+        healthPoint = maxHealthPoint * (HealthMulti + 1);
+        baseAtk = baseAtkStat * (AtkMulti + 1);
     }
 
     /// <summary>
@@ -50,7 +70,7 @@ public class AIBehavior : MonoBehaviour
     /// </summary>
     public void AttackThePlayer()
     {
-        target.GetComponent<PlayerStats>().currentHealth = target.GetComponent<PlayerStats>().currentHealth - baseAtk;
+        target.GetComponent<PlayerHealth>().TakeDamage(baseAtk);
     }
 
     /// <summary>
@@ -72,6 +92,8 @@ public class AIBehavior : MonoBehaviour
         float _healthPointAfterDamage = healthPoint - damage; // Calculate the HP after taking damage.
         float _actualDamageTaken = healthPoint - _healthPointAfterDamage; // Compare the HP between before and after taking damage, to save the actual taken damage.
 
+        FastTextManager.instance.MakeTextAtLocation(damage.ToString(), transform.position); //Feedback Of The Damagez
+
         healthPoint = _healthPointAfterDamage; // Apply damage.
 
         if(healthPoint <= 0) // Check if HP are below or equal to zero
@@ -89,7 +111,7 @@ public class AIBehavior : MonoBehaviour
     /// </summary>
     private void Death()
     {
-        gameObject.SetActive(false);
+        waveSystem.Deactivate(this.gameObject);
     }
 
     /// <summary>

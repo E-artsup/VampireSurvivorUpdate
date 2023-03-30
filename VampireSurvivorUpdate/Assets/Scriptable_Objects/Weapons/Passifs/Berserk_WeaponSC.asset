@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7a7815c552450499152502e0b495ee, type: 3}
+  m_Name: Berserk_WeaponSC
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 21300000, guid: c61e7bb33ac9d1e418022ec7457a4d6c, type: 3}
+  nameOfWeapon: Berserk
+  descriptionOfTheWeapon: Reduce Cooldown Sometime
+  descriptionOfTheLevelUp: Reduce Cooldown Sometime
+  speciality: 1
+  prefabsOfTheWeapon: {fileID: 3325182907888969665, guid: 396d7c7ca3fd98246b85770caebbcbdd,
+    type: 3}

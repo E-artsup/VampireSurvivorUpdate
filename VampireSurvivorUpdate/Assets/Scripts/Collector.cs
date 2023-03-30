@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Collectible_Items;
+using Managers;
+using UI;
 using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
     [Tooltip("The attraction speed of the magnet on the xp")]
     [SerializeField] private float attractionSpeed = 1f;
+    
+    [SerializeField] private GoldCounter_SO goldCounterSo;
     
     private PlayerStats playerStats;
     private List<XP> xpToAttract = new List<XP>();
@@ -61,7 +66,33 @@ public class Collector : MonoBehaviour
     /// <param name="xpAmount"></param>
     private void AddXP(int xpAmount)
     {
-        playerStats.xp += xpAmount;
+
+        if (playerStats.xp+xpAmount > playerStats.maxXp)
+        {
+            int xpAfterIncrease = playerStats.xp + xpAmount;
+            int xpRestAfterLeveling = xpAfterIncrease - playerStats.maxXp;
+            
+            playerStats.xp = xpRestAfterLeveling;
+            playerStats.maxXp = Mathf.RoundToInt(0.045f * playerStats.currentHealth * playerStats.currentHealth + 10);
+            AddLevel(1);
+            UpgradeSystemCS.SpawnUpgradeMenu();
+        }
+        else
+        {
+            playerStats.xp += xpAmount;
+        }
+        
+        UIManager.instance.UpdateExpBar();
+    }
+    
+    /// <summary>
+    /// Add a level to the player
+    /// </summary>
+    /// <param name="lvlAmount"></param>
+    private void AddLevel(int lvlAmount)
+    {
+        playerStats.level += lvlAmount;
+        UIManager.instance.UpdateExpBar();
     }
 
     /// <summary>
@@ -71,6 +102,15 @@ public class Collector : MonoBehaviour
     private void AddGold(int goldAmount)
     {
         playerStats.gold += goldAmount;
+        UIManager.instance.UpdateGoldCounter();
+        goldCounterSo.goldAccumulated = goldCounterSo.goldAccumulated + goldAmount;
+        UIManager.instance.UpdateGoldAccumulated();
+    }
+
+    [ContextMenu("GoldInfinite")]
+    public void TestGold()
+    {
+        AddGold(20000);
     }
 
     /// <summary>

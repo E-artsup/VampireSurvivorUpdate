@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed40090570c3be44ad9f19a71019eec, type: 3}
+  m_Name: Volcano_PowerData
+  m_EditorClassIdentifier: 
+  name: 
+  powerType: 2
+  icon: {fileID: 0}
+  type: 0
+  description: 
+  maxLevel: 0
+  baseDamage: 0
+  levelDamageMultiplier: 0
+  damageTypeZone: 0
+  projectileSpeed: 0
+  maxFireAmountAtSameTime: 0
+  duration: 0
+  cooldown: 0
+  hitBoxDelay: 0
+  piercing: 0
+  knockback: 0
+  maxOnScreenAtSameTime: 0
+  blockedByWalls: 0
+  passiveEffectsData:
+  - {fileID: 11400000, guid: f5f51223e0215a440a58fe679de52d4b, type: 2}
+  - {fileID: 11400000, guid: cf1ac6d310f9b9a4d9021701732beac2, type: 2}
+  - {fileID: 11400000, guid: 904a35c73b5eef94cb195336ab93c1dc, type: 2}

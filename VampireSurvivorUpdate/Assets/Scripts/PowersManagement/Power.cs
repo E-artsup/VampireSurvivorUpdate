@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,140 +6,78 @@ using UnityEngine;
 public class Power : MonoBehaviour
 {
 
-//#region private variables
-    protected PowersManager powersManager;
-
-    private Material icon;
-    private new string name;
-    private int type;
-        // 0 = unknown
-        // 1 = Fire
-        // 2 = Water
-        // 3 = Air
-        // 4 = Lightning
-        // 5 = Light
-        // 6 = Darkness
-    private string description;
-    protected int maxLevel;
-    protected int currentLevel;
-    protected int baseDamage;
-    protected int levelDamageMultiplier;
-    private DamageTypeZone damageTypeZone;
-    protected float projectileSpeed;
-    protected int maxFireAmountAtSameTime;
-    protected float duration;
-    protected float cooldown;
+#region private variables
+    [SerializeField]
+    [Tooltip("The power data object containing informations about the power")]
+    protected PowerData powerData;
+    [SerializeField]
+    [Tooltip("Sound chen the attack is launch")]
+    protected AudioSource attackSound;
+    [SerializeField]
+    protected int currentLevel = 1;
     protected float cooldownRemaining;
-    protected float hitBoxDelay;
-    private bool piercing;
-    protected float knockback;
-    protected int maxOnScreenAtSameTime;
-    private bool blockedByWalls;
-//#endregion
-//#region public variables
-//#endregion
+    #endregion
 
-//#region constructor
-    //<summary> Constructor of the Power class </summary>
-    //<param name="name"> Name of the power </param>
-    //<param name="type"> Type of the power </param>
-    //<param name="description"> Description of the power </param>
-    //<param name="maxLevel"> Max level of the power </param>
-    //<param name="baseDamage"> Base damage of the power </param>
-    //<param name="levelDamageMultiplier"> Damage multiplier per level of the power </param>
-    //<param name="damageTypeZone"> Type of damage zone of the power </param>
-    //<param name="projectileSpeed"> Speed of the projectile of the power </param>
-    //<param name="maxFireAmountAtSameTime"> Max amount of projectiles that can be fired at the same time </param>
-    //<param name="duration"> Duration of the power </param>
-    //<param name="cooldown"> Cooldown of the power </param>
-    //<param name="hitBoxDelay"> Delay before the hitbox of the power appears </param>
-    //<param name="piercing"> If the power can pierce through enemies </param>
-    //<param name="knockback"> Knockback's strength </param>
-    //<param name="maxOnScreenAtSameTime"> Max amount of projectiles that can be on screen at the same time </param>
-    //<param name="blockedByWalls"> If the power is blocked by walls </param>
-    public Power(
-        string name,
-        int type,
-        string description,
-        int maxLevel,
-        int baseDamage,
-        int levelDamageMultiplier,
-        DamageTypeZone damageTypeZone,
-        float projectileSpeed,
-        int maxFireAmountAtSameTime,
-        float duration,
-        float cooldown,
-        float hitBoxDelay,
-        bool piercing,
-        float knockback,
-        int maxOnScreenAtSameTime,
-        bool blockedByWalls
-    ){
-        this.name = name;
-        this.type = type;
-        this.description = description;
-        this.maxLevel = maxLevel;
-        this.baseDamage = baseDamage;
-        this.levelDamageMultiplier = levelDamageMultiplier;
-        this.damageTypeZone = damageTypeZone;
-        this.projectileSpeed = projectileSpeed;
-        this.maxFireAmountAtSameTime = maxFireAmountAtSameTime;
-        this.duration = duration;
-        this.cooldown = cooldown;
-        this.hitBoxDelay = hitBoxDelay;
-        this.piercing = piercing;
-        this.knockback = knockback;
-        this.maxOnScreenAtSameTime = maxOnScreenAtSameTime;
-        this.blockedByWalls = blockedByWalls;
-    }
-
-    //#endregion
-
-    //#region public methods
-
-    //<summary> Method to attack, please override it when creating an instance of this class </summary>
-    public void Attack(){
-        cooldownRemaining = cooldown;
-    }
-
+    #region Getters and setters
     //<summary> Get the remaining time of the power's cooldown </summary>
     //<returns> Remaining time of the power's cooldown </returns>
-    public float getRemainingCooldown(){
+    public float getRemainingCooldown()
+    {
         return cooldownRemaining;
     }
 
+    //<summary> Get the power data </summary>
+    public PowerData PowerData { get => powerData; }
+    public int GetCurrentLevel { get { return currentLevel; }}
+    public bool IsMaxLevel { get { return currentLevel >= powerData.MaxLevel; } }
+    #endregion
+    #region Private methods
+    private void Awake()
+    {
+        ResetLevel();
+    }
     //<summary> Code to execute every frame </summary>
-    public void FixedUpdate(){
+    private void FixedUpdate(){
         // If the cooldown is not finished
         if(cooldownRemaining > 0){
             // Decrease the cooldown
             cooldownRemaining -= Time.deltaTime;
         }
     }
+    #endregion
+
+    #region public methods
+    //<summary> Method to attack, please override it when creating an instance of this class </summary>
+    public virtual void Attack() { }
 
     //<summary> Method to level up the power </summary>
-    public void LevelUp(){
-        // If the power is not at max level
-        if(currentLevel < maxLevel){
-            // Increase the current level
-            currentLevel++;
-        }
+    public void LevelUp()
+    {
+        // Increase the current level
+        currentLevel++;
+        print("Level up " + this.name + " Current Level = " + currentLevel);
     }
-//#endregion
-
-//#region sub-classes
-    enum ElementalType{
-        Fire,
-        Water,
-        Air,
-        Lightning,
-        Light,
-        Darkness
+    /// <summary>
+    /// Set Current Level to 1
+    /// </summary>
+    public void ResetLevel()
+    {
+        currentLevel = 1;
     }
+    #endregion
 
+    public int CurrentLevel { set => currentLevel = value; }
+
+    //#region sub-classes
     public enum DamageTypeZone{
         Unique,
         Area
     }
 //#endregion
+}
+
+public enum DamageTypeZone
+{
+    Area,
+    Projectile
 }

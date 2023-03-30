@@ -43,10 +43,10 @@ public class PowerUtils : MonoBehaviour
     // </summary>
     // <param name="mustBeOnViewport">If true, the position returned is on the viewport</param>
     // <returns>Position of a random enemy</returns>
-    public static Vector3 GetRandomEnemyPosition(bool mustBeOnViewport)
+    public static (Vector3, GameObject) GetRandomEnemyPosition(bool mustBeOnViewport)
     {
         // Get Vectore3.zero as the default randomPosition value
-        Vector3 randomPosition = Vector3.zero;
+        (Vector3, GameObject) randomPosition = (Vector3.zero, null);
         // Get all enemies in the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         // If there are enemies in the scene
@@ -55,12 +55,13 @@ public class PowerUtils : MonoBehaviour
             // Get a random enemy
             int randomIndex = Random.Range(0, enemies.Length);
             // Get the position of the random enemy
-            randomPosition = enemies[randomIndex].transform.position;
+            GameObject randomEnnemi = enemies[randomIndex];
+            randomPosition = (randomEnnemi.transform.position, randomEnnemi);
             // If the position must be on the viewport
             if (mustBeOnViewport && IsEnemyOnViewport())
             {
                 // Get the viewport position of the random enemy
-                Vector3 viewportPosition = Camera.main.WorldToViewportPoint(randomPosition);
+                Vector3 viewportPosition = Camera.main.WorldToViewportPoint(randomPosition.Item1);
                 // If the viewport position is not on the viewport
                 if (viewportPosition.x < 0 || viewportPosition.x > 1 || viewportPosition.y < 0 || viewportPosition.y > 1)
                 {
@@ -70,7 +71,7 @@ public class PowerUtils : MonoBehaviour
             }
         }
         // Return the random position
-        return randomPosition;
+        return (randomPosition);
     }
     
     // <summary>
@@ -136,7 +137,7 @@ public class PowerUtils : MonoBehaviour
     // </summary>
     // <param name="position">Position to check</param>
     // <returns>Position of the nearest enemy</returns>
-    public static Vector3 GetNearestEnemyLocation(Vector3 position)
+    public static (Vector3, GameObject) GetNearestEnemyLocation(Vector3 position)
     {
         // Get all enemies in the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -162,10 +163,10 @@ public class PowerUtils : MonoBehaviour
                 }
             }
             // Return the position of the nearest enemy
-            return nearestEnemy.transform.position;
+            return (nearestEnemy.transform.position, nearestEnemy);
         }
         // Return Vector3.zero
-        return Vector3.zero;
+        return (Vector3.zero, null);
     }
 
     // <summary>
