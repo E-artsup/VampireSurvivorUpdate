@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,14 +11,18 @@ public class AIBehavior : MonoBehaviour
 
         #region Stats
         private float healthPoint;
-        [SerializeField] [Tooltip("IA's max health.")] private float maxHealthPoint = 5;
+        [SerializeField] [Tooltip("IA's base max health.")] private float maxHealthPoint = 5;
         [SerializeField] [Tooltip("IA's attack stat.")] private int baseAtk = 2;
+        [SerializeField][Tooltip("IA's attack stat.")] private int baseAtkStat;
+        [SerializeField] [Tooltip("IA's max health multiplier.")] private int HealthMulti;
+        [SerializeField] [Tooltip("IA's attack stat multiplier.")] private int AtkMulti;
         [SerializeField] [Tooltip("IA's speed stat.")] private float baseSpd = 3.5f;
         [SerializeField] [Tooltip("IA's acceleration.")] private float baseAcn = 8;
+        [SerializeField][Tooltip("In game time")] private float time;
         #endregion
 
-        #region Behavior
-        private NavMeshAgent agent;
+    #region Behavior
+    private NavMeshAgent agent;
         private GameObject target;
         private Rigidbody rb;
         private WaveSystem waveSystem;
@@ -37,14 +42,27 @@ public class AIBehavior : MonoBehaviour
     /// Agent Acceleration <- base Acceleration
     /// </summary>
     private void Awake() {
+        baseAtkStat = baseAtk;
         healthPoint = maxHealthPoint; // Set HP into the same amount as the MaxHP.
         target = GameObject.FindGameObjectWithTag("Player"); // Set the player as target.
         rb = GetComponentInChildren<Rigidbody>(); // Get the rigidbody
         agent = GetComponent<NavMeshAgent>(); // Get the NavMeshAgent.
+        time = GameObject.Find("Timer").GetComponent<TimeManager>().currentTime;
 
         waveSystem = GameObject.Find("WaveManager").GetComponent<WaveSystem>();
         agent.speed = baseSpd; // Set Agent Speed into base Speed.
         agent.acceleration = baseAcn; // Set Agent Acceleration into base Acceleration.
+    }
+
+    /// <summary>
+    /// Update the Stats depending on the game timer
+    /// </summary>
+    public void OnEnable()
+    {
+        AtkMulti = (int)(time / 300);
+        HealthMulti = (int)(time / 150);
+        healthPoint = maxHealthPoint * HealthMulti;
+        baseAtk = baseAtkStat * AtkMulti;
     }
 
     /// <summary>
