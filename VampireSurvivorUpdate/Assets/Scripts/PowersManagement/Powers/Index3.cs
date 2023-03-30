@@ -21,7 +21,8 @@ public class Index3 : Power
     }
     public void Update()
     {
-        foreach(GameObject ennemi in ennemiInHellFire)
+        if (ennemiInHellFire == null) return;
+        foreach (GameObject ennemi in ennemiInHellFire)
         {
             if(!ennemi.activeInHierarchy)
             {

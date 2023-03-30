@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         //Regen
         playerStats.currentHealth += playerStats.regenRate * Time.deltaTime;
         playerStats.currentHealth = Mathf.Clamp(playerStats.currentHealth, 0, playerStats.maxHealth);
+        if(isThePlayerDead) Time.timeScale = 1;
     }
 
     //============
@@ -60,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
         InputManager.instance = null;
         FindObjectOfType<TimeManager>().enabled = false;
         FindObjectOfType<WaveSystem>().gameObject.SetActive(false);
+
         foreach(AIBehavior ennemiScript in FindObjectsOfType<AIBehavior>())
         {
             ennemiScript.canMove = false;

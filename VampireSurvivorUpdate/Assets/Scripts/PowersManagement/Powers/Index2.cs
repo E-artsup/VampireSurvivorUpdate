@@ -24,6 +24,7 @@ public class Index2 : Power
             Attack();
             this.cooldownRemaining = powerData.Cooldown - 0.3f * currentLevel;
         }
+        if (ennemiInHellFire == null) return;
         foreach (GameObject ennemi in ennemiInHellFire)
         {
             if (!ennemi.activeInHierarchy)

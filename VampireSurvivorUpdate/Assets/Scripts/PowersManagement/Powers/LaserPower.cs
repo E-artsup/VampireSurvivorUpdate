@@ -32,6 +32,7 @@ public class LaserPower : Power
     }
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if (other.gameObject.TryGetComponent<AIBehavior>(out AIBehavior enemy))
         {
             // Deals damage to the enemy
@@ -48,7 +49,7 @@ public class LaserPower : Power
                     enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
                 }
             }
-        }
+        }*/
     }
 
     //========
