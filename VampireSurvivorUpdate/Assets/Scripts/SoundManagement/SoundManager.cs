@@ -56,15 +56,15 @@ public class SoundManager : MonoBehaviour
 
     public bool soundIsValid(SoundData soundData){
         if(soundData == null){
-            Debug.LogWarning("SoundManager: The sound is null.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound is null.");
             return false;
         }
         if(soundData.Source == null){
-            Debug.LogWarning("SoundManager: The sound clip is null.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound clip is null.");
             return false;
         }
         if(this.soundsDatas.ContainsKey(soundData.Name) == false){
-            Debug.LogWarning("SoundManager: The sound is not registered in the game.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound is not registered in the game.");
             return false;
         }
         return true;
@@ -73,15 +73,15 @@ public class SoundManager : MonoBehaviour
     public bool soundIsValid(string soundName){
         SoundData _soundData;
         if(!this.soundsDatas.TryGetValue(soundName, out _soundData)){
-            Debug.LogWarning("SoundManager: The sound is not registered in the game.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound is not registered in the game.");
             return false;
         }
         if(_soundData == null){
-            Debug.LogWarning("SoundManager: The sound is null.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound is null.");
             return false;
         }
         if(_soundData.Source == null){
-            Debug.LogWarning("SoundManager: The sound source is null -> Don't forget to register a sound data by calling the method 'registerSound()' in the SoundManager class.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound source is null -> Don't forget to register a sound data by calling the method 'registerSound()' in the SoundManager class.");
             return false;
         }
         return true;
@@ -90,7 +90,7 @@ public class SoundManager : MonoBehaviour
     public SoundData getSoundData(string soundName){
         SoundData _soundData;
         if(!this.soundsDatas.TryGetValue(soundName, out _soundData)){
-            Debug.LogWarning("SoundManager: The sound is not registered in the game.");
+            UnityEngine.Debug.LogWarning("SoundManager: The sound is not registered in the game.");
             return null;
         }
         return _soundData;
@@ -139,7 +139,7 @@ public class SoundManager : MonoBehaviour
         if(!this.soundIsValid(soundData)){
             return;
         }
-        Debug.LogWarning("SoundManager: The sound "+soundData+" have been unlinked from his curve -> Used changeVolumeSmoothly on it.");
+        UnityEngine.Debug.LogWarning("SoundManager: The sound "+soundData+" have been unlinked from his curve -> Used changeVolumeSmoothly on it.");
         soundData.LinkToCurve = false;
         StartCoroutine(ChangeVolumeSmoothlyRoutine(soundData, targetVolume, duration));
     }
@@ -153,7 +153,7 @@ public class SoundManager : MonoBehaviour
         if(!this.soundIsValid(_soundData)){
             return;
         }
-        Debug.LogWarning("SoundManager: The sound "+_soundData+" have been unlinked from his curve -> Used changeVolumeSmoothly on it.");
+        UnityEngine.Debug.LogWarning("SoundManager: The sound "+_soundData+" have been unlinked from his curve -> Used changeVolumeSmoothly on it.");
         _soundData.LinkToCurve = false;
         StartCoroutine(ChangeVolumeSmoothlyRoutine(_soundData, targetVolume, duration));
     }
@@ -175,9 +175,9 @@ public class SoundManager : MonoBehaviour
     private void updateSoundsVolume(){
         foreach(SoundData _soundData in this.soundsDatas.Values){
             if(_soundData.LinkToCurve){
-                Debug.Log("Sound "+_soundData.Name+": "+(_soundData.Source.time/_soundData.Clip.length)*100+"% ("+_soundData.Source.time+" / "+_soundData.Clip.length+")");
+                UnityEngine.Debug.Log("Sound "+_soundData.Name+": "+(_soundData.Source.time/_soundData.Clip.length)*100+"% ("+_soundData.Source.time+" / "+_soundData.Clip.length+")");
                 _soundData.Source.volume = _soundData.Volume * _soundData.VolumeCurve.Evaluate(_soundData.Source.time/_soundData.Clip.length);
-                Debug.Log("volume of sound "+_soundData.Name+" is now "+_soundData.Source.volume);
+                UnityEngine.Debug.Log("volume of sound "+_soundData.Name+" is now "+_soundData.Source.volume);
             }
         }
     }
