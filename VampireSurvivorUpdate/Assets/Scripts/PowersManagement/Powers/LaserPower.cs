@@ -87,7 +87,6 @@ public class LaserPower : Power
                         {
                             // Deals damage to the enemy
                             enemyParent.TakeDamage(powerData.GetDamageCalcul(currentLevel));
-                            
                             continue;
                         }
                     }

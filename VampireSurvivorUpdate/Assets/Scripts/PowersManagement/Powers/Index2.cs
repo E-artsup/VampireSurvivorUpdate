@@ -24,6 +24,13 @@ public class Index2 : Power
             Attack();
             this.cooldownRemaining = powerData.Cooldown - 0.3f * currentLevel;
         }
+        foreach (GameObject ennemi in ennemiInHellFire)
+        {
+            if (!ennemi.activeInHierarchy)
+            {
+                ennemiInHellFire.Remove(ennemi.gameObject);
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

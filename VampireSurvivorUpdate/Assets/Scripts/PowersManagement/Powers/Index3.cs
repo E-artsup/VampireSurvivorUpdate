@@ -17,11 +17,17 @@ public class Index3 : Power
     {
         StartCoroutine(DamageFonction(true, powerData.HitBoxDelay));
         transform.parent = PowersManager.instance.getPlayer().transform.GetChild(0);
-        transform.localPosition = Vector3.forward * 3;
+        transform.localPosition = - Vector3.forward * 3;
     }
     public void Update()
     {
-
+        foreach(GameObject ennemi in ennemiInHellFire)
+        {
+            if(!ennemi.activeInHierarchy)
+            {
+                ennemiInHellFire.Remove(ennemi.gameObject);
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -3575,6 +3575,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 633d71cad285eb44f94135e57f024b78, type: 3}
+--- !u!114 &122025632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8614068181151732040, guid: b56ba0e13a89d7f43b6a9496d54d3378,
+    type: 3}
+  m_PrefabInstance: {fileID: 1992598377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &122398988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11042,6 +11054,8 @@ MonoBehaviour:
   rectangleLength: 0
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
@@ -18031,6 +18045,8 @@ MonoBehaviour:
   rectangleLength: 0
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
@@ -25090,7 +25106,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 5154d5ec109870c488275c38d201544e, type: 2}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
@@ -27964,6 +27980,8 @@ MonoBehaviour:
   rectangleLength: 0
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
@@ -36674,6 +36692,8 @@ MonoBehaviour:
   rectangleLength: 0
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
@@ -39554,6 +39574,8 @@ MonoBehaviour:
   rectangleLength: 0
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 0
@@ -47004,6 +47026,8 @@ MonoBehaviour:
   rectangleLength: 35
   rLength: 0
   rWidth: 0
+  innerPolygonLengthRatio: 0
+  lengthRatio: 0
   snailShape: 0
   elipse: 0
   rectangle: 1
@@ -62524,6 +62548,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8614068181151732040, guid: b56ba0e13a89d7f43b6a9496d54d3378,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitTheUpgradeMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 9089967453996440400, guid: b56ba0e13a89d7f43b6a9496d54d3378,
         type: 3}
       propertyPath: m_Name
@@ -62666,6 +62695,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: aa3a00585ddc0c542a562054e98dce35,
         type: 2}
+    - target: {fileID: 9089967453996440415, guid: b56ba0e13a89d7f43b6a9496d54d3378,
+        type: 3}
+      propertyPath: listOfButtonAfterThePlayerHaveUpgradeEverythings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089967453996440415, guid: b56ba0e13a89d7f43b6a9496d54d3378,
+        type: 3}
+      propertyPath: listOfButtonAfterThePlayerHaveUpgradeEverythings.Array.data[0]
+      value: 
+      objectReference: {fileID: 122025632}
     - target: {fileID: 9089967454606287732, guid: b56ba0e13a89d7f43b6a9496d54d3378,
         type: 3}
       propertyPath: m_AnchorMax.y
